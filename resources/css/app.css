@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #aaa;
+}
+
+
+.header-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: .5s ease-in-out;
+}
+
+.header-content {
+    background-color: #cacaca;
+    width: 100%;
+}
+
+/* For Title */
+/* https://codepen.io/mark-julius-mella/pen/QWdBNyv */
+h1 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    padding: 2rem;
+
+    color: #2c2c2c;
+    letter-spacing: .05em;
+    text-shadow: 
+        3px 3px 0px #d5d5d5, 
+        5px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand img {
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+}
+/* For Title */
+
+.navbar {
+    max-width: 1250px;
+    margin: 0 auto;
+    -webkit-position: sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: dodgerblue;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-list {
+    display: flex;
+}
+
+.menu-list li {
+    list-style: none;
+}
+
+.menu-list li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 1rem;
+    display: block;
+}
+
+.menu-list li:hover {
+    background: #444;
+}
+
+.navbar .button a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-right: 2rem;
+}
+
+.navbar .button a:hover {
+    color: black;
+}
+
+/* Logout button */
+button {
+    background-color: transparent;
+    margin-right: 2rem;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    outline: none;
+    border: none;
+    border: 1px solid #444;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+button:hover {
+    color: white;
+    background-color: #444;
+}
+/* Logout button */
+
+
+
+
+/* For Icon */
+.menu-icon {
+    color: white;
+    font-size: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    display: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+/* For Icon */
+
+
+
+.footer {
+    max-width: 1250px;
+    margin: 0 auto;
+    background-color: #444;
+    padding: 1rem;
+    color: #ccc;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.arrow {
+    background-color: dodgerblue;
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    text-align: center;
+    line-height: 40px;
+}
+
+.arrow a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.arrow a:hover {
+    color: black;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #444;
+}
+
+
+@media (max-width: 790px){
+
+    .brand {
+        margin-top: 2rem;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .menu-list {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 100%;
+        background: #222;
+        padding: 3rem 0;
+        display: block;
+        transition: all .8s ease;
+    }
+
+    .menu-list.active {
+        left: 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .navbar .button a {
+        margin-right: 1rem;
+    }
+
+    button {
+        margin-right: 1rem;
+    }
+
+    .footer {
+        font-size: 12px;
+    }
+
+}

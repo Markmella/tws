@@ -1,0 +1,161 @@
+
+.main-content {
+    max-width: 1250px;
+    margin: 0 auto;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.recent-post {
+    width: 75%;
+    min-height: 750px;
+    border-radius: 5px;
+    border: 2px solid #aaa;
+    padding: 1rem;
+}
+
+.recent-post h4 {
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.post p {
+    letter-spacing: 1px;
+    padding: .5rem 0;
+}
+
+.post .title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+}
+
+.post .date-time {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+.post .author {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    border-bottom: 1px solid black;
+}
+
+.post .text-content {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.share-container p {
+    font-size: 1.2rem;
+}
+
+.share-container a {
+    text-decoration: none;
+    color: dodgerblue;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.topic-content {
+    position: sticky;
+    top: 70px;
+    width: 20%;
+    height: 600px;
+    border-radius: 5px;
+    border: 2px solid #aaa;
+    padding: 1rem;
+}
+
+.topic-content .searchBar {
+    width: 100%;
+}
+
+.topic-content .searchBar input {
+    background-color: transparent;
+    width: 100%;
+    color: black;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    outline: none;
+    border: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.topic-content .searchBar input::-webkit-input-placeholder {
+    color: black;
+}
+
+.topic-content h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
+.all-topics {
+    margin-top: 1rem;
+    overflow: scroll;
+    height: 450px;
+    padding: .5rem;
+}
+
+.all-topics::-webkit-scrollbar {
+    width: 5px;
+    overflow: scroll;  
+    background-color: transparent;
+}
+
+.topic {
+    padding: 10px;
+    border-radius: 3px;
+    transition: .5s ease-in-out;
+}
+
+.topic a {
+    text-decoration: none;
+    color: black;
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.topic:hover {
+    background-color: #ccc;
+    font-weight: bold;
+}
+
+
+@media (max-width: 990px){
+
+    .recent-post {
+        width: 70%;
+    }
+    
+    .topic-content {
+        width: 25%;
+    }
+    
+}
+
+@media (max-width: 790px){
+    .main-content {
+        flex-direction: column;
+    }
+
+    .recent-post {
+        width: 100%;
+    }
+
+    .topic-content {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}

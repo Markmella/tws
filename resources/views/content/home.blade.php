@@ -3,8 +3,11 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
 @guest        
     <script src="{{ asset('js/header.js') }}" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 @endguest
 
 <div class="main-content">
@@ -29,18 +32,23 @@
 
             <div class="share-container">
                 <p> Share </p>
-                <a href="https://www.facebook.com/sharer/sharer.php?uhttps://www.twitch.tv/" target="_blank" title="Facebook">
+
+                <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $source ?>" target="_blank" title="Facebook">
                     <i class="fab fa-facebook-square"></i>
                 </a>
-                <a href="https://twitter.com/intent/tweet?source=https://www.youtube.com/watch?v=mIBs-QyQuyw&text=https://www.youtube.com/watch?v=mIBs-QyQuyw" target="_blank" title="Twitter">
+                <a href="https://twitter.com/intent/tweet?source=<?php echo $source ?>&text=<?php echo $source ?>" target="_blank" title="Twitter">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://nbafullmatch.com/pacers-vs-jazz/" target="_blank" title="LinedIn">
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo $source ?>" target="_blank" title="LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="" title="Copy link">
+
+                <input id="source" type="text" value="<?php echo $source ?>">
+                <button id="copy" title="Copy">
                     <i class="fas fa-link"></i>
-                </a>
+                </button>
+
+                <p> <a class="source" href="<?php echo $source ?>" target="_blank"> Source </a> </p>
             </div>
         </div>
     </div>
@@ -98,6 +106,28 @@
                     
                 }
             }
+
+            let link = document.getElementById("source");
+            let btnCopy = document.getElementById("copy");
+
+            btnCopy.addEventListener('click', copyLink);
+
+            function copyLink(){
+                // e.preventDefault();
+                link.select();
+                document.execCommand("Copy");
+
+                Swal.fire({
+                    title: 'Copy to Clipboard',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                });
+            }
+
         </script>
     @endguest
 

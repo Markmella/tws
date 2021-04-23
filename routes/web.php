@@ -48,6 +48,7 @@ Route::get('/', function () {
             "datetime" => $data[0][1],
             "author" => $data[0][2],
             "content" => $data[0][3],
+            "source" => $data[0][4]
         ]);
     }else {
         $articleNo = $_GET["article"];
@@ -56,6 +57,7 @@ Route::get('/', function () {
             "datetime" => $data[$articleNo][1],
             "author" => $data[$articleNo][2],
             "content" => $data[$articleNo][3],
+            "source" => $data[$articleNo][4]
         ]);
     }
 

@@ -52,6 +52,7 @@
 
 .share-container p {
     font-size: 1.2rem;
+    margin-top: 2rem;
 }
 
 .share-container a {
@@ -59,6 +60,40 @@
     color: dodgerblue;
     font-size: 1.5rem;
     margin-right: 1rem;
+}
+
+.share-container input {
+    width: 1px;
+    background-color: transparent;
+    color: transparent;
+    border: none;
+    outline: none;
+}
+
+.share-container button {
+    background-color: transparent;
+    border: none;
+    color: dodgerblue;
+    font-size: 1.2rem;
+}
+
+.share-container .source {
+    right: 1rem;
+    color: #aaa;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.share-container .source:hover {
+    color: #444;
+}
+
+.swal2-popup {
+    width: 400px;
+}
+
+.swal2-title {
+    font-size: 2rem;
 }
 
 .topic-content {
@@ -164,5 +199,13 @@
     .topic-content {
         width: 100%;
         margin-top: 1rem;
+    }
+
+    .swal2-popup {
+        width: 300px;
+    }
+    
+    .swal2-title {
+        font-size: 1.2rem;
     }
 }

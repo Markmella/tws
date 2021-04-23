@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 
 <div class="dashboard-container">
-    <h2> Dashboard Content Here </h2>
+    {{-- <h2> Dashboard Content Here </h2> --}}
     <h2> Welcome to TWS {{ auth()->user()->name }} </h2>
     <p class="dashboard-text">    
         Write your article below then it will be review by the admin

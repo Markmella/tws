@@ -9,7 +9,8 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title> TWS | West Philippine Sea </title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <script type="text/javascript" src="{{ asset('js/all.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/fontAwesomeIcon.js') }}" defer></script>
+
 </head>
     <body>
         <div id="Home" class="header-container">

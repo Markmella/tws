@@ -49,7 +49,9 @@ $data = array(
         sided with China’s rival claimants. <br><br>
     
         China accused the U.S. of sowing discord in the region, and last month reportedly test-fired two missiles in the South China Sea during 
-        live-fire exercises. <br><br><br>"
+        live-fire exercises. <br><br><br>",
+
+        "https://apnews.com/article/beijing-south-china-sea-territorial-disputes-philippines-china-626f161db42af40758bc9f7912dfb450"
     ),
 
     array("[OPINION] Law and justice in the West Philippine Sea", 
@@ -138,7 +140,9 @@ $data = array(
         a full EEZ in the WPS. And yes, the arbitral tribunal expressly declared that Mischief Reef is part of Philippine EEZ. 
         So if China is still in Mischief Reef, it is there illegally as a squatter. Sea level rise by the end of this century and 
         beyond will submerge all the naturally-formed islands of China in the WPS. Once submerged, they will form part of Philippine 
-        EEZ if within 200 nautical miles from our archipelagic baselines. <br><br><br>"
+        EEZ if within 200 nautical miles from our archipelagic baselines. <br><br><br>",
+
+        "https://www.rappler.com/voices/thought-leaders/opinion-law-justice-west-philippine-sea"
     ),
 
     array("Philippines' conflict in West PH Sea is with China only: Locsin",
@@ -189,7 +193,12 @@ $data = array(
         It also protested the pointing of a radar gun at a Philippine Navy ship in Philippine waters. <br><br> 
 
         <a href='https://news.abs-cbn.com/news/04/23/20/chinese-ship-had-hostile-intent-in-pointing-radar-gun-at-ph-vessel-military' target='_blank'> 
-            Chinese ship had 'hostile intent' in pointing radar gun at PH vessel: military <br><br><br>"
+            Chinese ship had 'hostile intent' in pointing radar gun at PH vessel: military <br><br><br>",
+
+        "https://news.abs-cbn.com/news/09/22/20/philippines-conflict-in-west-ph-sea-is-with-china-only-locsin#:~:text=The%20Philippines%20calls%20the%20part,is%20disregarding%20the%20landmark%20decision."
     ),
+
+
+    
 
 );

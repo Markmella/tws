@@ -6,12 +6,6 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\DashboardController;
 
-// Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
-
-Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
-
-
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 
@@ -20,10 +14,11 @@ Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 
 
+Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
+Route::post('/logout', [LogoutController::class, 'logout']);
 
-Route::get('/', function () { 
-    return view('content.home');
-})->middleware(['guest'])->name('home');
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 
 Route::get('/about', function () {
@@ -42,6 +37,26 @@ Route::get('/contact', function () {
 
 
 
-Route::get('/dashboard', function () {
-    return view('content.dashboard');
-})->name('dashboard');
+
+Route::get('/', function () { 
+
+    include_once 'data.php';
+
+    if(empty($_GET["article"])){
+        return view('content.home', [
+            "title" => $data[0][0],
+            "datetime" => $data[0][1],
+            "author" => $data[0][2],
+            "content" => $data[0][3],
+        ]);
+    }else {
+        $articleNo = $_GET["article"];
+        return view('content.home', [
+            "title" => $data[$articleNo][0],
+            "datetime" => $data[$articleNo][1],
+            "author" => $data[$articleNo][2],
+            "content" => $data[$articleNo][3],
+        ]);
+    }
+
+})->middleware(['guest'])->name('home');

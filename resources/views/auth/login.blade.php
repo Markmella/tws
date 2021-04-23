@@ -1,42 +1,48 @@
 @extends('layout.app')
 
 @section('content')
-    <div class="login-register-form">
-        <form class="forms" action="{{ route('login') }}" method="POST">
-            <h2> Login </h2>
-            @csrf
-            @if (session('status'))
-                <div class="error-login">
-                    {{ session('status') }}
-                </div>
-            @endif
-            <input id="email" type="text" name="email" placeholder="Email"
-                @error('email') style="border: 2px solid red" onkeyup="emailInput()" @enderror
-                value="{{ old('email') }}">
-            @error('email')
-                <div id="error1" class="error-message">
-                    {{ $message }}
-                </div>
-            @enderror
 
-            <input id="password" type="password" name="password" placeholder="Password"
-                @error('password') style="border: 2px solid red" onkeyup="passwordInput()" @enderror>
-            @error('password')
-                <div id="error2" class="error-message">
-                    {{ $message }}
-                </div>
-            @enderror
+<link rel="stylesheet" href="{{ asset('css/login-register.css') }}">
+@guest        
+    <script src="{{ asset('js/header.js') }}" defer></script>
+@endguest
 
-            <div class="remember">
-                <input class="checkbox" type="checkbox" name="remember">
-                <label for="remember"> Remember me </label>
+<div class="login-register-form">
+    <form class="forms" action="{{ route('login') }}" method="POST">
+        <h2> Login </h2>
+        @csrf
+        @if (session('status'))
+            <div class="error-login">
+                {{ session('status') }}
             </div>
+        @endif
+        <input id="email" type="text" name="email" placeholder="Email"
+            @error('email') style="border: 2px solid red" onkeyup="emailInput()" @enderror
+            value="{{ old('email') }}">
+        @error('email')
+            <div id="error1" class="error-message">
+                {{ $message }}
+            </div>
+        @enderror
 
-            <input type="submit" value="Login">
-        </form>
-    </div>
+        <input id="password" type="password" name="password" placeholder="Password"
+            @error('password') style="border: 2px solid red" onkeyup="passwordInput()" @enderror>
+        @error('password')
+            <div id="error2" class="error-message">
+                {{ $message }}
+            </div>
+        @enderror
+
+        <div class="remember">
+            <input class="checkbox" type="checkbox" name="remember">
+            <label for="remember"> Remember me </label>
+        </div>
+
+        <input type="submit" value="Login">
+    </form>
+</div>
+
     <script>
-        
         let emailField = document.getElementById('email');
         let passwordField = document.getElementById('password');
 
@@ -66,38 +72,6 @@
                 passwordField.style.borderColor = "red";
             }
         }
-
-        const menu = document.querySelector(".menu-list");
-        const menuBtn = document.querySelector(".menu-btn");
-        const closeBtn = document.querySelector(".close-btn");
-
-        const homeBtn = document.getElementById("home");
-        const aboutBtn = document.getElementById("about");
-        const disclaimerBtn = document.getElementById("disclaimer");
-        const contactBtn = document.getElementById("contact");
-
-        menuBtn.addEventListener("click", function(){
-            menu.classList.add("active");
-        });
-
-        closeBtn.addEventListener("click", function(){
-            menu.classList.remove("active");
-        });
-
-        homeBtn.addEventListener("click", function(){
-            menu.classList.remove("active");
-        });
-
-        aboutBtn.addEventListener("click", function(){
-            menu.classList.remove("active");
-        });
-
-        disclaimerBtn.addEventListener("click", function(){
-            menu.classList.remove("active");
-        });
-
-        contactBtn.addEventListener("click", function(){
-            menu.classList.remove("active");
-        });
     </script>
+    
 @endsection

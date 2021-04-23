@@ -69,7 +69,7 @@
 }
 
 .social-media a:hover {
-    color: #7585ff;
+    color: dodgerblue;
 }
 
 .contact-button {
@@ -79,23 +79,57 @@
 .contact-button a {
     background-color: #fff;
     padding: 10px 1rem;
-    color: #7585ff;
+    color: #444;
     font-size: 14px;
     font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
     text-decoration: none; 
     border-radius: 40px ;
-    border: 2px solid #7585ff;
+    border: 2px solid #444;
     transition: .5s ease-in-out;
 }
 
 .contact-button a:hover {
     padding: 10px 2rem;
-    background-color: #7585ff;
+    background-color: #444;
     color: #fff;
 }
 
+.information {
+    width: 50%;
+    border-radius: 5px;
+    border: 2px solid #444;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-top: 10rem;
+    letter-spacing: 1px;
+    line-height: 1.5rem;
+}
+
+.visit-us {
+    width: 50%;
+    padding: 1rem;
+}
+
+.call-us {
+    width: 50%;
+    padding: 1rem;
+}
+
+
+@media (max-width: 790px){
+    .information {
+        flex-direction: column;
+    }
+
+    .visit-us,
+    .call-us {
+        width: 100%;
+    }
+
+}
 
 @media (max-width: 1090px){
     
@@ -110,6 +144,10 @@
 
     .content {
         flex-direction: column;
+    }
+
+    .information {
+        width: 80%;
     }
     
 }

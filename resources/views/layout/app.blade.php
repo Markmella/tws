@@ -9,13 +9,6 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title> TWS | West Philippine Sea </title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/login-register.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/about.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/disclaimer.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
-
     <script type="text/javascript" src="{{ asset('js/all.js') }}" defer></script>
 </head>
     <body>

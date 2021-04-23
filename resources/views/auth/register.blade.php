@@ -1,52 +1,59 @@
 @extends('layout.app')
 
 @section('content')
-    <div class="login-register-form">
-        <form class="forms" action="{{ route('register') }}" method="POST">
-            <h2> Register </h2>
-            @csrf
-            <input id="name" type="text" name="name" placeholder="Name"
-                @error('name') style="border: 2px solid red" onkeyup="nameInput()" @enderror
-                value="{{ old('name') }}">
-            @error('name')
-                <div id="error1" class="error-message">
-                    {{ $message }}
-                </div>
-            @enderror
 
-            <input id="username" type="text" name="username" placeholder="Username"
-                @error('username') style="border: 2px solid red" onkeyup="usernameInput()" @enderror
-                value="{{ old('username') }}">
-            @error('username')
-                <div id="error2" class="error-message">
-                    {{ $message }}
-                </div>
-            @enderror
+<link rel="stylesheet" href="{{ asset('css/login-register.css') }}">
+@guest        
+    <script src="{{ asset('js/header.js') }}" defer></script>
+@endguest
 
-            <input id="email" type="text" name="email" placeholder="Email"
-                @error('email') style="border: 2px solid red" onkeyup="emailInput()" @enderror
-                value="{{ old('email') }}">
-            @error('email')
-                <div id="error3" class="error-message">
-                    {{ $message }}
-                </div>
-            @enderror
+<div class="login-register-form">
+    <form class="forms" action="{{ route('register') }}" method="POST">
+        <h2> Register </h2>
+        @csrf
+        <input id="name" type="text" name="name" placeholder="Name"
+            @error('name') style="border: 2px solid red" onkeyup="nameInput()" @enderror
+            value="{{ old('name') }}">
+        @error('name')
+            <div id="error1" class="error-message">
+                {{ $message }}
+            </div>
+        @enderror
 
-            <input id="password1" type="password" name="password" placeholder="Password"
-                @error('password') style="border: 2px solid red" onkeyup="password1Input()" @enderror
-                value="{{ old('password') }}">
+        <input id="username" type="text" name="username" placeholder="Username"
+            @error('username') style="border: 2px solid red" onkeyup="usernameInput()" @enderror
+            value="{{ old('username') }}">
+        @error('username')
+            <div id="error2" class="error-message">
+                {{ $message }}
+            </div>
+        @enderror
 
-            <input id="password2" type="password" name="password_confirmation" placeholder="Repeat Password"
-                @error('password') style="border: 2px solid red" onkeyup="password2Input()" @enderror>
-            @error('password')
-                <div id="error4" class="error-message">
-                    {{ $message }}
-                </div>
-            @enderror
+        <input id="email" type="text" name="email" placeholder="Email"
+            @error('email') style="border: 2px solid red" onkeyup="emailInput()" @enderror
+            value="{{ old('email') }}">
+        @error('email')
+            <div id="error3" class="error-message">
+                {{ $message }}
+            </div>
+        @enderror
 
-            <input type="submit" value="Sign Up">
-        </form>
-    </div>
+        <input id="password1" type="password" name="password" placeholder="Password"
+            @error('password') style="border: 2px solid red" onkeyup="password1Input()" @enderror
+            value="{{ old('password') }}">
+
+        <input id="password2" type="password" name="password_confirmation" placeholder="Repeat Password"
+            @error('password') style="border: 2px solid red" onkeyup="password2Input()" @enderror>
+        @error('password')
+            <div id="error4" class="error-message">
+                {{ $message }}
+            </div>
+        @enderror
+
+        <input type="submit" value="Sign Up">
+    </form>
+</div>
+
     <script>
         let nameField = document.getElementById('name');
         let usernameField = document.getElementById('username');
@@ -117,39 +124,6 @@
                 password2Field.style.borderColor = "red";
             }
         }
-
-        const menu = document.querySelector(".menu-list");
-        const menuBtn = document.querySelector(".menu-btn");
-        const closeBtn = document.querySelector(".close-btn");
-
-        const homeBtn = document.getElementById("home");
-        const aboutBtn = document.getElementById("about");
-        const disclaimerBtn = document.getElementById("disclaimer");
-        const contactBtn = document.getElementById("contact");
-
-        menuBtn.addEventListener("click", function(){
-            menu.classList.add("active");
-        });
-
-        closeBtn.addEventListener("click", function(){
-            menu.classList.remove("active");
-        });
-
-        homeBtn.addEventListener("click", function(){
-            menu.classList.remove("active");
-        });
-
-        aboutBtn.addEventListener("click", function(){
-            menu.classList.remove("active");
-        });
-
-        disclaimerBtn.addEventListener("click", function(){
-            menu.classList.remove("active");
-        });
-
-        contactBtn.addEventListener("click", function(){
-            menu.classList.remove("active");
-        });
     </script>
     
 @endsection

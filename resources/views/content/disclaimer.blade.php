@@ -1,11 +1,8 @@
-@extends('layout.app')
+@extends('layout.master')
 
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('css/disclaimer.css') }}">
-@guest        
-    <script src="{{ asset('js/header.js') }}" defer></script>
-@endguest
 
 <div class="disclaimer">
     <div class="disclaimer-content">
@@ -118,6 +115,11 @@
             <div class="link">
                 <a href="https://www.cbsnews.com/" target="_blank">
                     CBS News
+                </a>
+            </div>
+            <div class="link">
+                <a href="https://economictimes.indiatimes.com/" target="_blank">
+                    The Economic Times
                 </a>
             </div>
         </div>

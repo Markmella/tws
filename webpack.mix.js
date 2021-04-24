@@ -12,7 +12,8 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-.js('resources/js/header.js', 'public/js')
+    .js('resources/js/header.js', 'public/js')
+    .js('resources/js/dashboard.js', 'public/js')
     .js('resources/js/fontAwesomeIcon.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css')
     .postCss('resources/css/login-register.css', 'public/css')
@@ -20,5 +21,6 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/about.css', 'public/css')
     .postCss('resources/css/disclaimer.css', 'public/css')
     .postCss('resources/css/contact.css', 'public/css')
-    .postCss('resources/css/dashboard.css', 'public/css');
+    .postCss('resources/css/dashboard.css', 'public/css')
+    .postCss('resources/css/profile.css', 'public/css');
 

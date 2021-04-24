@@ -54,6 +54,13 @@ $data = array(
         "https://apnews.com/article/beijing-south-china-sea-territorial-disputes-philippines-china-626f161db42af40758bc9f7912dfb450"
     ),
 
+
+
+
+
+
+
+
     array("[OPINION] Law and justice in the West Philippine Sea", 
         "December 12, 2020", 
         "Antonio T. Carpio",
@@ -145,6 +152,13 @@ $data = array(
         "https://www.rappler.com/voices/thought-leaders/opinion-law-justice-west-philippine-sea"
     ),
 
+
+
+
+
+
+
+
     array("Philippines' conflict in West PH Sea is with China only: Locsin",
         "September 22, 2020",
         "Willard Cheng",
@@ -193,12 +207,239 @@ $data = array(
         It also protested the pointing of a radar gun at a Philippine Navy ship in Philippine waters. <br><br> 
 
         <a href='https://news.abs-cbn.com/news/04/23/20/chinese-ship-had-hostile-intent-in-pointing-radar-gun-at-ph-vessel-military' target='_blank'> 
-            Chinese ship had 'hostile intent' in pointing radar gun at PH vessel: military <br><br><br>",
+            Chinese ship had 'hostile intent' in pointing radar gun at PH vessel: military <br><br><br>
+        </a>",
 
         "https://news.abs-cbn.com/news/09/22/20/philippines-conflict-in-west-ph-sea-is-with-china-only-locsin#:~:text=The%20Philippines%20calls%20the%20part,is%20disregarding%20the%20landmark%20decision."
     ),
 
 
+
+
+
+
+
+
+    array("US-Philippines officials discuss concerns over China's ships",
+        "April 11, 2021",
+        "AP",
+
+        "Defence Secretary Lloyd Austin on Saturday discussed with his Philippine counterpart China's recent positioning of “militia vessels” 
+        near the Philippines in the South China Sea. <br><br>
+
+        Austin spoke by phone with Philippine Secretary of National Defence Delfin Lorenzana while Austin was flying from Washington to 
+        Israel to begin an international trip. <br><br>
+        
+        Pentagon press secretary John Kirby said Austin and Lorenzana discussed the situation in the South China Sea and the recent massing 
+        of Chinese vessels at Whitsun Reef, which has drawn criticism from Manila. <br><br>
+        
+        China has said its vessels are there for fishing. <br><br>
+        
+        In their phone call, Austin proposed to Lorenzana several measures to deepen defence cooperation, including by “enhancing situational 
+        awareness of threats in the South China Sea,” Kirby said. He did not elaborate. <br><br>
+        
+        Kirby said earlier this week that the aircraft carrier USS Theodore Roosevelt and its strike group, as well as the amphibious ship 
+        USS Makin Island, are operating in the South China Sea. <br><br>
+        
+        The US has no military forces based permanently in the Philippines but sometimes rotates forces to the country under the US-Philippines 
+        Visiting Forces Agreement. <br><br>
+        
+        The recent gathering of Chinese vessels near the Philippines is among moves the United States has criticised as efforts by Beijing to 
+        intimidate smaller nations in the region. <br><br><br>",
     
+        "https://economictimes.indiatimes.com/news/defence/us-philippines-officials-discuss-concerns-over-chinas-ships/articleshow/82014088.cms"
+    ),
+    
+
+
+
+
+
+
+
+    array("Philippines, US launch military drills amid South China Sea tensions",
+        "April 12, 2021",
+        "Reuters",
+
+
+        "Philippine and U.S. soldiers started two weeks of military exercises on Monday against a backdrop of rising tensions in the 
+        South China Sea, though the drills were reduced in scale due to the coronavirus pandemic. <br><br>
+
+
+        The countries are proceeding with the exercises, which were postponed last year due to the pandemic, after Manila recently 
+        accused China of territorial incursions by hundreds of its vessels manned by militias in the South China Sea. <br><br>
+        
+        Chinese diplomats, however, have said the boats were just sheltering from rough seas and no militia were aboard. <br><br>
+        
+        Philippine military officials said the 'Balikatan' (shoulder-to-shoulder) war games that end on April 23 will involve drills 
+        in tabletop and simulation form rather than field training. <br><br>
+        
+        Social distancing protocols significantly cut the number of troops participating to nearly a thousand from close to 8,000 
+        in previous years. <br><br>
+        
+        All ground exercises were cancelled except for live fire exercises which do not entail face-to-face engagement, 
+        Major General Edgard Arevalo, the exercise director, said in a speech. <br><br>
+        
+        In a speech read by his undersecretary, Philippine Defence Secretary Delfin Lorenzana said the joint drills would 
+        'strengthen our capabilities in addressing traditional and non-traditional security challenges amidst the increasingly 
+        complex situation in the region.' <br><br>
+        
+        Lorenzana and his U.S.counterpart Lloyd Austin held a phone call on Sunday to discuss the exercises, the situation in 
+        the South China Sea, and recent regional security developments. <br><br>
+        
+        The defence chiefs also reiterated the importance of the Visiting Forces Agreement (VFA) between the two countries, 
+        which provides the legal framework under which U.S. troops can operate on a rotational basis in the Philippines. <br><br>
+            
+        Philippine President Rorigo Duterte has said the United States should pay more if it wants to maintain the VFA, 
+        which he unilaterally cancelled last year in an angry response to an ally being denied a U.S. visa. <br><br>
+        
+        The withdrawal period has been twice extended, however, to create what Philippine officials say is a window 
+        for better terms to be agreed. <br><br><br>",
+    
+        "https://economictimes.indiatimes.com/news/defence/philippines-us-launch-military-drills-amid-south-china-sea-tensions/articleshow/82032887.cms"
+    ),
+
+
+
+
+
+
+
+
+
+    array("Philippines summons Chinese ambassador over reef dispute",
+        "April 13, 2021",
+        "AP",
+
+        "The Philippine government summoned the Chinese ambassador to press its demand for Chinese vessels to immediately leave a 
+        reef claimed by Manila in the South China Sea and said their presence was stoking tensions, officials said Tuesday. <br><br>
+
+        The escalating feud between Manila and Beijing started after more than 200 Chinese vessels suspected by Philippine authorities 
+        to be operated by militias were spotted early last month at Whitsun Reef. The Philippine government demanded the vessels 
+        leave then deployed coast guard and patrol vessels to the area but China said it owns the reef and the Chinese vessels were 
+        sheltering from rough seas. <br><br>
+        
+        After summoning Ambassador Huang Xilian on Monday, Philippine Foreign Undersecretary Elizabeth Buensuceso expressed to 
+        him Manila's “displeasure over the illegal lingering presence of Chinese vessels around Julian Felipe Reef,” the foreign 
+        affairs department said in a statement, using the Philippine name for Whitsun Reef in the most hotly disputed Spratlys 
+        region of the busy waterway. <br><br>
+        
+        “The continuing presence of Chinese vessels around the reef is a source of regional tension,” Buensuceso said. <br><br>
+        
+        She reiterated to Huang that the reef, which lies about 175 nautical miles (324 kilometers) west of the Philippine 
+        province of Palawan, is within an internationally recognised offshore zone where Manila has the exclusive right to 
+        exploit fisheries, oil, gas and other resources. <br><br>
+        
+        She also cited a 2016 ruling in an international arbitration case the Philippines brought against China that invalidated 
+        Beijing's vast claims on historical grounds to virtually all of the South China Sea under a 1982 U.N. maritime treaty. <br><br>
+        
+        The Philippine military has said aerial surveillance showed some of the Chinese vessels have left the reef but more 
+        than 40 remained moored in the area in late March. It debunked China's claim that the vessels were sheltering from 
+        rough seas saying the weather has been fine around the reef. <br><br>
+        
+        The United States has said it would stand by the Philippines amid the standoff. The Department of National Defense 
+        in Manila said last week that the Philippines could seek the help of the U.S., with which it has a mutual defense 
+        treaty, to protect its interests in the South China Sea. <br><br>
+        
+        The Philippines' high-profile protests against China over Whitsun has unfolded amid the cozier relations President 
+        Rodrigo Duterte nurtured with China after taking office in mid-2016. Duterte has been repeatedly criticized for not 
+        immediately demanding Chinese compliance with the 2016 arbitration ruling and taking a stronger stand against China's 
+        actions in the disputed waters. <br><br>
+        
+        The Spratly chain of islands, islets and atolls are claimed entirely or partly by China, the Philippines, Vietnam, 
+        Malaysia, Taiwan and Brunei. China has turned seven disputed reefs into missile-protected island bases in recent years, 
+        ratcheting up tensions in what has long been feared as a potential flashpoint in Asia. <br><br><br>",
+
+        "https://economictimes.indiatimes.com/news/defence/philippines-summons-chinese-ambassador-over-reef-dispute/articleshow/82046848.cms"
+    ),
+
+
+
+
+
+
+
+    array("PH sends more patrol vessels to West Philippine Sea as China ships linger",
+        "April 21 2021",
+        "ABS-CBN News",
+
+        "MANILA — The Philippines has sent more of its maritime assets to the West Philippine Sea to boost and sustain sovereignty patrols amid 
+        tensions in the area, a government task force said on Wednesday. <br><br>
+
+
+        The West Philippine Sea is the country's exclusive economic zone (EEZ) in the disputed, resource-rich South China Sea, roughly 90 
+        percent of which is being claimed by China. <br><br>
+        
+        
+        Several Chinese ships have been spotted in the area and remained despite Philippine demands for them to leave. <br><br>
+        
+        
+        In a statement, the National Task Force for the West Philippine Sea (NTF-WPS) said the deployment of additional vessels and aircraft 
+        in the area aims to intensify operations against illegal, unreported, and unregulated fishing and to 'increase safety of life at 
+        sea operations.' <br><br>
+        
+        
+        <a href=' https://news.abs-cbn.com/news/04/14/21/dfas-locsin-orders-fresh-diplomatic-protest-vs-beijing' target='_blank'> 
+            DFA's Locsin files 2 new diplomatic protests vs Beijing <br><br>
+        </a>
+        
+        <a href=' https://news.abs-cbn.com/news/04/13/21/at-least-240-chinese-ships-swarming-in-philippines-eez-ntf-wps' target='_blank'> 
+            At least 240 Chinese ships swarming in Philippines' EEZ: NTF-WPS <br><br>
+        </a>
+        
+        The said assets, according to the statement, would be under the control of the Area Task Forces in the West Philippine Sea and Northern 
+        Philippines. <br><br>
+        
+        The following were deployed by the government to boost maritime law enforcement and patrols, according to the task force: 
+        
+        4 Philippine Coast Guard (PCG) vessels <br>
+        
+        1 PCG aircraft <br>
+        5 Bureau of Fisheries and Aquatic Resources (BFAR) vessels <br>
+        Philippine National Police - Maritime Group (PNP-MG) high speed tactical watercraft and rubber boats <br>
+        
+        'The foregoing whole-of-nation approach to protect our national interest in the WPS manifests the firm rejection of the Philippine 
+        Government of any attempt to undermine the 2016 Arbitral Award,' the statement read. <br><br>
+        
+        NTF-WPS also pointed out that they are 'exhausting all means' to protect the country's territory and EEZ. <br><br>
+        
+        Aside from these, the government is also ramping up development efforts with an P8.8-billion program for the 'environmental 
+        protection, security, safety and sustainable development' in Kalayaan. <br><br>
+        
+        This is in line with the plan of the Palawan Council for Sustainable Development (PCSD), according to NTF-WPS. <br><br>
+        
+        <a href=https://news.abs-cbn.com/news/04/15/21/philippine-coast-guard-patrols-west-ph-sea-sends-boats-to-lingering-chinese-vessels' target='_blank'> 
+            Philippine Coast Guard patrols West PH Sea, sends boats to lingering Chinese vessels <br><br>
+        </a>
+        
+        
+        Fishery Management Areas have also been established there to conserve and manage fish resources in Philippine waters. <br><br>
+        
+        This will be coordinated by local government units near the area, BFAR, the Department of Environment and Natural Resources, and the 
+        Department of the Interior and Local Government (DILG). <br><br>
+        
+        'As mandated, the establishment of Fishery Management Areas, and the DENR has further proposed the declaration of a marine protected 
+        landscape and seascape covering the Pag-asa Islands and eastern parts of the Kalayaan Island Group,' the task force explained, 
+        referring to the islands within the Philippines' EEZ. <br><br>
+        
+        The move came after the task force spotted at least 240 Chinese ships located in different parts of the West Philippine Sea last week, 
+        denouncing their presence in the country's territory. <br><br>
+        
+        This prompted Foreign Affairs Secretary Teodoro Locsin Jr. to file a fresh diplomatic protest against Beijing. <br><br>
+        
+        The Department of Foreign Affairs also confirmed it is still filing daily diplomatic protests over China’s continued presence 
+        at the Julian Felipe Reef (Whitsun Reef), where at least 9 of their ships remained. <br><br>
+        
+        Analysts and several countries earlier warned China of its incursions in the West Philippine Sea, as it could threaten 
+        regional stability. <br><br>
+        
+        The United States, Japan, Australia, Canada and the United Kingdom have voiced their concerns on the matter. <br><br>
+        
+        President Rodrigo Duterte has pursued friendlier relations with China upon assuming power in 2016, shelving the maritime 
+        disputes in favor of economic aid and investments. <br><br><br>",
+
+        "https://news.abs-cbn.com/news/04/21/21/ph-sends-more-patrol-vessels-to-west-philippine-sea-as-china-ships-linger"
+    ),
+
 
 );

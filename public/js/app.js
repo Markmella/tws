@@ -19113,6 +19113,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/css/profile.css":
+/*!***********************************!*\
+  !*** ./resources/css/profile.css ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/css/app.css":
 /*!*******************************!*\
   !*** ./resources/css/app.css ***!
@@ -19487,6 +19500,7 @@ process.umask = function() { return 0; };
 /******/ 			"css/home": 0,
 /******/ 			"css/login-register": 0,
 /******/ 			"css/app": 0,
+/******/ 			"css/profile": 0,
 /******/ 			"css/dashboard": 0,
 /******/ 			"css/contact": 0
 /******/ 		};
@@ -19536,14 +19550,15 @@ process.umask = function() { return 0; };
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/app","css/dashboard","css/contact"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/app","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/app.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/app","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/login-register.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/app","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/home.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/app","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/about.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/app","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/disclaimer.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/app","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/contact.css")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/app","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/dashboard.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/app","css/profile","css/dashboard","css/contact"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/app","css/profile","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/app","css/profile","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/login-register.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/app","css/profile","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/home.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/app","css/profile","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/about.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/app","css/profile","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/disclaimer.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/app","css/profile","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/contact.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/app","css/profile","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/dashboard.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/app","css/profile","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/profile.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

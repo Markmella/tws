@@ -1,11 +1,8 @@
-@extends('layout.app')
+@extends('layout.master')
 
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('css/login-register.css') }}">
-@guest        
-    <script src="{{ asset('js/header.js') }}" defer></script>
-@endguest
 
 <div class="login-register-form">
     <form class="forms" action="{{ route('register') }}" method="POST">

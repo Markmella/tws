@@ -1,11 +1,8 @@
-@extends('layout.app')
+@extends('layout.master')
 
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
-@guest        
-    <script src="{{ asset('js/header.js') }}" defer></script>
-@endguest
 
 <div class="contact-container">
     <h2> Contact Us </h2>

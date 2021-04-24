@@ -1,11 +1,8 @@
-@extends('layout.app')
+@extends('layout.master')
 
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('css/login-register.css') }}">
-@guest        
-    <script src="{{ asset('js/header.js') }}" defer></script>
-@endguest
 
 <div class="login-register-form">
     <form class="forms" action="{{ route('login') }}" method="POST">
@@ -17,8 +14,7 @@
             </div>
         @endif
         <input id="email" type="text" name="email" placeholder="Email"
-            @error('email') style="border: 2px solid red" onkeyup="emailInput()" @enderror
-            value="{{ old('email') }}">
+            @error('email') style="border: 2px solid red" onkeyup="emailInput()" @enderror>
         @error('email')
             <div id="error1" class="error-message">
                 {{ $message }}

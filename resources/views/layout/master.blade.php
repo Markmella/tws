@@ -10,6 +10,8 @@
     <title> TWS | West Philippine Sea </title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script type="text/javascript" src="{{ asset('js/fontAwesomeIcon.js') }}" defer></script>
+    @guest <script src="{{ asset('js/header.js') }}" defer></script> @endguest
+    @auth <script src="{{ asset('js/dashboard.js') }}" defer></script> @endauth
 
 </head>
     <body>
@@ -36,7 +38,7 @@
                     @endguest
                     @auth
                         <li id="dashboard"><a href="{{ route('dashboard') }}"> Dashboard </a></li>
-                        <li id="profile"><a href="">{{ auth()->user()->name }}</a></li>
+                        <li id="profile"><a href="{{ route('profile') }}">{{ auth()->user()->name }}</a></li>
                     @endauth
                 </ul>
                 <div class="menu-icon menu-btn">

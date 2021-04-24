@@ -1,12 +1,14 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/header.js": "/js/header.js",
+    "/js/dashboard.js": "/js/dashboard.js",
     "/js/fontAwesomeIcon.js": "/js/fontAwesomeIcon.js",
     "/css/disclaimer.css": "/css/disclaimer.css",
     "/css/about.css": "/css/about.css",
     "/css/home.css": "/css/home.css",
     "/css/login-register.css": "/css/login-register.css",
     "/css/app.css": "/css/app.css",
+    "/css/profile.css": "/css/profile.css",
     "/css/dashboard.css": "/css/dashboard.css",
     "/css/contact.css": "/css/contact.css"
 }

@@ -1,0 +1,28 @@
+Group 9 - Disputes on the West Philippine Sea
+
+We created a news website for the topic of west philippine sea
+the name of our website is "The World Scoop"
+We have 9 routes the /home, /about, /disclaimer, /contact,
+/login, /register, /logout, /dashboard, /profile and 5 of them is Controller
+the LoginController, RegisterController, LogoutController, DashboardController,
+ProfileController, the user can register and sign in to our website but the
+dashboard and profile controller is not fully working since the minimum requirements
+for this project is to create create a 5 pages (News/ Information/ Blog) Website using Laravel
+and coding will only be on Laravel routing, controllers, and views
+also our app is fully responsive in any device, we have a Database for our register and login
+also all of the article that we find in google is we include the source under the end of the article
+
+
+Leader:  Mella, Mark Julius (Main Programmer)
+           -frontend and backend
+           -mysql Database
+
+Members: Aunzo, Mark Angelo (Designer/Tester)
+           -helps in designing the web app and testing the app for finding error
+	   -helps in finding article about west philippine sea        
+	   -layout
+         
+         Valencia Joshua (Designer/Tester)
+           -helps in designing the web app and testing the app for finding error
+	   -helps in finding article about west philippine sea           
+	   -layout

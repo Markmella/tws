@@ -10,37 +10,27 @@ use App\Http\Controllers\ProfileController;
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 
-
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
-
 
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 Route::post('/logout', [LogoutController::class, 'logout']);
 
-
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-
 
 Route::get('/about', function () {
     return view('content.about');
 })->middleware(['guest'])->name('about');
 
-
 Route::get('/disclaimer', function () {
     return view('content.disclaimer');
 })->middleware(['guest'])->name('disclaimer');
 
-
 Route::get('/contact', function () {
     return view('content.contact');
 })->middleware(['guest'])->name('contact');
-
-
-
 
 Route::get('/', function () { 
 
@@ -68,3 +58,5 @@ Route::get('/', function () {
     }
 
 })->middleware(['guest'])->name('home');
+
+

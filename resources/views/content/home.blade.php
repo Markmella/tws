@@ -128,7 +128,7 @@
                 document.execCommand("Copy");
 
                 Swal.fire({
-                    title: 'Copy link to Clipboard',
+                    title: 'Copied to Clipboard',
                     showClass: {
                         popup: 'animate__animated animate__fadeInDown'
                     },

@@ -31,7 +31,6 @@ class RegisterController extends Controller
             'password' => 'required|confirmed'
         ]);
 
-
         User::create([
             'name' => ucwords($request->name),
             'username' => ucwords($request->username),

@@ -1,8 +1,8 @@
 
 .disclaimer {
+    background-color: #ccc;
     max-width: 1250px;
     margin: 0 auto;
-    background-color: white;
     display: flex;
     justify-content: space-around;
     padding: 1rem;
@@ -54,6 +54,7 @@
 }
 
 .website-links::-webkit-scrollbar {
+    height: 0;
     width: 5px;
     overflow: scroll;  
     background-color: transparent;
@@ -73,7 +74,7 @@
 }
 
 .link:hover {
-    background-color: #ccc;
+    background-color: #aaa;
     font-weight: bold;
 }
 

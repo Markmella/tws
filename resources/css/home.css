@@ -1,8 +1,8 @@
 
 .main-content {
+    background-color: #ccc;
     max-width: 1250px;
     margin: 0 auto;
-    background-color: white;
     display: flex;
     justify-content: space-around;
     padding: 1rem;
@@ -101,7 +101,7 @@
     position: sticky;
     top: 70px;
     width: 20%;
-    height: 600px;
+    height: 620px;
     border-radius: 5px;
     border: 2px solid #aaa;
     padding: 1rem;
@@ -144,6 +144,7 @@
 }
 
 .all-topics::-webkit-scrollbar {
+    height: 0;
     width: 5px;
     overflow: scroll;  
     background-color: transparent;
@@ -163,7 +164,7 @@
 }
 
 .topic:hover {
-    background-color: #ccc;
+    background-color: #aaa;
     font-weight: bold;
 }
 

@@ -9,7 +9,7 @@
         <h2> Register </h2>
         @csrf
         <input id="name" type="text" name="name" placeholder="Name"
-            @error('name') style="border: 2px solid red" onkeyup="nameInput()" @enderror
+            @error('name') style="border: 1px solid red" onkeyup="nameInput()" @enderror
             value="{{ old('name') }}">
         @error('name')
             <div id="error1" class="error-message">
@@ -18,7 +18,7 @@
         @enderror
 
         <input id="username" type="text" name="username" placeholder="Username"
-            @error('username') style="border: 2px solid red" onkeyup="usernameInput()" @enderror
+            @error('username') style="border: 1px solid red" onkeyup="usernameInput()" @enderror
             value="{{ old('username') }}">
         @error('username')
             <div id="error2" class="error-message">
@@ -27,7 +27,7 @@
         @enderror
 
         <input id="email" type="text" name="email" placeholder="Email"
-            @error('email') style="border: 2px solid red" onkeyup="emailInput()" @enderror
+            @error('email') style="border: 1px solid red" onkeyup="emailInput()" @enderror
             value="{{ old('email') }}">
         @error('email')
             <div id="error3" class="error-message">
@@ -36,11 +36,11 @@
         @enderror
 
         <input id="password1" type="password" name="password" placeholder="Password"
-            @error('password') style="border: 2px solid red" onkeyup="password1Input()" @enderror
+            @error('password') style="border: 1px solid red" onkeyup="password1Input()" @enderror
             value="{{ old('password') }}">
 
         <input id="password2" type="password" name="password_confirmation" placeholder="Repeat Password"
-            @error('password') style="border: 2px solid red" onkeyup="password2Input()" @enderror>
+            @error('password') style="border: 1px solid red" onkeyup="password2Input()" @enderror>
         @error('password')
             <div id="error4" class="error-message">
                 {{ $message }}
@@ -68,10 +68,10 @@
 
             if(input.length !== 0){
                 error1.style.display = "none";
-                nameField.style.borderColor = "#ccc";
+                nameField.style.border = "1px solid #444";
             }else {
                 error1.style.display = "block";
-                nameField.style.borderColor = "red";
+                nameField.style.border = "1px solid #444"
             }
         }
         
@@ -80,10 +80,10 @@
 
             if(input.length !== 0){
                 error2.style.display = "none";
-                usernameField.style.borderColor = "#ccc";
+                usernameField.style.border = "1px solid #444";
             }else {
                 error2.style.display = "block";
-                usernameField.style.borderColor = "red";
+                usernameField.style.border = "1px solid #444"
             }
         }
 
@@ -92,10 +92,10 @@
 
             if(input.length !== 0){
                 error3.style.display = "none";
-                emailField.style.borderColor = "#ccc";
+                emailField.style.border = "1px solid #444";
             }else {
                 error3.style.display = "block";
-                emailField.style.borderColor = "red";
+                emailField.style.border = "1px solid #444"
             }
         }
 
@@ -103,9 +103,9 @@
             let input = document.getElementById('password1').value;
             
             if(input.length !== 0){
-                password1Field.style.borderColor = "#ccc";
+                password1Field.style.border = "1px solid #444";
             }else {
-                password1Field.style.borderColor = "red";
+                password1Field.style.border = "1px solid #444"
             }
 
         }
@@ -115,10 +115,10 @@
 
             if(input.length !== 0){
                 error4.style.display = "none";
-                password2Field.style.borderColor = "#ccc";
+                password2Field.style.border = "1px solid #444";
             }else {
                 error4.style.display = "block";
-                password2Field.style.borderColor = "red";
+                password2Field.style.border = "1px solid #444";
             }
         }
     </script>

@@ -1,6 +1,6 @@
 
 .contact-container {
-    background-color: white;
+    background-color: #ccc;
     max-width: 1250px;
     margin: 0 auto;
     padding: 2rem;
@@ -40,6 +40,7 @@
 }
 
 .contact-body form input {
+    background-color: #ccc;
     width: 70%;
     font-size: 1.2rem;
     letter-spacing: 1px;
@@ -50,6 +51,7 @@
 }
 
 .contact-body form textarea {
+    background-color: #ccc;
     margin-top: 1rem;
     width: 70%;
     font-size: 1.2rem;
@@ -64,7 +66,6 @@
 .submit-button {
     background-color: transparent;
     cursor: pointer;
-    transition: .5s ease-in-out;
 }
 
 .submit-button:hover {

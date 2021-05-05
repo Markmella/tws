@@ -8,17 +8,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:ital,wght@0,700;1,500&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title> TWS | West Philippine Sea </title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/master.css') }}">
     <script type="text/javascript" src="{{ asset('js/fontAwesomeIcon.js') }}" defer></script>
     @guest <script src="{{ asset('js/header.js') }}" defer></script> @endguest
     @auth <script src="{{ asset('js/dashboard.js') }}" defer></script> @endauth
-
 </head>
     <body>
         <div id="Home" class="header-container">
             <div class="header-content">
                 <div class="brand">
-                    <img src="/images/logo.JPG">
+                    <a href="{{ route('home') }}" title="Home">
+                        <img src="/images/logo.JPG">
+                    </a>
                     <h1> The World Scoop </h1>
                 </div>
                 <h1> Disputes on the West Philippine Sea </h1>
@@ -37,6 +38,7 @@
                         <li id="contact"><a href="{{ route('contact') }}"> Contact </a></li>
                     @endguest
                     @auth
+                        <li id="home"><a href="{{ route('home') }}"> Home </a></li>
                         <li id="dashboard"><a href="{{ route('dashboard') }}"> Dashboard </a></li>
                         <li id="profile"><a href="{{ route('profile') }}">{{ auth()->user()->name }}</a></li>
                     @endauth

@@ -9,7 +9,7 @@
     align-items: center;
 }
 
-.error-login {
+#error-login {
     background-color: #F04D4D;
     text-align: center;
     padding: 1.5rem;
@@ -21,8 +21,8 @@
 }
 
 .forms {
-    background-color: white;
-    border: 2px solid #ccc;
+    background-color: #ccc;
+    border: 1px solid #444;
     width: 450px;
     padding: 2rem;
     border-radius: 8px;
@@ -35,26 +35,26 @@
 }
 
 .forms input {
+    background-color: #ccc;
     width: 100%;
     font-size: 1.2rem;
     letter-spacing: 1px;
     padding: .5rem;
     margin: 1rem 0;
-    border: 2px solid #ccc;
+    border: 1px solid #444;
     border-radius: 5px;   
 }
 
 .forms input[type="submit"] {
     cursor: pointer;
-    transition: .5s ease-in-out;
 }
 
 .forms input[type="submit"]:hover {
-    background-color: dodgerblue;
+    color: white;
+    background-color: #444;
 }
 
 .remember .checkbox {
-    width: 0;
     width: 1rem;
     height: 1rem;
     line-height: 1.5rem;
@@ -93,7 +93,7 @@
         font-size: 1rem;
     }
 
-    .error-login {
+    #error-login {
         padding: 1.2rem;
         font-size: 1rem;
     }

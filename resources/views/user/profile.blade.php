@@ -7,6 +7,7 @@
 <div class="profile-container">
     <div class="profile-content">
         <img src="/images/profile.png">
+        
         <p> <span> Name: </span> {{ auth()->user()->name }} </p>
         <p> <span> Username: </span> {{ auth()->user()->username }} </p>
         <p> <span> Email: </span> {{ auth()->user()->email }} </p>

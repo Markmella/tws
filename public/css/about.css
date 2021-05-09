@@ -96,7 +96,7 @@
 }
 
 .information {
-    width: 50%;
+    width: 70%;
     border-radius: 5px;
     border: 2px solid #444;
     display: flex;
@@ -107,24 +107,24 @@
     line-height: 1.5rem;
 }
 
-.visit-us {
-    width: 50%;
-    padding: 1rem;
+.information div {
+    width: 25%;
 }
 
-.call-us {
-    width: 50%;
-    padding: 1rem;
+.icon-container {
+    padding: 0;
+    font-size: 1.5rem;
+    color: #444;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
 }
-
 
 @media (max-width: 790px){
     .information {
         flex-direction: column;
     }
 
-    .visit-us,
-    .call-us {
+    .information div {
         width: 100%;
     }
 
@@ -147,6 +147,10 @@
 
     .information {
         width: 80%;
+    }
+
+    .information div {
+        margin-bottom: 1.5rem;
     }
     
 }

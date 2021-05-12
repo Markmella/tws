@@ -3,6 +3,7 @@ const menuBtn = document.querySelector(".menu-btn");
 const closeBtn = document.querySelector(".close-btn");
 
 const dashboardBtn = document.getElementById("dashboard");
+const postBtn = document.getElementById("post");
 const profileBtn = document.getElementById("profile");
 
 menuBtn.addEventListener("click", function(){
@@ -14,6 +15,10 @@ closeBtn.addEventListener("click", function(){
 });
 
 dashboardBtn.addEventListener("click", function(){
+    menu.classList.remove("active");
+});
+
+postBtn.addEventListener("click", function(){
     menu.classList.remove("active");
 });
 

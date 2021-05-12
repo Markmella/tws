@@ -26,15 +26,15 @@ class RegisterController extends Controller
 
         $this->validate($request, [
             'name' => 'required|max:255',
-            'username' => 'required|max:255',
+            'username' => 'required|max:255|unique:users',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed'
         ]);
 
         User::create([
             'name' => ucwords($request->name),
-            'username' => ucwords($request->username),
-            'email' => ucwords($request->email),
+            'username' => $request->username,
+            'email' => $request->email,
             'password' => Hash::make($request->password)
         ]);
 

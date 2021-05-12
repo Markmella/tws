@@ -1,5 +1,7 @@
 @extends('layout.master')
 
+@section('title') TWS | About @endsection
+
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('css/about.css') }}">
@@ -94,16 +96,37 @@
             </div>
         </div>
         <div class="information">
-            <div class="visit-us">
-                <h2> Visit Us </h2>
-                The World Scoop Corporation
-                89 C Santos St Ugong
-                Pasig City Philippines 1606
+            <div class="info">
+                <h3> Visit Us </h3>
+                <div class="icon-container">
+                    <i class="fas fa-home"></i>
+                </div>
+                <p>
+                    The World Scoop Corp.
+                </p>
+                <p>
+                    89 C Santos St Ugong
+                    Pasig City Philippines 1606
+                </p>
             </div>
-            <div class="call-us">
-                <h2> Call Us </h2>
-                +6390 - 8656 - 0048 <br>
-                +6390 - 8656 - 0050
+            <div class="info">
+                <h3> Call Us </h3>
+                <div class="icon-container">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <p> +6390 - 8656 - 0048 </p>
+                <p> +6390 - 8656 - 0050 </p>
+            </div>
+            <div class="info">
+                <h3> Follow Us </h3>
+                <div class="icon-container">
+                    <a href="" title="facebook">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="" title="twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

@@ -1,5 +1,7 @@
 @extends('layout.master')
 
+@section('title') TWS | Disclaimer @endsection
+
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('css/disclaimer.css') }}">

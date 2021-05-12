@@ -6,35 +6,26 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\UpdateController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PostsController;
+
+use App\Models\Post;
 
 Route::get('/', function () { 
 
-    include_once 'data.php';
+    $posts = Post::get();
+    $latest = Post::latest('created_at')->first();
 
-    if(empty($_GET["article"])){
-        return view('content.home')->with([
-            "title" => $data[0][0],
-            "datetime" => $data[0][1],
-            "author" => $data[0][2],
-            "content" => $data[0][3],
-            "source" => $data[0][4]
-            ]
-        );
-    }else {
-        $articleNo = $_GET["article"];
-        return view('content.home')->with([
-            "title" => $data[$articleNo][0],
-            "datetime" => $data[$articleNo][1],
-            "author" => $data[$articleNo][2],
-            "content" => $data[$articleNo][3],
-            "source" => $data[$articleNo][4]
-            ]
-        );
-    }
+    if(!empty($_GET["article"]))
+        $latest = Post::find($_GET["article"]);
+    
+    return view('content.home', [
+        'posts' => $posts,
+        'latest' => $latest
+    ]);   
 
 })->name('home');
-
 
 Route::get('/about', [MasterController::class, 'about'])->name('about');
 Route::get('/disclaimer', [MasterController::class, 'disclaimer'])->name('disclaimer');
@@ -54,8 +45,20 @@ Route::post('/logout', [LogoutController::class, 'logout']);
 
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/delete{id}', [DashboardController::class, 'delete'])->name('delete');
+
+
+Route::get('/update{id}', [UpdateController::class, 'index'])->name('update');
+Route::post('/update{id}', [UpdateController::class, 'update']);
+
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::post('/upload-profile', [ProfileController::class, 'store'])->name('upload-profile');
+
+
+Route::get('/posts', [PostsController::class, 'index'])->name('posts');
+Route::post('/posts', [PostsController::class, 'store']);
+
 
 
 

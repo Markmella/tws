@@ -1,8 +1,8 @@
 
 .profile-container {
-    background-color: white;
+    background-color: #ccc;
     max-width: 1250px;
-    min-height: 700px;
+    min-height: 100vh;
     margin: 0 auto;
     padding: 2rem;
     display: flex;
@@ -18,7 +18,33 @@
     flex-direction: column;
 }
 
-.profile-content img {
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-content .fullname {
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+label {
+    margin-top: -4rem;
+    color: #444;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: .8;
+}
+
+
+.profile img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -40,6 +66,7 @@
 .profile-content button {
     margin: 0;
     margin-top: 1rem;
+    color: black;
     font-size: 1rem;
     letter-spacing: 1px;
     background-color: transparent;
@@ -62,6 +89,7 @@
 }
 
 .password-container input {
+    background-color: transparent;
     width: 100%;
     font-size: 1rem;
     letter-spacing: 1px;
@@ -84,3 +112,5 @@
     }
     
 }
+
+

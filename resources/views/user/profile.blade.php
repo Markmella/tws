@@ -1,14 +1,25 @@
 @extends('layout.master')
 
+@section('title') TWS | Profile @endsection
+
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
 
 <div class="profile-container">
     <div class="profile-content">
-        <img src="/images/profile.png">
-        
-        <p> <span> Name: </span> {{ auth()->user()->name }} </p>
+        <div class="profile">
+            <form action="{{ route('upload-profile') }}">
+                @csrf
+                <img src="/images/profile.png">
+                <input type="file" name="image" accept="image/*">
+            </form>
+        <label for="file" title="Upload profile">
+                <i class="fas fa-camera"></i>
+            </label>
+        </div>
+        {{-- <span> Name: </span> --}}
+        <p class="fullname"> {{ auth()->user()->name }} </p>
         <p> <span> Username: </span> {{ auth()->user()->username }} </p>
         <p> <span> Email: </span> {{ auth()->user()->email }} </p>
         <button id="change-password-button" type="submit"> Change Password </button>

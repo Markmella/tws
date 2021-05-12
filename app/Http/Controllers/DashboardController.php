@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -12,7 +13,23 @@ class DashboardController extends Controller
     }
 
     public function index(){
-        return view('user.dashboard');
+
+        $posts = Post::get();
+
+        return view('user.dashboard', [
+            'posts' => $posts
+        ]);
+        
     }
+
+    public function delete($id){
+        $_SESSION['delete'] = 'delete';
+
+        $article = Post::find($id);
+        $article->delete();
+
+        return redirect()->route('dashboard');
+    }
+    
     
 }

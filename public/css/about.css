@@ -1,6 +1,7 @@
 .about-container {
     background-color: #ccc;
     max-width: 1250px;
+    min-height: 100vh;
     margin: 0 auto;
     padding: 2rem;
 }
@@ -107,16 +108,26 @@
     line-height: 1.5rem;
 }
 
-.information div {
+.information .info {
     width: 25%;
 }
 
 .icon-container {
-    padding: 0;
     font-size: 1.5rem;
     color: #444;
     margin-top: 1rem;
     margin-bottom: .5rem;
+}
+
+.icon-container a {
+    text-decoration: none;
+    color: #444;
+    cursor: pointer;
+    margin-right: .5rem;
+}
+
+.icon-container a:hover {
+    color: dodgerblue;
 }
 
 @media (max-width: 790px){
@@ -145,12 +156,15 @@
         flex-direction: column;
     }
 
-    .information {
-        width: 80%;
+    .information .info {
+        width: 100%;
+        padding-bottom: 2rem;
     }
 
-    .information div {
-        margin-bottom: 1.5rem;
+    .information .info {
+        margin-bottom: 1rem;
     }
     
 }
+
+

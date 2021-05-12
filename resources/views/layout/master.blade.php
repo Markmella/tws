@@ -7,11 +7,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:ital,wght@0,700;1,500&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title> TWS | West Philippine Sea </title>
     <link rel="stylesheet" href="{{ asset('css/master.css') }}">
     <script type="text/javascript" src="{{ asset('js/fontAwesomeIcon.js') }}" defer></script>
     @guest <script src="{{ asset('js/header.js') }}" defer></script> @endguest
     @auth <script src="{{ asset('js/dashboard.js') }}" defer></script> @endauth
+    <title> @yield('title') </title>
 </head>
     <body>
         <div id="Home" class="header-container">
@@ -40,7 +40,8 @@
                     @auth
                         <li id="home"><a href="{{ route('home') }}"> Home </a></li>
                         <li id="dashboard"><a href="{{ route('dashboard') }}"> Dashboard </a></li>
-                        <li id="profile"><a href="{{ route('profile') }}">{{ auth()->user()->name }}</a></li>
+                        <li id="post"><a href="{{ route('posts') }}"> Post Article </a></li>
+                        <li id="profile"> <img src="/images/profile.png"> <a href="{{ route('profile') }}">{{ auth()->user()->name }}</a></li>
                     @endauth
                 </ul>
                 <div class="menu-icon menu-btn">
@@ -49,7 +50,7 @@
                 <div class="button">
                     @guest
                         <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Sign Up</a>
+                        {{-- <a href="{{ route('register') }}">Sign Up</a> --}}
                     @endguest
                     @auth
                         <form action="{{ route('logout') }}" method="POST">

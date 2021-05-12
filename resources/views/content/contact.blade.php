@@ -1,5 +1,7 @@
 @extends('layout.master')
 
+@section('title') TWS | Contact @endsection
+
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('css/contact.css') }}">

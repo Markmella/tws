@@ -1,5 +1,7 @@
 @extends('layout.master')
 
+@section('title') TWS | West Philippine Sea @endsection
+
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('css/home.css') }}">
@@ -7,89 +9,82 @@
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <div class="main-content">
-    <div class="recent-post">
-        {{-- <h4> Recent Post </h4> --}}
-        <div class="post">
-            <p class="title"> 
-                {{ $title }}
-            </p>
-            
-            <p class="date-time"> 
-                {{ $datetime }}
-            </p>
-
-            <p class="author"> 
-                {{ $author }}
-            </p>
-            
-            <p class="text-content">
-                <?php echo $content ?>
-            </p>
-
-            <div class="share-container">
-                <p> Share </p>
-
-                <a href="https://www.facebook.com/sharer/sharer.php?u={{ $source }}" target="_blank" title="Facebook">
-                    <i class="fab fa-facebook-square"></i>
-                </a>
-                <a href="https://twitter.com/intent/tweet?source={{ $source }}&text={{ $source }}" target="_blank" title="Twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ $source }}" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-
-                <input id="source" type="text" value="{{ $source }}">
-                <button id="copy" title="Copy">
-                    <i class="fas fa-link"></i>
-                </button>
-
-                <p> <a class="source" href="{{ $source }}" target="_blank"> Source </a> </p>
+    <div class="top-container">
+        <div class="recent-post">
+            {{-- <h4> Recent Post </h4> --}}
+            <div class="post">
+                
+                <p class="title"> 
+                    {{ $latest->title }}
+                </p>
+                
+                <p class="date-time"> 
+                    {{ $latest->created_at->format('M d, Y') }} &nbsp;&nbsp; 
+                    <span> {{ $latest->updated_at->diffForHumans() }} </span>
+                </p>
+    
+                <p class="author"> 
+                    {{ $latest->author }}
+                </p>
+                
+                <textarea disabled><?php echo $latest->article ?></textarea>
+              
+                <div class="share-container">
+                    <p> Share </p>
+    
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ $latest->source }}" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?source={{ $latest->source }}&text={{ $latest->source }}" target="_blank" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ $latest->source }}" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+    
+                    <input id="source" type="text" value="{{ $latest->source }}">
+                    <button id="copy" title="Copy">
+                        <i class="fas fa-link"></i>
+                    </button>
+    
+                    <p> <a class="source" href="{{ $latest->source }}" target="_blank"> Source </a> </p>
+                </div>
+            </div>
+        </div>
+        <div class="topic-content">
+            <div class="searchBar">
+                <input id="search-bar" type="text" placeholder="Search topic here...">
+            </div>
+            <h2> Topics </h2>
+            <div class="all-topics">
+                @foreach ($posts as $post)
+                    <div class="topic">
+                        <a href="/?article={{ $post->id }}">
+                            {{ $post->title }}
+                        </a>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
-    <div class="topic-content">
-        <div class="searchBar">
-            <input id="search-bar" type="text" placeholder="Search topic here...">
-        </div>
-        <h2> Topics </h2>
-        <div class="all-topics">
-            <div class="topic">
-                <a href="/?article=0">
-                    China, Philippine defense chiefs discuss territorial dispute
-                </a>
-            </div>
-            <div class="topic">
-                <a href="/?article=1">
-                    [OPINION] Law and justice in the West Philippine Sea
-                </a>
-            </div>
-            <div class="topic">
-                <a href="/?article=2">
-                    Philippines' conflict in West PH Sea is with China only: Locsin
-                </a>
-            </div>
-            <div class="topic">
-                <a href="/?article=3">
-                    US-Philippines officials discuss concerns over China's ships
-                </a>
-            </div>
-            <div class="topic">
-                <a href="/?article=4">
-                    Philippines, US launch military drills amid South China Sea tensions
-                </a>
-            </div>
-            <div class="topic">
-                <a href="/?article=5">
-                    Philippines summons Chinese ambassador over reef dispute
-                </a>
-            </div>
-            <div class="topic">
-                <a href="/?article=6">
-                    PH sends more patrol vessels to West Philippine Sea as China ships linger
-                </a>
-            </div>
-        </div>
+    <div class="all-article">
+        @if ($posts->count())
+            @foreach ($posts as $post)
+                <div class="article">
+                    <div class="article-content">
+                        <p class="title"> {{ $post->title }} </p>
+                        <p class="date-time"> {{ $post->updated_at->format('M d, Y') }} &nbsp;&nbsp; 
+                            <span> {{ $post->updated_at->diffForHumans() }} </span>
+                        </p>
+                        <p class="author"> {{ $post->author }} </p>
+                        <p class="text-content"> {{ $post->article }} </p>
+                    </div>
+                    <div class="article-button">
+                        <a href="/?article={{ $post->id }}"> Read more </a>
+                    </div>
+                </div>              
+            @endforeach
+        @endif
     </div>
 </div>
 

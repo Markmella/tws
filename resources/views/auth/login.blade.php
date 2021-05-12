@@ -1,5 +1,7 @@
 @extends('layout.master')
 
+@section('title') TWS | Login @endsection
+
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('css/login-register.css') }}">
@@ -36,6 +38,8 @@
         </div>
 
         <input type="submit" value="Login">
+
+        <a href="{{ route('register') }}"> Create Account </a>
     </form>
 </div>
 

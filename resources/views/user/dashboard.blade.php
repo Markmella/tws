@@ -7,27 +7,36 @@
 <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-<div class="dashboard-container">
-    <?php
-        if(isset($_SESSION['delete'])){ ?>
-            <script>
-                Swal.fire({
-                    icon: 'info',
-                    width: '350',
-                    title: 'Incorrect Password!',
-                    text: ''
-                })
-                console.log(123)
-            </script>
-    <?php } ?>
-            
+@if (session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            width: '320',
+            title: 'Article Successfully Updated'
+        })
+    </script>
+@endif
+
+@if (session('deleted'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            width: '320',
+            title: 'Article Successfully Deleted'
+        })
+    </script>
+@endif
+
+<div class="dashboard-container">         
     @if ($posts->count())
         @foreach ($posts as $post)
             @if ($post->user_id === auth()->user()->id)
                 <div class="article">
                     <div class="article-content">
                         <p class="title"> {{ $post->title }} </p>
-                        <p class="date-time"> {{ $post->updated_at->format('M d, Y') }} &nbsp;&nbsp; {{ $post->updated_at->diffForHumans() }}</p>
+                        <p class="date-time"> {{ $post->updated_at->format('M d, Y') }} &nbsp;&nbsp; 
+                            <span> {{ $post->updated_at->diffForHumans() }} </span>
+                        </p>
                         <p class="author"> {{ $post->author }} </p>
                         <p class="text-content"> {{ $post->article }} </p>
                     </div>
@@ -44,6 +53,10 @@
                 </div>       
             @endif
         @endforeach
+    @else
+        <div>
+            There is no post.
+        </div>
     @endif
 
 </div>

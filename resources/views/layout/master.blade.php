@@ -18,7 +18,7 @@
             <div class="header-content">
                 <div class="brand">
                     <a href="{{ route('home') }}" title="Home">
-                        <img src="/images/logo.JPG">
+                        <img src="{{ asset('images/logo.JPG') }}">
                     </a>
                     <h1> The World Scoop </h1>
                 </div>
@@ -31,18 +31,29 @@
                     <div class="menu-icon close-btn">
                         <i class="fas fa-times"></i>
                     </div>
-                    @guest
                         <li id="home"><a href="{{ route('home') }}"> Home </a></li>
-                        <li id="about"><a href="{{ route('about') }}"> About </a></li>
-                        <li id="disclaimer"><a href="{{ route('disclaimer') }}"> Disclaimer </a></li>
-                        <li id="contact"><a href="{{ route('contact') }}"> Contact </a></li>
-                    @endguest
-                    @auth
-                        <li id="home"><a href="{{ route('home') }}"> Home </a></li>
-                        <li id="dashboard"><a href="{{ route('dashboard') }}"> Dashboard </a></li>
-                        <li id="post"><a href="{{ route('posts') }}"> Post Article </a></li>
-                        <li id="profile"> <img src="/images/profile.png"> <a href="{{ route('profile') }}">{{ auth()->user()->name }}</a></li>
-                    @endauth
+                        @auth
+                            <li id="dashboard"><a href="{{ route('dashboard') }}"> Dashboard </a></li>
+                            <li id="post"><a href="{{ route('posts') }}"> Post Article </a></li>
+                            <li id="profile">
+                                @if (auth()->user()->image == NULL)
+                                    <img src="{{ asset('images/profile.png') }}">
+                                    <a href="{{ route('profile', auth()->user()->id) }}">
+                                        {{ auth()->user()->name }}
+                                    </a>
+                                @else
+                                    <img src="{{ asset('images-upload/' . auth()->user()->image) }}">
+                                    <a href="{{ route('profile', auth()->user()->id) }}">
+                                        {{ auth()->user()->name }}
+                                    </a>
+                                @endif
+                            </li>
+                        @endauth
+                        @guest
+                            <li id="about"><a href="{{ route('about') }}"> About </a></li>
+                            <li id="disclaimer"><a href="{{ route('disclaimer') }}"> Disclaimer </a></li>
+                            <li id="contact"><a href="{{ route('contact') }}"> Contact </a></li>
+                        @endguest
                 </ul>
                 <div class="menu-icon menu-btn">
                     <i class="fas fa-bars"></i>
@@ -50,7 +61,6 @@
                 <div class="button">
                     @guest
                         <a href="{{ route('login') }}">Login</a>
-                        {{-- <a href="{{ route('register') }}">Sign Up</a> --}}
                     @endguest
                     @auth
                         <form action="{{ route('logout') }}" method="POST">

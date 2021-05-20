@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
@@ -27,7 +28,7 @@ class PostsController extends Controller
             'article' => ucfirst($request->article)
         ]);
 
-        return redirect()->route('dashboard');
+        return back()->with('success', ' ');
 
     }
 

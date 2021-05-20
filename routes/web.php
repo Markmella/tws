@@ -5,10 +5,10 @@ use App\Http\Controllers\MasterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LogoutController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\UpdateController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\PostsController;
+use App\Http\Controllers\User\DashboardController;
+use App\Http\Controllers\User\UpdateController;
+use App\Http\Controllers\User\ProfileController;
+use App\Http\Controllers\User\PostsController;
 
 use App\Models\Post;
 
@@ -47,19 +47,14 @@ Route::post('/logout', [LogoutController::class, 'logout']);
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/delete{id}', [DashboardController::class, 'delete'])->name('delete');
 
-
-Route::get('/update{id}', [UpdateController::class, 'index'])->name('update');
-Route::post('/update{id}', [UpdateController::class, 'update']);
-
-
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-Route::post('/upload-profile', [ProfileController::class, 'store'])->name('upload-profile');
-
-
 Route::get('/posts', [PostsController::class, 'index'])->name('posts');
 Route::post('/posts', [PostsController::class, 'store']);
 
 
+Route::get('/update{id}', [UpdateController::class, 'index'])->name('update');
+Route::post('/update{id}', [UpdateController::class, 'update']);
 
-
+Route::get('/profile{id}', [ProfileController::class, 'index'])->name('profile');
+Route::post('/profile{id}', [ProfileController::class, 'uploadProfile']);
+Route::post('/profile{id}', [ProfileController::class, 'changePassword']);
 

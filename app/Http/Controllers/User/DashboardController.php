@@ -1,34 +1,31 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
+use App\Http\Controllers\Controller;
 
+use App\Models\User;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-
     public function __construct(){
         $this->middleware(['auth']);
     }
 
     public function index(){
-
-        $posts = Post::get();
-
         return view('user.dashboard', [
-            'posts' => $posts
+            'posts' => Post::get(),
+            'users' => User::get()
         ]);
-        
     }
 
     public function delete($id){
-        $_SESSION['delete'] = 'delete';
 
         $article = Post::find($id);
         $article->delete();
 
-        return redirect()->route('dashboard');
+        return back()->with('deleted', ' ');
     }
     
     

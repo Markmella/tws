@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
 use App\Http\Controllers\Controller;
+
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -23,8 +24,10 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
 
-        if(!auth()->attempt($request->only('email', 'password'), $request->remember)){
-            return back()->with('status', 'Invalid Login Details');
+        $credentials = $request->only('email', 'password');
+
+        if(!auth()->attempt($credentials, $request->remember)){
+            return back()->with('error', ' ');
         }
 
         return redirect()->route('dashboard');

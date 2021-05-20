@@ -36,17 +36,16 @@
                             <li id="dashboard"><a href="{{ route('dashboard') }}"> Dashboard </a></li>
                             <li id="post"><a href="{{ route('posts') }}"> Post Article </a></li>
                             <li id="profile">
-                                @if (auth()->user()->image == NULL)
-                                    <img src="{{ asset('images/profile.png') }}">
-                                    <a href="{{ route('profile', auth()->user()->id) }}">
-                                        {{ auth()->user()->name }}
-                                    </a>
-                                @else
-                                    <img src="{{ asset('images-upload/' . auth()->user()->image) }}">
-                                    <a href="{{ route('profile', auth()->user()->id) }}">
-                                        {{ auth()->user()->name }}
-                                    </a>
-                                @endif
+                                <img 
+                                    @if (auth()->user()->image == NULL)
+                                        src="{{ asset('images/profile.png') }}"
+                                    @else
+                                        src="{{ asset('uploads/' . auth()->user()->image) }}"
+                                    @endif
+                                >
+                                <a href="{{ route('profile', auth()->user()->id) }}">
+                                    {{ auth()->user()->name }}
+                                </a>
                             </li>
                         @endauth
                         @guest

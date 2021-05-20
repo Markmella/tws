@@ -4,7 +4,7 @@
     max-width: 1250px;
     min-height: 100vh;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -31,6 +31,7 @@
     border-radius: 50%;
     border: 2px solid #444;
     margin-bottom: 2rem;
+    cursor: pointer;
 }
 
 .profile .camera {
@@ -103,16 +104,17 @@
 
 .change-picture-container {
     display: none;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 1rem;
     width: 500px;
-    background: #aaa;
-    border: 2px solid #444;
+    background-color: white;
+    box-shadow: 0 0 10px #444;
     border-radius: 10px;
-    /* z-index: 1; */
 }
 
 .change-picture-container .exit {
@@ -194,6 +196,27 @@
     color: white;
 }
 
+.error-message {
+    text-align: center;
+    color: red;
+    letter-spacing: 1px;
+    padding-bottom: 1;
+}
+
+.swal2-title {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.swal2-styled.swal2-confirm {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    background-color: #444;
+}
+
+.swal2-styled.swal2-confirm:focus {
+    box-shadow: none;
+}
 
 @media (max-width: 790px){
     
@@ -230,7 +253,3 @@
     }
 
 }
-
-
-
-

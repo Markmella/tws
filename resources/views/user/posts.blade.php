@@ -19,7 +19,8 @@
 
 <div class="post-container">
     {{-- <h2> Post Content Here </h2> --}}
-    <h2> Welcome to T W S &nbsp;&nbsp; {{ auth()->user()->name }} </h2>
+    <h2> Welcome to T W S </h2>
+    <h2> {{ auth()->user()->name }} </h2>
     <p class="post-text">    
         Submit your article below then it will be review by the admin
         if we're going to publish it. Thank you. Have a nice Day. 

@@ -30,7 +30,8 @@
 .post-body {
     width: 60%;
     padding: 2rem;
-    border: 2px solid #444;
+    background-color: white;
+    box-shadow: 0 0 10px #444;
     border-radius: 5px;
 }
 
@@ -85,6 +86,21 @@
     margin-top: 5px;
 }
 
+.swal2-title {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.swal2-styled.swal2-confirm {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    background-color: #444;
+}
+
+.swal2-styled.swal2-confirm:focus {
+    box-shadow: none;
+}
+
 @media (max-width: 990px){
 
     .post-body {
@@ -101,5 +117,6 @@
     }
 
 }
+
 
 

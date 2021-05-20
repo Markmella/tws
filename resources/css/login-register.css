@@ -9,20 +9,9 @@
     align-items: center;
 }
 
-#error-login {
-    background-color: #F04D4D;
-    text-align: center;
-    padding: 1.5rem;
-    color: white;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    border-radius: 5px;
-    margin-bottom: 1rem;
-}
-
 .forms {
-    background-color: #ccc;
-    border: 1px solid #444;
+    background-color: white;
+    box-shadow: 0 0 10px #444;
     width: 450px;
     padding: 2rem;
     border-radius: 8px;
@@ -35,7 +24,7 @@
 }
 
 .forms input {
-    background-color: #ccc;
+    background-color: transparent;
     width: 100%;
     font-size: 1.2rem;
     letter-spacing: 1px;
@@ -47,7 +36,6 @@
 
 .forms input[type="submit"] {
     cursor: pointer;
-    margin-bottom: 3rem;
 }
 
 .forms input[type="submit"]:hover {
@@ -55,15 +43,26 @@
     background-color: #444;
 }
 
-.forms a {
-    color: black;
-    letter-spacing: 1px;
-    text-decoration: none;
+.forms .btn-register {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.forms a:hover {
-    text-decoration: underline;
-    font-weight: bold;
+.forms .btn-register a {
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 1rem;
+    color: black;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    border: 1px solid #444;
+    border-radius: 5px;   
+}
+
+.forms .btn-register a:hover {
+    box-shadow: 0 0 10px #444;
 }
 
 .remember .checkbox {
@@ -85,6 +84,20 @@
     padding-bottom: 1;
 }
 
+.swal2-title {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.swal2-styled.swal2-confirm {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    background-color: #444;
+}
+
+.swal2-styled.swal2-confirm:focus {
+    box-shadow: none;
+}
 
 @media (max-width: 790px){
     
@@ -92,8 +105,17 @@
         width: 370px;
     }
 
+    .forms h2 {
+        font-size: 1.2rem;
+    }
+
     .forms input {
         font-size: 1rem;
+    }
+
+    .forms .btn-register a {
+        font-size: 14px;
+        padding: 8px 14px;
     }
 
     .remember .checkbox {
@@ -105,8 +127,4 @@
         font-size: 1rem;
     }
 
-    #error-login {
-        padding: 1.2rem;
-        font-size: 1rem;
-    }
 }

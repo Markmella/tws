@@ -5,12 +5,23 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('css/login-register.css') }}">
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+@if (session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            width: '320',
+            title: 'Account Successfully Created'
+        })
+    </script>
+@endif
 
 <div class="login-register-form">
     <form class="forms" action="{{ route('register') }}" method="POST">
         <h2> Register </h2>
         @csrf
-        <input id="name" type="text" name="name" placeholder="Name"
+        <input id="name" type="text" name="name" placeholder="Name" autofocus
             @error('name') style="border: 1px solid red" onkeyup="nameInput()" @enderror
             value="{{ old('name') }}">
         @error('name')
@@ -19,7 +30,7 @@
             </div>
         @enderror
 
-        <input id="username" type="text" name="username" placeholder="Username"
+        <input id="username" type="text" name="username" placeholder="Username" autofocus
             @error('username') style="border: 1px solid red" onkeyup="usernameInput()" @enderror
             value="{{ old('username') }}">
         @error('username')
@@ -28,7 +39,7 @@
             </div>
         @enderror
 
-        <input id="email" type="text" name="email" placeholder="Email"
+        <input id="email" type="text" name="email" placeholder="Email" autofocus
             @error('email') style="border: 1px solid red" onkeyup="emailInput()" @enderror
             value="{{ old('email') }}">
         @error('email')
@@ -37,11 +48,11 @@
             </div>
         @enderror
 
-        <input id="password1" type="password" name="password" placeholder="Password"
+        <input id="password1" type="password" name="password" placeholder="Password" autofocus
             @error('password') style="border: 1px solid red" onkeyup="password1Input()" @enderror
             value="{{ old('password') }}">
 
-        <input id="password2" type="password" name="password_confirmation" placeholder="Repeat Password"
+        <input id="password2" type="password" name="password_confirmation" placeholder="Repeat Password" autofocus
             @error('password') style="border: 1px solid red" onkeyup="password2Input()" @enderror>
         @error('password')
             <div id="error4" class="error-message">
@@ -50,8 +61,6 @@
         @enderror
 
         <input type="submit" value="Sign Up">
-
-        <a href="{{ route('login') }}"> Login here </a>
     </form>
 </div>
 

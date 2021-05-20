@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
+use App\Http\Controllers\Controller;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -12,10 +13,9 @@ class UpdateController extends Controller
     }
 
     public function index($id){
-        $posts = Post::find($id);
 
         return view('user.update', [
-            'posts' => $posts
+            'posts' => Post::find($id)
         ]);
     }
 
@@ -30,16 +30,15 @@ class UpdateController extends Controller
 
         $user = Post::find($id);
 
-        $user->title = ucfirst($request->title);
-        $user->author = ucfirst($request->author);
-        $user->source = $request->source;
-        $user->article = ucfirst($request->article);
-
-        $user->updated_at = now();
+        $user->update([
+            'title' => ucfirst($request->title),
+            'author' => ucfirst($request->author),
+            'source' => $request->source,
+            'article' => ucfirst($request->article),
+            'updated_at' => now()
+        ]);
         
-        $user->save();
-        
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard')->with('success', ' ');
 
     }
 }

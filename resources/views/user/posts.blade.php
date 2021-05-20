@@ -5,6 +5,17 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('css/post.css') }}">
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+@if (session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            width: '320',
+            title: 'Article Successfully Submitted'
+        })
+    </script>
+@endif
 
 <div class="post-container">
     {{-- <h2> Post Content Here </h2> --}}

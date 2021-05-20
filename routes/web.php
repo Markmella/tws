@@ -55,6 +55,6 @@ Route::get('/update{id}', [UpdateController::class, 'index'])->name('update');
 Route::post('/update{id}', [UpdateController::class, 'update']);
 
 Route::get('/profile{id}', [ProfileController::class, 'index'])->name('profile');
-Route::post('/profile{id}', [ProfileController::class, 'uploadProfile']);
-Route::post('/profile{id}', [ProfileController::class, 'changePassword']);
+Route::post('/profile{id}', [ProfileController::class, 'update']);
+// Route::post('/profile{id}', [ProfileController::class, 'changePassword']);
 

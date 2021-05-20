@@ -18,6 +18,9 @@
 @endif
 
 <div class="login-register-form">
+    {{-- <div class="loader">
+        <img src="{{ asset('images/loader.gif') }}">
+    </div> --}}
     <form class="forms" action="{{ route('login') }}" method="POST">
         <h2> Login to The World Scoop </h2>
         @csrf

@@ -1,9 +1,10 @@
+
 .about-container {
     background-color: #ccc;
     max-width: 1250px;
     min-height: 100vh;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .about-container h2 {

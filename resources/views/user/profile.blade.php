@@ -5,15 +5,28 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+@if (session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            width: '320',
+            title: 'Profile Successfully Updated'
+        })
+    </script>
+@endif
 
 <div class="profile-container">
     <div class="profile-content">
         <div class="profile">
-            @if ($users->image == NULL)
-                <img src="{{ asset('images/profile.png') }}">
-            @else
-                <img src="{{ asset('images-upload/' . $users->image) }}">
-            @endif   
+            <img id="profile-picture"
+                @if ($users->image == NULL)
+                    src="{{ asset('images/profile.png') }}"
+                @else
+                    src="{{ asset('uploads/' . $users->image) }}"
+                @endif
+            >
             <div class="camera">
                 <i class="fas fa-camera"></i>
             </div>
@@ -45,18 +58,25 @@
     </div>
 </div>
 
-<div class="change-picture-container">
+<div class="change-picture-container" @error ('image') style="display: flex" @enderror>
     <div class="exit">
         <i class="fas fa-times"></i>
     </div>
     <form action="{{ route('profile', $users->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="profile-preview">
-            @if ($users->image == NULL)
-                <img id="profile-prev" src="{{ asset('images/profile.png') }}">
-            @else
-                <img id="profile-prev" src="{{ asset('images-upload/' . $users->image) }}">
-            @endif
+            <img id="profile-prev"
+                @if ($users->image == NULL)
+                    src="{{ asset('images/profile.png') }}"
+                @else
+                    src="{{ asset('uploads/' . $users->image) }}"
+                @endif
+            >
+        </div>
+        <div class="error-message">
+            @error('image')
+                {{ $message }}
+            @enderror
         </div>
         <div class="btn-change-profile">
             <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
@@ -72,46 +92,20 @@
 
 
     <script>
-        // For camera icon
-        let btnCamera = document.querySelector(".camera");
+        // Display profile picture
+        let profilePicture = document.getElementById("profile-picture");
+        let source = document.getElementById("profile-picture").src;
 
-        let profileCon = document.querySelector(".profile-container");
-        let changePictureCon = document.querySelector(".change-picture-container");
-        let btnExit = document.querySelector(".exit");
-
-        btnCamera.addEventListener('click', function(){
-            changePictureCon.style.display = "block";
-            profileCon.style.opacity = ".2";
+        profilePicture.addEventListener('click', function(){
+            Swal.fire({
+                imageUrl: source,
+                imageWidth: 300,
+                imageHeight: 300,
+                showConfirmButton: false,
+                width: '350',
+            });
         });
-
-        btnExit.addEventListener('click', function(){
-            changePictureCon.style.display = "none";
-            profileCon.style.opacity = "1";
-        });
-        // For camera icon
-
-        // For change profile container
-        let btnChangeProfile = document.querySelector(".btn-change-profile");
-        let btnSaveProfile = document.querySelector(".btn-save-profile");
-        let btnCancel = document.getElementById("cancel");
-
-        function showPreview(event){
-            if(event.target.files.length > 0){
-                var src = URL.createObjectURL(event.target.files[0]);
-                var preview = document.getElementById("profile-prev");
-                preview.src = src;
-                btnChangeProfile.style.display = "none";
-                btnSaveProfile.style.display = "flex";
-            }
-        }
-
-        btnCancel.addEventListener('click', function(e){
-            e.preventDefault();
-            btnSaveProfile.style.display = "none";
-            btnChangeProfile.style.display = "flex";
-            window.location.reload();
-        });
-        // For change profile container
+        // Display profile picture
 
         // For change password container
         let changePasswordBtn = document.getElementById("change-password-button");
@@ -131,6 +125,58 @@
             changePasswordBtn.style.display = "flex";
         });
         // For change password container
+
+        // For camera icon
+        let errorMessage = document.querySelector(".error-message");
+        let btnCamera = document.querySelector(".camera");
+
+        let profileCon = document.querySelector(".profile-container");
+        let changePictureCon = document.querySelector(".change-picture-container");
+        let btnExit = document.querySelector(".exit");
+
+        btnCamera.addEventListener('click', function(){
+            changePasswordBtn.disabled = true;
+            changePictureCon.style.display = "block";
+            profileCon.style.opacity = ".2";
+        });
+
+        btnExit.addEventListener('click', function(){
+            changePasswordBtn.disabled = false;
+            errorMessage.style.display = "none";
+            changePictureCon.style.display = "none";
+            profileCon.style.opacity = "1";
+        });
+        // For camera icon
+
+
+
+        // For change profile container
+        let btnChangeProfile = document.querySelector(".btn-change-profile");
+        let btnSaveProfile = document.querySelector(".btn-save-profile");
+        let btnCancel = document.getElementById("cancel");
+
+        function showPreview(event){
+            if(event.target.files.length > 0){
+                var src = URL.createObjectURL(event.target.files[0]);
+                var preview = document.getElementById("profile-prev");
+                preview.src = src;
+                btnChangeProfile.style.display = "none";
+                btnSaveProfile.style.display = "flex";
+            }
+        }
+
+        btnCancel.addEventListener('click', function(e){
+            e.preventDefault();
+            errorMessage.style.display = "none";
+            btnSaveProfile.style.display = "none";
+            btnChangeProfile.style.display = "flex";
+            window.location.reload();
+        });
+        // For change profile container
+
+
+
+
 
     </script>
 

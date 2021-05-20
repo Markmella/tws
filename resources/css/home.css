@@ -4,10 +4,10 @@
     max-width: 1250px;
     min-height: 100vh;
     margin: 0 auto;
+    padding: 1rem;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 1rem;
 }
 
 .top-container {

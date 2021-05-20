@@ -19,20 +19,22 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function uploadProfile(Request $request, $id){      
+    public function update(Request $request, $id){      
         $user = User::find($id);
 
         $this->validate($request, [
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:5048'
+            'image' => 'required|mimes:jpeg,jpg,png|max:5048'
         ]);
         
-        $request->image->move(public_path('images-upload'), $request->image->getClientOriginalName());
+        $filename = $request->image->getClientOriginalName();
+
+        $request->image->move(public_path('uploads'), $filename);
 
         $user->update([
-            'image' => $request->image->getClientOriginalName()
+            'image' => $filename
         ]);
 
-        return back();
+        return back()->with('success', ' ');
     }
 
     public function changePassword(Request $request, $id){      

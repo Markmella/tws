@@ -9,7 +9,8 @@
     align-items: center;
 }
 
-.forms {
+.form-container,
+.register-form {
     background-color: white;
     box-shadow: 0 0 10px #444;
     width: 450px;
@@ -17,13 +18,15 @@
     border-radius: 8px;
 }
 
-.forms h2 {
+.forms h2,
+.register-form h2 {
     text-align: center;
     letter-spacing: 1px;
     margin-bottom: 2rem;
 }
 
-.forms input {
+.forms input,
+.register-form input {
     background-color: transparent;
     width: 100%;
     font-size: 1.2rem;
@@ -34,48 +37,59 @@
     border-radius: 5px;   
 }
 
-.forms input[type="submit"] {
-    cursor: pointer;
-}
-
-.forms input[type="submit"]:hover {
-    color: white;
-    background-color: #444;
-}
-
-.forms .btn-register {
-    margin-top: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.forms .btn-register a {
-    text-align: center;
-    text-decoration: none;
-    padding: 10px 1rem;
-    color: black;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    border: 1px solid #444;
-    border-radius: 5px;   
-}
-
-.forms .btn-register a:hover {
-    box-shadow: 0 0 10px #444;
-}
-
-.remember .checkbox {
+.forms .remember .checkbox {
     width: 1rem;
     height: 1rem;
     line-height: 1.5rem;
     cursor: pointer;
 }
 
-.remember label {
+.forms .remember label {
     margin-left: 5px;
     font-size: 1.2rem;
     letter-spacing: 1px;
+}
+
+.button-container input[type="button"],
+.register-form input[type="submit"] {
+    background-color: transparent;
+    width: 100%;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    padding: .5rem;
+    margin: 1rem 0;
+    border: 1px solid #444;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-container input[type="button"]:hover,
+.register-form input[type="submit"]:hover {
+    color: white;
+    background-color: #444;
+}
+
+.button-container .btn-register {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-container .btn-register a {
+    background-color: #444;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 1rem;
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    border: 1px solid #444;
+    border-radius: 5px;   
+}
+
+.button-container .btn-register a:hover {
+    box-shadow: 0 0 10px #444;
 }
 
 .error-message {
@@ -85,12 +99,12 @@
 }
 
 .swal2-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     letter-spacing: 1px;
 }
 
 .swal2-styled.swal2-confirm {
-    font-size: 1rem;
+    font-size: 14px;
     letter-spacing: 1px;
     background-color: #444;
 }
@@ -128,4 +142,7 @@
     }
 
 }
+
+
+
 

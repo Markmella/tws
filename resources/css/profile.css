@@ -80,8 +80,8 @@
 }
 
 .password-container {
+    width: 50%;
     display: none;
-    width: 100%;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -99,6 +99,21 @@
     border-radius: 3px;   
 }
 
+.save-password {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.save-password input {
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.save-password input:hover {
+    background-color: #444;
+    color: white;
+}
 
 
 
@@ -180,9 +195,10 @@
 }
 
 .btn-save-profile input {
+    width: 50%;
     background-color: transparent;
     padding: 10px 2rem;
-    margin: 0 10px;
+    margin: 0 1rem;
     color: black;
     font-size: 1rem;
     letter-spacing: 1px;
@@ -204,12 +220,12 @@
 }
 
 .swal2-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     letter-spacing: 1px;
 }
 
 .swal2-styled.swal2-confirm {
-    font-size: 1rem;
+    font-size: 14px;
     letter-spacing: 1px;
     background-color: #444;
 }
@@ -250,6 +266,21 @@
     .change-picture-container label,
     .btn-save-profile input {
         font-size: 14px;
+        margin: 0 5px;
     }
+
+    .password-container {
+        width: 80%;
+    }
+
+    .password-container input {
+        font-size: 14px;
+    }
+
+    .save-password input {
+        font-size: 14px;
+        margin: 10px;
+    }
+
 
 }

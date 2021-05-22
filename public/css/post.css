@@ -87,12 +87,12 @@
 }
 
 .swal2-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     letter-spacing: 1px;
 }
 
 .swal2-styled.swal2-confirm {
-    font-size: 1rem;
+    font-size: 14px;
     letter-spacing: 1px;
     background-color: #444;
 }

@@ -19,7 +19,7 @@ class ProfileController extends Controller
         ]);
     }
 
-    public function update(Request $request, $id){      
+    public function updatePicture(Request $request, $id){      
         $user = User::find($id);
 
         $this->validate($request, [
@@ -37,7 +37,7 @@ class ProfileController extends Controller
         return back()->with('success', ' ');
     }
 
-    public function changePassword(Request $request, $id){      
+    public function updatePassword(Request $request, $id){
         $user = User::find($id);
 
         $this->validate($request, [
@@ -46,16 +46,14 @@ class ProfileController extends Controller
 
         if(Hash::check($request->current_password, $user->password)){
             $user->update([
-                'password' => $request->password
+                'password' => Hash::make($request->password)
             ]);
-        }else {
-            return back()->withErrors(['current_password' => 'Incorrect Current Password']);
+
+            return back()->with('updated', ' ');
         }
-
-        return back();
+        
+        return back()->with('error', ' ');
+        
     }
-
-
-    
 
 }

@@ -18,10 +18,10 @@
 @endif
 
 <div class="login-register-form">
-    <form class="forms" action="{{ route('register') }}" method="POST">
+    <form class="register-form" action="{{ route('register') }}" method="POST">
         <h2> Register </h2>
         @csrf
-        <input id="name" type="text" name="name" placeholder="Name" autofocus
+        <input id="name" type="text" name="name" placeholder="Name"
             @error('name') style="border: 1px solid red" onkeyup="nameInput()" @enderror
             value="{{ old('name') }}">
         @error('name')
@@ -30,7 +30,7 @@
             </div>
         @enderror
 
-        <input id="username" type="text" name="username" placeholder="Username" autofocus
+        <input id="username" type="text" name="username" placeholder="Username"
             @error('username') style="border: 1px solid red" onkeyup="usernameInput()" @enderror
             value="{{ old('username') }}">
         @error('username')
@@ -39,7 +39,7 @@
             </div>
         @enderror
 
-        <input id="email" type="text" name="email" placeholder="Email" autofocus
+        <input id="email" type="text" name="email" placeholder="Email"
             @error('email') style="border: 1px solid red" onkeyup="emailInput()" @enderror
             value="{{ old('email') }}">
         @error('email')
@@ -48,11 +48,11 @@
             </div>
         @enderror
 
-        <input id="password1" type="password" name="password" placeholder="Password" autofocus
+        <input id="password1" type="password" name="password" placeholder="Password"
             @error('password') style="border: 1px solid red" onkeyup="password1Input()" @enderror
             value="{{ old('password') }}">
 
-        <input id="password2" type="password" name="password_confirmation" placeholder="Repeat Password" autofocus
+        <input id="password2" type="password" name="password_confirmation" placeholder="Repeat Password"
             @error('password') style="border: 1px solid red" onkeyup="password2Input()" @enderror>
         @error('password')
             <div id="error4" class="error-message">

@@ -17,6 +17,28 @@
     </script>
 @endif
 
+@if (session('updated'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            width: '320',
+            title: 'Password Successfully Updated'
+        })
+    </script>
+@endif
+
+{{-- @if (session('error')) --}}
+@error('password')
+    <script>
+        Swal.fire({
+            icon: 'error',
+            width: '320',
+            title: {{ $message }}
+        })
+    </script>
+@enderror
+{{-- @endif --}}
+
 <div class="profile-container">
     <div class="profile-content">
         <div class="profile">
@@ -34,24 +56,21 @@
         <p class="fullname"> {{ $users->name }} </p>
         <p> <span> Username: </span> {{ $users->username }} </p>
         <p> <span> Email: </span> {{ $users->email }} </p>
-        <button id="change-password-button" type="submit"> Change Password </button>
-        <div class="password-container" 
-            @error('current_password')
-                style="display: block; background-color: red"
-            @enderror>
+        <button id="change-password-button" type="submit"
+            @error ('password') style="display: none" @enderror> 
+            Change Password 
+        </button>
+        <div class="password-container" @error ('password') style="display: flex" @enderror>
             <div class="btn-save-password">
-                <form action="{{ route('profile', $users->id) }}" method="POST">
+                <form action="{{ route('update-password', $users->id) }}" method="POST">
                     @csrf
-                    @error('current_password')
-                        <div class="error-container">
-                            {{ session('password-error') }}
-                        </div>
-                    @enderror
                     <input type="password" name="current_password" placeholder="Current Password">
                     <input type="password" name="password" placeholder="New Password">
                     <input type="password" name="password_confirmation" placeholder="Repeat new Password">
-                    <input type="submit" name="submit" value="Save">
-                    <input type="submit" id="cancel-button" value="Cancel">
+                    <div class="save-password">       
+                        <input type="submit" name="submit" value="Save">
+                        <input type="submit" id="cancel-button" value="Cancel">
+                    </div>
                 </form>
             </div>
         </div>
@@ -62,7 +81,7 @@
     <div class="exit">
         <i class="fas fa-times"></i>
     </div>
-    <form action="{{ route('profile', $users->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('update-profile', $users->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="profile-preview">
             <img id="profile-prev"
@@ -107,6 +126,9 @@
         });
         // Display profile picture
 
+
+
+
         // For change password container
         let changePasswordBtn = document.getElementById("change-password-button");
         let savehangePasswordBtn = document.getElementById("save-password-button");
@@ -123,8 +145,12 @@
             e.preventDefault();
             changePasswordCon.style.display = "none";
             changePasswordBtn.style.display = "flex";
+            window.location.reload();
         });
         // For change password container
+
+
+
 
         // For camera icon
         let errorMessage = document.querySelector(".error-message");
@@ -150,6 +176,7 @@
 
 
 
+
         // For change profile container
         let btnChangeProfile = document.querySelector(".btn-change-profile");
         let btnSaveProfile = document.querySelector(".btn-save-profile");
@@ -170,7 +197,6 @@
             errorMessage.style.display = "none";
             btnSaveProfile.style.display = "none";
             btnChangeProfile.style.display = "flex";
-            window.location.reload();
         });
         // For change profile container
 

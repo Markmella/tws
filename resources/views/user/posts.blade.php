@@ -29,7 +29,7 @@
         <form action="{{ route('posts') }}" method="POST">
             <h3> Post Article </h3>
             @csrf
-            <input id="title" type="text" name="title" placeholder="Title"
+            <input id="title" type="text" name="title" placeholder="Title" autofocus
                 @error('title') style="border: 1px solid red" onkeyup="titleInput()" @enderror
                 value="{{ old('title') }}">
             @error('title')

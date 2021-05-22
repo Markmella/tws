@@ -20,10 +20,18 @@
 @if (session('deleted'))
     <script>
         Swal.fire({
+            title: 'Deleting...',
+            timer: 2000,
+            didOpen: () => {
+                Swal.showLoading()
+            },
+        }).then(() => {
+            Swal.fire({
             icon: 'success',
             width: '320',
             title: 'Article Successfully Deleted'
-        })
+            })
+        });
     </script>
 @endif
 

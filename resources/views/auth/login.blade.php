@@ -18,40 +18,39 @@
 @endif
 
 <div class="login-register-form">
-    {{-- <div class="loader">
-        <img src="{{ asset('images/loader.gif') }}">
-    </div> --}}
-    <form class="forms" action="{{ route('login') }}" method="POST">
-        <h2> Login to The World Scoop </h2>
-        @csrf
-        <input id="email" type="text" name="email" placeholder="Email" autofocus
-            @error('email') style="border: 1px solid red" onkeyup="emailInput()" @enderror
-            value="{{ old('email') }}">
-        @error('email')
-            <div id="error1" class="error-message">
-                {{ $message }}
+    <div class="form-container">
+        <form class="forms" name="login_form" action="{{ route('login') }}" method="POST">
+            <h2> Login to The World Scoop </h2>
+            @csrf
+            <input id="email" type="text" name="email" placeholder="Email"
+                @error('email') style="border: 1px solid red" onkeyup="emailInput()" @enderror
+                value="{{ old('email') }}">
+            @error('email')
+                <div id="error1" class="error-message">
+                    {{ $message }}
+                </div>
+            @enderror
+    
+            <input id="password" type="password" name="password" placeholder="Password"
+                @error('password') style="border: 1px solid red" onkeyup="passwordInput()" @enderror>
+            @error('password')
+                <div id="error2" class="error-message">
+                    {{ $message }}
+                </div>
+            @enderror
+    
+            <div class="remember">
+                <input class="checkbox" type="checkbox" name="remember">
+                <label for="remember"> Remember me </label>
             </div>
-        @enderror
-
-        <input id="password" type="password" name="password" placeholder="Password" autofocus
-            @error('password') style="border: 1px solid red" onkeyup="passwordInput()" @enderror>
-        @error('password')
-            <div id="error2" class="error-message">
-                {{ $message }}
+        </form>
+        <div class="button-container">
+            <input id="submit" type="button" value="Login">
+            <div class="btn-register">
+                <a href="{{ route('register') }}"> Create Account </a>
             </div>
-        @enderror
-
-        <div class="remember">
-            <input class="checkbox" type="checkbox" name="remember">
-            <label for="remember"> Remember me </label>
         </div>
-
-        <input type="submit" value="Login">
-
-        <div class="btn-register">
-            <a href="{{ route('register') }}"> Create Account </a>
-        </div>
-    </form>
+    </div>
 </div>
 
 <script>
@@ -84,6 +83,23 @@
             passwordField.style.border = "1px solid red";
         }
     }
+    
+    let btnSubmit = document.getElementById('submit');
+
+    btnSubmit.addEventListener('click', function(){
+        Swal.fire({
+            width: 250,
+            title: 'Checking...',
+            timer: 1000,
+            didOpen: () => {
+                Swal.showLoading()
+            },
+        }).then(() => {
+            login_form.submit();
+        })
+    });
+
+
 </script>
     
 @endsection

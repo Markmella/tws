@@ -5,6 +5,7 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
+<script src="{{ asset('js/profile.js') }}" defer></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 @if (session('success'))
@@ -17,7 +18,7 @@
     </script>
 @endif
 
-@if (session('updated'))
+@if (session('updated-password'))
     <script>
         Swal.fire({
             icon: 'success',
@@ -27,17 +28,15 @@
     </script>
 @endif
 
-{{-- @if (session('error')) --}}
-@error('password')
+@if (session('updated-info'))
     <script>
         Swal.fire({
-            icon: 'error',
-            width: '320',
-            title: {{ $message }}
+            icon: 'success',
+            width: '400',
+            title: 'Profile Infomation Successfully Updated'
         })
     </script>
-@enderror
-{{-- @endif --}}
+@endif
 
 <div class="profile-container">
     <div class="profile-content">
@@ -53,20 +52,80 @@
                 <i class="fas fa-camera"></i>
             </div>
         </div>
-        <p class="fullname"> {{ $users->name }} </p>
-        <p> <span> Username: </span> {{ $users->username }} </p>
-        <p> <span> Email: </span> {{ $users->email }} </p>
+
+        <div class="information">
+            <form action="{{ route('update-information', $users->id) }}" method="POST">
+                @csrf
+                <p class="fullname"> <input id="fullname" name="name" type="text" value="{{ $users->name }}" disabled> </p>
+                <p> Username:  <input id="username" name="username" type="text" value="{{ $users->username }}" disabled> </p>
+                <p> Email: <input id="email" name="email" type="text" value="{{ $users->email }}" disabled> </p>
+                <div id="error" class="error-message error-password">
+                    @error('name')
+                        {{ $message }}
+                    @enderror
+                    @error('username')
+                        {{ $message }}
+                    @enderror
+                    @error('email')
+                        {{ $message }}
+                    @enderror
+                </div>
+                <div class="information-button">       
+                    <input type="submit" name="submit" value="Save">
+                    <input type="submit" id="cancel-info" value="Cancel">
+                </div>
+            </form>
+        </div>
+
+        <button id="change-information-button" type="submit"
+            @error ('password') style="display: none" @enderror
+            @if (session('error')) style="display: none" @endif>
+            Edit Account Information
+        </button>
+
         <button id="change-password-button" type="submit"
-            @error ('password') style="display: none" @enderror> 
+            @error ('password') style="display: none" @enderror
+            @if (session('error')) style="display: none" @endif>
             Change Password 
         </button>
-        <div class="password-container" @error ('password') style="display: flex" @enderror>
+
+        <div class="password-container"
+            @error ('password') style="display: flex" @enderror
+            @if (session('error')) style="display: flex" @endif>
             <div class="btn-save-password">
                 <form action="{{ route('update-password', $users->id) }}" method="POST">
                     @csrf
-                    <input type="password" name="current_password" placeholder="Current Password">
-                    <input type="password" name="password" placeholder="New Password">
-                    <input type="password" name="password_confirmation" placeholder="Repeat new Password">
+                    <input id="current" type="password" name="current_password" placeholder="Current Password"
+                        @error('password') style="border: 1px solid red" @enderror
+                        @if (session('error')) style="border: 1px solid red" @endif
+                        value="{{ old('current_password') }}">
+
+                        <div class="error-message current-password">
+                            @if (session('error'))
+                                Invalid Current Password
+                            @endif
+                        </div>
+         
+                    <input id="password1" type="password" name="password" placeholder="New Password"
+                        @error('password') style="border: 1px solid red" @enderror
+                        value="{{ old('password') }}">
+
+                    <input id="password2" type="password" name="password_confirmation" placeholder="Confirm New Password"
+                        @error('password') style="border: 1px solid red" @enderror
+                        value="{{ old('password_confirmation') }}">
+
+                        <div id="error" class="error-message error-password">
+                            @error('password')
+                                {{ $message }}
+                            @enderror
+                            @error('password_confirmation')
+                                {{ $message }}
+                            @enderror
+                        </div>
+
+                        <p id="show-password"> Show Password </p>
+                        <p id="hide-password" style="display: none"> Hide Password </p>
+
                     <div class="save-password">       
                         <input type="submit" name="submit" value="Save">
                         <input type="submit" id="cancel-button" value="Cancel">
@@ -74,6 +133,13 @@
                 </form>
             </div>
         </div>
+    </div>
+
+    <div class="delete-account">
+        <form action="{{ route('delete-account', $users->id) }}" name="delete_form" method="POST">
+            @csrf
+        </form>
+        <button id="delete" type="button"> Delete Account </button>
     </div>
 </div>
 
@@ -98,8 +164,8 @@
             @enderror
         </div>
         <div class="btn-change-profile">
-            <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
-            <input type="file" name="image" id="file" accept="image/*" onchange="showPreview(event);">
+            <input type="file" id="file-ip-1" accept="image/*">
+            <input type="file" name="image" id="file" accept="image/*">
             <label for="file"> Choose Profile </label>
         </div>
         <div class="btn-save-profile">
@@ -108,102 +174,5 @@
         </div>
     </form>
 </div>
-
-
-    <script>
-        // Display profile picture
-        let profilePicture = document.getElementById("profile-picture");
-        let source = document.getElementById("profile-picture").src;
-
-        profilePicture.addEventListener('click', function(){
-            Swal.fire({
-                imageUrl: source,
-                imageWidth: 300,
-                imageHeight: 300,
-                showConfirmButton: false,
-                width: '350',
-            });
-        });
-        // Display profile picture
-
-
-
-
-        // For change password container
-        let changePasswordBtn = document.getElementById("change-password-button");
-        let savehangePasswordBtn = document.getElementById("save-password-button");
-        let changePasswordCon = document.querySelector(".password-container");
-
-        changePasswordBtn.addEventListener('click', function(){
-            changePasswordBtn.style.display = "none";
-            changePasswordCon.style.display = "flex";
-        });
-
-        let btnCancelPassword = document.getElementById("cancel-button");
-
-        btnCancelPassword.addEventListener('click', function(e){
-            e.preventDefault();
-            changePasswordCon.style.display = "none";
-            changePasswordBtn.style.display = "flex";
-            window.location.reload();
-        });
-        // For change password container
-
-
-
-
-        // For camera icon
-        let errorMessage = document.querySelector(".error-message");
-        let btnCamera = document.querySelector(".camera");
-
-        let profileCon = document.querySelector(".profile-container");
-        let changePictureCon = document.querySelector(".change-picture-container");
-        let btnExit = document.querySelector(".exit");
-
-        btnCamera.addEventListener('click', function(){
-            changePasswordBtn.disabled = true;
-            changePictureCon.style.display = "block";
-            profileCon.style.opacity = ".2";
-        });
-
-        btnExit.addEventListener('click', function(){
-            changePasswordBtn.disabled = false;
-            errorMessage.style.display = "none";
-            changePictureCon.style.display = "none";
-            profileCon.style.opacity = "1";
-        });
-        // For camera icon
-
-
-
-
-        // For change profile container
-        let btnChangeProfile = document.querySelector(".btn-change-profile");
-        let btnSaveProfile = document.querySelector(".btn-save-profile");
-        let btnCancel = document.getElementById("cancel");
-
-        function showPreview(event){
-            if(event.target.files.length > 0){
-                var src = URL.createObjectURL(event.target.files[0]);
-                var preview = document.getElementById("profile-prev");
-                preview.src = src;
-                btnChangeProfile.style.display = "none";
-                btnSaveProfile.style.display = "flex";
-            }
-        }
-
-        btnCancel.addEventListener('click', function(e){
-            e.preventDefault();
-            errorMessage.style.display = "none";
-            btnSaveProfile.style.display = "none";
-            btnChangeProfile.style.display = "flex";
-        });
-        // For change profile container
-
-
-
-
-
-    </script>
 
 @endsection

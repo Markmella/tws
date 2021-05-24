@@ -108,6 +108,7 @@
     font-size: 1.2rem;
     cursor: pointer;
 }
+
 .share-container button:hover {
     color: dodgerblue;
 }
@@ -124,23 +125,20 @@
     font-weight: bold;
 }
 
-.swal2-popup {
-    width: 400px;
-}
-
 .swal2-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     letter-spacing: 1px;
 }
 
 .swal2-styled.swal2-confirm {
+    font-size: 14px;
+    letter-spacing: 1px;
     background-color: #444;
 }
 
 .swal2-styled.swal2-confirm:focus {
     box-shadow: none;
 }
-
 
 .topic-content {
     width: 20%;
@@ -229,7 +227,7 @@
 }
 
 .article-button {
-    margin-top: 4rem;
+    margin-top: 1rem;
 }
 
 .article-button a {
@@ -274,7 +272,7 @@
 .article .text-content {
     font-family: 'Lato', sans-serif;
     padding-top: 5px;
-    height: 100px;
+    height: 150px;
     font-size: 14px;
     line-height: 1.5rem;
     overflow: hidden;
@@ -297,6 +295,7 @@
 }
 
 @media (max-width: 790px){
+
     .main-content {
         flex-direction: column;
     }
@@ -325,5 +324,5 @@
     .swal2-title {
         font-size: 1.2rem;
     }
-}
 
+}

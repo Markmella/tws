@@ -13,17 +13,32 @@ use App\Http\Controllers\User\PostsController;
 use App\Models\Post;
 
 Route::get('/', function () { 
+    include_once 'data.php';
 
     $posts = Post::get();
     $latest = Post::latest('created_at')->first();
 
-    if(!empty($_GET["article"]))
-        $latest = Post::find($_GET["article"]);
-    
-    return view('content.home', [
-        'posts' => $posts,
-        'latest' => $latest
-    ]);   
+    if($posts->count()){
+        if(!empty($_GET["article"]))
+            $latest = Post::find($_GET["article"]);
+        
+        return view('content.home', [
+            'posts' => $posts,
+            'latest' => $latest
+        ]); 
+    }else {
+        return view('content.home', [
+            'posts' => $posts,
+            'latest' => $latest,
+            "title" => $data[0],
+            "datetime" => $data[1],
+            "author" => $data[2],
+            "article" => $data[3],
+            "source" => $data[4]
+            ]
+        );
+    }
+
 
 })->name('home');
 
@@ -57,4 +72,5 @@ Route::post('/update{id}', [UpdateController::class, 'update']);
 Route::get('/profile{id}', [ProfileController::class, 'index'])->name('profile');
 Route::post('/profile-update-picture{id}', [ProfileController::class, 'updatePicture'])->name('update-profile');
 Route::post('/profile-update-password{id}', [ProfileController::class, 'updatePassword'])->name('update-password');
-
+Route::post('/profile-update-information{id}', [ProfileController::class, 'updateInformation'])->name('update-information');
+Route::post('/profile{id}', [ProfileController::class, 'deleteAccount'])->name('delete-account');

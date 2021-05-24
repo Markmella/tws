@@ -62,10 +62,10 @@
                         <a href="{{ route('login') }}">Login</a>
                     @endguest
                     @auth
-                        <form action="{{ route('logout') }}" method="POST">
+                        <form name="logout_form" action="{{ route('logout') }}" method="POST">
                             @csrf
-                            <button type="submit"> Logout </button>
                         </form>
+                        <button id="submit" type="button"> Logout </button>
                     @endauth
                 </div>
             </div>
@@ -79,5 +79,25 @@
         <div class="arrow">
             <a href="#Home"> <i class="fas fa-arrow-up"></i> </a>
         </div>
+
+        
+        @auth
+        <script>
+            let btnLogout = document.getElementById('submit');
+
+            btnLogout.addEventListener('click', function(){
+                Swal.fire({
+                    width: 250,
+                    title: 'Logging out',
+                    timer: 1500,
+                        didOpen: () => {
+                            Swal.showLoading()
+                        },
+                    }).then(() => {
+                        logout_form.submit();
+                })
+            });
+        </script>
+        @endauth
     </body>
 </html>

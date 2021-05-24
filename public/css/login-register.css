@@ -37,6 +37,19 @@
     border-radius: 5px;   
 }
 
+.forms p,
+.register-form p {
+    text-align: end;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.forms p:hover,
+.register-form p:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 .forms .remember .checkbox {
     width: 1rem;
     height: 1rem;
@@ -48,6 +61,7 @@
     margin-left: 5px;
     font-size: 1.2rem;
     letter-spacing: 1px;
+    cursor: pointer;
 }
 
 .button-container input[type="button"],
@@ -81,7 +95,7 @@
     text-align: center;
     text-decoration: none;
     padding: 10px 1rem;
-    color: white;
+    color: black;
     font-size: 1rem;
     letter-spacing: 1px;
     border: 1px solid #444;
@@ -89,6 +103,7 @@
 }
 
 .button-container .btn-register a:hover {
+    color: white;
     box-shadow: 0 0 10px #444;
 }
 
@@ -115,34 +130,38 @@
 
 @media (max-width: 790px){
     
-    .forms {
+    .form-container,
+    .register-form {
         width: 370px;
     }
 
-    .forms h2 {
+    .forms h2,
+    .register-form h2 {
         font-size: 1.2rem;
     }
 
-    .forms input {
+    .forms input,
+    .register-form input {
         font-size: 1rem;
     }
 
-    .forms .btn-register a {
+    .button-container input[type="button"],
+    .register-form input[type="submit"] {
+        font-size: 1rem;
+    }
+    
+    .button-container .btn-register a {
         font-size: 14px;
         padding: 8px 14px;
     }
 
-    .remember .checkbox {
+    .forms .remember .checkbox {
         width: .8rem;
         height: .8rem;
     }
 
-    .remember label {
+    .forms .remember label {
         font-size: 1rem;
     }
 
 }
-
-
-
-

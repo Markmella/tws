@@ -44,23 +44,60 @@
     cursor: pointer;
 }
 
-.profile-content .fullname {
-    color: black;
-    font-size: 2rem;
-    font-weight: bold;
+.information {
+    margin-bottom: 5rem;
 }
 
-.profile-content p {
+.information p {
     color: #444;
     font-size: 1.2rem;
     letter-spacing: 1px;
     margin: 1rem 0;
 }
 
-.profile-content p span {
+.information p input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 5px 0 5px 0;
+    margin-top: 5px;
+}
+
+.information .fullname input {
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-size: 2rem;
     font-weight: bold;
 }
 
+.information .information-button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.information .information-button input {
+    background-color: transparent;
+    width: 100%;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: .5rem;
+    margin: 1rem 2rem;
+    border: none;
+    border: 1px solid #444;
+    border-radius: 3px;  
+    cursor: pointer; 
+}
+
+.information .information-button input:hover {
+    background-color: #444;
+    color: white;
+}
+ 
 .profile-content button {
     margin: 0;
     padding: 8px 14px;
@@ -75,19 +112,20 @@
 }
 
 .profile-content button:hover {
+    font-size: 1rem;
     color: white;
     background-color: #444;
 }
 
 .password-container {
-    width: 50%;
+    width: 100%;
     display: none;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-.password-container input {
+.btn-save-password input {
     background-color: transparent;
     width: 100%;
     font-size: 1rem;
@@ -99,6 +137,21 @@
     border-radius: 3px;   
 }
 
+.btn-save-password #show-password,
+.btn-save-password #hide-password {
+    text-align: end;
+    color: black;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.btn-save-password #show-password:hover,
+.btn-save-password #hide-password:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 .save-password {
     display: flex;
     align-items: center;
@@ -106,7 +159,7 @@
 }
 
 .save-password input {
-    margin: 1rem;
+    margin: 1rem 2rem;
     cursor: pointer;
 }
 
@@ -115,7 +168,28 @@
     color: white;
 }
 
+/* Delete Account  */
+.delete-account {
+    margin-top: 20rem;
+}
 
+.delete-account button {
+    background-color: #EE204E;
+    color: black;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 10px 2rem;
+    margin: 1rem 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.delete-account button:hover {
+    color: white;
+    box-shadow: 0 0 10px red;
+}
+/* Delete Account  */
 
 .change-picture-container {
     display: none;
@@ -213,10 +287,9 @@
 }
 
 .error-message {
-    text-align: center;
+    width: 100%;
     color: red;
     letter-spacing: 1px;
-    padding-bottom: 1;
 }
 
 .swal2-title {
@@ -232,6 +305,13 @@
 
 .swal2-styled.swal2-confirm:focus {
     box-shadow: none;
+}
+
+.swal2-image {
+    border: 2px solid #444;
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
 }
 
 @media (max-width: 790px){
@@ -281,6 +361,5 @@
         font-size: 14px;
         margin: 10px;
     }
-
 
 }

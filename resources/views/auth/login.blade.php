@@ -5,6 +5,7 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('css/login-register.css') }}">
+<script src="{{ asset('js/login.js') }}" defer></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 @if (session('error'))
@@ -17,89 +18,54 @@
     </script>
 @endif
 
+@if (session('deleted'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            width: '400',
+            title: 'Your account has been Successfully Deleted'
+        })
+    </script>
+@endif
+
 <div class="login-register-form">
     <div class="form-container">
         <form class="forms" name="login_form" action="{{ route('login') }}" method="POST">
             <h2> Login to The World Scoop </h2>
             @csrf
-            <input id="email" type="text" name="email" placeholder="Email"
-                @error('email') style="border: 1px solid red" onkeyup="emailInput()" @enderror
-                value="{{ old('email') }}">
-            @error('email')
-                <div id="error1" class="error-message">
+            <input id="username" type="text" name="username" placeholder="Username" autofocus
+                @error('username') style="border: 1px solid red" @enderror
+                value="{{ old('username') }}">
+            <div id="error1" class="error-message">
+                @error('username')
                     {{ $message }}
-                </div>
-            @enderror
-    
+                @enderror
+            </div>
+                
             <input id="password" type="password" name="password" placeholder="Password"
-                @error('password') style="border: 1px solid red" onkeyup="passwordInput()" @enderror>
-            @error('password')
+                @error('password') style="border: 1px solid red" @enderror
+                value="{{ old('password') }}">
                 <div id="error2" class="error-message">
-                    {{ $message }}
+                    @error('password')
+                        {{ $message }}
+                    @enderror
                 </div>
-            @enderror
     
+            <p id="show-password"> Show Password </p>
+            <p id="hide-password" style="display: none"> Hide Password </p>
+
             <div class="remember">
-                <input class="checkbox" type="checkbox" name="remember">
+                <input class="checkbox" type="checkbox" id="remember">
                 <label for="remember"> Remember me </label>
             </div>
         </form>
         <div class="button-container">
-            <input id="submit" type="button" value="Login">
+            <input id="submit" type="button" value="Log In">
             <div class="btn-register">
-                <a href="{{ route('register') }}"> Create Account </a>
+                <a href="{{ route('register') }}"> Create New Account </a>
             </div>
         </div>
     </div>
 </div>
 
-<script>
-    let emailField = document.getElementById('email');
-    let passwordField = document.getElementById('password');
-
-    let error1 = document.getElementById('error1');
-    let error2 = document.getElementById('error2');
-
-    function emailInput(){
-        let input = document.getElementById('email').value;
-
-        if(input.length !== 0){
-            error1.style.display = "none";
-            emailField.style.border = "1px solid #444";
-        }else {
-            error1.style.display = "block";
-            emailField.style.border = "1px solid red";
-        }
-    }
-
-    function passwordInput(){
-        let input = document.getElementById('password').value;
-
-        if(input.length !== 0){
-            error2.style.display = "none";
-            passwordField.style.border = "1px solid #444";
-        }else {
-            error2.style.display = "block";
-            passwordField.style.border = "1px solid red";
-        }
-    }
-    
-    let btnSubmit = document.getElementById('submit');
-
-    btnSubmit.addEventListener('click', function(){
-        Swal.fire({
-            width: 250,
-            title: 'Checking...',
-            timer: 1000,
-            didOpen: () => {
-                Swal.showLoading()
-            },
-        }).then(() => {
-            login_form.submit();
-        })
-    });
-
-
-</script>
-    
 @endsection

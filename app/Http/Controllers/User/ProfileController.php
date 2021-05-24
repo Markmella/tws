@@ -49,11 +49,47 @@ class ProfileController extends Controller
                 'password' => Hash::make($request->password)
             ]);
 
-            return back()->with('updated', ' ');
+            return back()->with('updated-password', ' ');
         }
         
         return back()->with('error', ' ');
-        
+    }
+
+    public function updateInformation(Request $request, $id){
+        $user = User::find($id);
+
+        // Need to edit 
+        // if($user->email == $request->email && $user->username == $request->username){
+        //     $user->update([
+        //         'name' => ucwords($request->name),
+        //         'username' => $request->username,
+        //         'email' => $request->email,
+        //     ]);
+
+        //     return back()->with('updated-info', ' ');
+        // }else {
+        //     $this->validate($request, [
+        //         'name' => 'required|max:255',
+        //         'username' => 'required|max:255|unique:users',
+        //         'email' => 'required|max:255|unique:users'
+        //     ]);
+        // }
+
+        // $user->update([
+        //     'name' => ucwords($request->name),
+        //     'username' => $request->username,
+        //     'email' => $request->email,
+        // ]);
+
+        return back()->with('updated-info', ' ');
+    }
+
+    public function deleteAccount($id){
+
+        $user = User::find($id);
+        $user->delete();
+
+        return redirect()->route('login')->with('deleted', ' ');
     }
 
 }

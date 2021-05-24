@@ -10,7 +10,6 @@
     flex-wrap: wrap;
 }
 
-
 .article {
     padding: 1.5rem;
     width: 350px;
@@ -22,7 +21,7 @@
 }
 
 .article-button {
-    margin-top: 4rem;
+    margin-top: 1rem;
 }
 
 .article-button a {
@@ -68,7 +67,7 @@
 .article .text-content {
     font-family: 'Lato', sans-serif;
     padding-top: 5px;
-    height: 100px;
+    height: 150px;
     font-size: 14px;
     line-height: 1.5rem;
     overflow: hidden;
@@ -90,10 +89,9 @@
 }
 
 @media (max-width: 1190px){
+    
     .article {
         margin-top: 1rem;
     }
+
 }
-
-
-

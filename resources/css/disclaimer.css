@@ -29,9 +29,6 @@
     font-weight: bold;
 }
 
-
-
-
 .website-content {
     width: 20%;
     height: 400px;
@@ -92,6 +89,7 @@
 }
 
 @media (max-width: 790px){
+
     .disclaimer {
         flex-direction: column;
     }
@@ -106,4 +104,3 @@
     }
     
 }
-

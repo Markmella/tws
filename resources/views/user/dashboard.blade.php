@@ -20,7 +20,8 @@
 @if (session('deleted'))
     <script>
         Swal.fire({
-            title: 'Deleting...',
+            width: 250,
+            title: 'Deleting artile...',
             timer: 2000,
             didOpen: () => {
                 Swal.showLoading()
@@ -61,12 +62,7 @@
                 </div>       
             @endif
         @endforeach
-    @else
-        <div>
-            There is no post.
-        </div>
     @endif
-
 </div>
 
 @endsection

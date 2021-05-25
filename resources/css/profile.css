@@ -44,29 +44,30 @@
     cursor: pointer;
 }
 
-.information {
+.information-container {
     margin-bottom: 5rem;
 }
 
-.information p {
+.information-container p {
     color: #444;
     font-size: 1.2rem;
     letter-spacing: 1px;
     margin: 1rem 0;
 }
 
-.information p input {
+.information-container p input {
     width: 100%;
     background-color: transparent;
     border: none;
     outline: none;
     font-size: 1.2rem;
+    letter-spacing: 1px;
     font-weight: bold;
     padding: 5px 0 5px 0;
     margin-top: 5px;
 }
 
-.information .fullname input {
+.information-container .fullname input {
     width: 100%;
     text-align: center;
     color: black;
@@ -74,13 +75,13 @@
     font-weight: bold;
 }
 
-.information .information-button {
+.information-container .save-information {
     display: none;
     align-items: center;
     justify-content: center;
 }
 
-.information .information-button input {
+.information-container .save-information input {
     background-color: transparent;
     width: 100%;
     font-size: 1rem;
@@ -93,9 +94,10 @@
     cursor: pointer; 
 }
 
-.information .information-button input:hover {
-    background-color: #444;
+.information-container .save-information input:hover {
     color: white;
+    background-color: #444;
+    box-shadow: 0 0 10px #444;
 }
  
 .profile-content button {
@@ -115,6 +117,7 @@
     font-size: 1rem;
     color: white;
     background-color: #444;
+    box-shadow: 0 0 10px #444;
 }
 
 .password-container {
@@ -164,8 +167,9 @@
 }
 
 .save-password input:hover {
-    background-color: #444;
     color: white;
+    background-color: #444;
+    box-shadow: 0 0 10px #444;
 }
 
 /* Delete Account  */
@@ -219,8 +223,9 @@
 }
 
 .change-picture-container .exit:hover {
-    background-color: #444;
     color: white;
+    background-color: #444;
+    box-shadow: 0 0 10px #444;
 }
 
 .btn-change-profile {
@@ -245,8 +250,9 @@
 }
 
 .change-picture-container label:hover {
-    background-color: #444;
     color: white;
+    background-color: #444;
+    box-shadow: 0 0 10px #444;
 }
 
 .profile-preview {
@@ -282,8 +288,9 @@
 }
 
 .btn-save-profile input:hover {
-    background-color: #444;
     color: white;
+    background-color: #444;
+    box-shadow: 0 0 10px #444;
 }
 
 .error-message {

@@ -4,13 +4,15 @@ var __webpack_exports__ = {};
   !*** ./resources/js/user/profile.js ***!
   \**************************************/
 var changeInformationBtn = document.getElementById("change-information-button");
-var informationBtn = document.querySelector(".information-button");
+var saveInformationContainer = document.querySelector(".save-information");
 var changePasswordBtn = document.getElementById("change-password-button");
 var changePasswordCon = document.querySelector(".password-container"); // For change information container
 
 var fullnameField = document.getElementById("fullname");
 var usernameField = document.getElementById("username");
 var emailField = document.getElementById("email");
+var error1 = document.getElementById("error1");
+var error2 = document.getElementById("error2");
 changeInformationBtn.addEventListener('click', function () {
   fullnameField.disabled = false;
   usernameField.disabled = false;
@@ -18,45 +20,76 @@ changeInformationBtn.addEventListener('click', function () {
   fullnameField.style.borderBottom = "2px solid #444";
   usernameField.style.borderBottom = "2px solid #444";
   emailField.style.borderBottom = "2px solid #444";
-  informationBtn.style.display = "flex";
+  saveInformationContainer.style.display = "flex";
   changeInformationBtn.style.display = "none";
   changePasswordBtn.style.display = "none";
+  error1.style.display = "none";
+  error2.style.display = "none";
 });
-var btnCancelInfo = document.getElementById("cancel-info");
-btnCancelInfo.addEventListener('click', function (e) {
+var btnCancelInformation = document.getElementById("cancel-information");
+btnCancelInformation.addEventListener('click', function (e) {
   e.preventDefault();
-  fullnameField.disabled = true;
-  usernameField.disabled = true;
-  emailField.disabled = true;
-  fullnameField.style.borderBottom = "none";
-  usernameField.style.borderBottom = "none";
-  emailField.style.borderBottom = "none";
-  informationBtn.style.display = "none";
-  changePasswordCon.style.display = "none";
-  changeInformationBtn.style.display = "flex";
-  changePasswordBtn.style.display = "flex";
+  Swal.fire({
+    width: 200,
+    timer: 1500,
+    didOpen: function didOpen() {
+      Swal.showLoading();
+    }
+  }).then(function () {
+    location.reload();
+  });
 }); // For change information container
+// For saving information button
+
+var btnSavingInformation = document.getElementById('saving-information');
+btnSavingInformation.addEventListener('click', function () {
+  Swal.fire({
+    width: 220,
+    title: 'Checking...',
+    timer: 1500,
+    didOpen: function didOpen() {
+      Swal.showLoading();
+    }
+  }).then(function () {
+    information_form.submit();
+  });
+}); // For saving information button
 // For change password container
 
 var savePasswordContainer = document.querySelector(".btn-save-password");
-var passwordInput = savePasswordContainer.querySelectorAll("input[type='password']");
 changePasswordBtn.addEventListener('click', function () {
   changePasswordCon.style.display = "flex";
   changePasswordBtn.style.display = "none";
   changeInformationBtn.style.display = "none";
-  passwordInput[0].value = "";
-  passwordInput[1].value = "";
-  passwordInput[2].value = "";
 });
-var btnCancelPassword = document.getElementById("cancel-button");
-var errorPassword = document.querySelector(".error-password");
+var btnCancelPassword = document.getElementById("cancel-password");
 btnCancelPassword.addEventListener('click', function (e) {
   e.preventDefault();
-  errorPassword.style.display = "none";
-  changePasswordCon.style.display = "none";
-  changePasswordBtn.style.display = "flex";
-  changeInformationBtn.style.display = "flex";
+  Swal.fire({
+    width: 200,
+    timer: 1500,
+    didOpen: function didOpen() {
+      Swal.showLoading();
+    }
+  }).then(function () {
+    location.reload();
+  });
 }); // For change password container
+// For saving password button
+
+var btnSavingPassword = document.getElementById('saving-password');
+btnSavingPassword.addEventListener('click', function () {
+  Swal.fire({
+    width: 220,
+    title: 'Checking...',
+    timer: 1500,
+    didOpen: function didOpen() {
+      Swal.showLoading();
+    }
+  }).then(function () {
+    password_form.submit();
+  });
+}); // For saving information button
 // For change password input
 
 var currentPasswordField = document.getElementById('current');
@@ -134,11 +167,15 @@ btnCamera.addEventListener('click', function () {
   profileCon.style.opacity = ".2";
 });
 btnExit.addEventListener('click', function () {
-  changePasswordBtn.disabled = false;
-  errorMessage.style.display = "none";
-  changePictureCon.style.display = "none";
-  profileCon.style.opacity = "1";
-  location.reload();
+  Swal.fire({
+    width: 200,
+    timer: 1500,
+    didOpen: function didOpen() {
+      Swal.showLoading();
+    }
+  }).then(function () {
+    location.reload();
+  });
 }); // For camera icon
 // For change profile container
 
@@ -184,8 +221,8 @@ profilePicture.addEventListener('click', function () {
 var btnDelete = document.getElementById('delete');
 btnDelete.addEventListener('click', function () {
   Swal.fire({
-    width: 300,
-    title: 'Deleting Account...',
+    width: 320,
+    title: 'Deleting My Account...',
     timer: 3000,
     didOpen: function didOpen() {
       Swal.showLoading();

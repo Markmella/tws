@@ -59,8 +59,10 @@
                 <label for="remember"> Remember me </label>
             </div>
         </form>
+
         <div class="button-container">
             <input id="submit" type="button" value="Log In">
+            <div class="line"></div>
             <div class="btn-register">
                 <a href="{{ route('register') }}"> Create New Account </a>
             </div>

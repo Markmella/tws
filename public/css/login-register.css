@@ -83,8 +83,14 @@
     background-color: #444;
 }
 
+.button-container .line {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    margin: 2rem 0;
+}
+
 .button-container .btn-register {
-    margin-top: 3rem;
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;

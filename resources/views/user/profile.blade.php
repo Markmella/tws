@@ -28,7 +28,7 @@
     </script>
 @endif
 
-@if (session('updated-info'))
+@if (session('updated-information'))
     <script>
         Swal.fire({
             icon: 'success',
@@ -53,28 +53,28 @@
             </div>
         </div>
 
-        <div class="information">
-            <form action="{{ route('update-information', $users->id) }}" method="POST">
+
+        <div class="information-container">
+            <form action="{{ route('update-information', $users->id) }}" name="information_form" method="POST">
                 @csrf
                 <p class="fullname"> <input id="fullname" name="name" type="text" value="{{ $users->name }}" disabled> </p>
-                <p> Username:  <input id="username" name="username" type="text" value="{{ $users->username }}" disabled> </p>
-                <p> Email: <input id="email" name="email" type="text" value="{{ $users->email }}" disabled> </p>
-                <div id="error" class="error-message error-password">
-                    @error('name')
-                        {{ $message }}
-                    @enderror
+                <p> Username <input id="username" name="username" type="text" value="{{ $users->username }}" disabled> </p>
+                <div id="error1" class="error-message error-password">
                     @error('username')
                         {{ $message }}
                     @enderror
+                </div>
+                <p> Email <input id="email" name="email" type="text" value="{{ $users->email }}" disabled> </p>
+                <div id="error2" class="error-message error-password">
                     @error('email')
                         {{ $message }}
                     @enderror
                 </div>
-                <div class="information-button">       
-                    <input type="submit" name="submit" value="Save">
-                    <input type="submit" id="cancel-info" value="Cancel">
-                </div>
             </form>
+            <div class="save-information">       
+                <input type="submit" id="saving-information" name="submit" value="Save">
+                <input type="submit" id="cancel-information" value="Cancel">
+            </div>
         </div>
 
         <button id="change-information-button" type="submit"
@@ -89,22 +89,23 @@
             Change Password 
         </button>
 
+
         <div class="password-container"
             @error ('password') style="display: flex" @enderror
             @if (session('error')) style="display: flex" @endif>
             <div class="btn-save-password">
-                <form action="{{ route('update-password', $users->id) }}" method="POST">
+                <form action="{{ route('update-password', $users->id) }}" name="password_form" method="POST">
                     @csrf
                     <input id="current" type="password" name="current_password" placeholder="Current Password"
                         @error('password') style="border: 1px solid red" @enderror
                         @if (session('error')) style="border: 1px solid red" @endif
                         value="{{ old('current_password') }}">
 
-                        <div class="error-message current-password">
-                            @if (session('error'))
-                                Invalid Current Password
-                            @endif
-                        </div>
+                    <div class="error-message current-password">
+                        @if (session('error'))
+                            Invalid Current Password
+                        @endif
+                    </div>
          
                     <input id="password1" type="password" name="password" placeholder="New Password"
                         @error('password') style="border: 1px solid red" @enderror
@@ -114,23 +115,23 @@
                         @error('password') style="border: 1px solid red" @enderror
                         value="{{ old('password_confirmation') }}">
 
-                        <div id="error" class="error-message error-password">
-                            @error('password')
-                                {{ $message }}
-                            @enderror
-                            @error('password_confirmation')
-                                {{ $message }}
-                            @enderror
-                        </div>
-
-                        <p id="show-password"> Show Password </p>
-                        <p id="hide-password" style="display: none"> Hide Password </p>
-
-                    <div class="save-password">       
-                        <input type="submit" name="submit" value="Save">
-                        <input type="submit" id="cancel-button" value="Cancel">
+                    <div id="error" class="error-message error-password">
+                        @error('password')
+                            {{ $message }}
+                        @enderror
+                        @error('password_confirmation')
+                            {{ $message }}
+                        @enderror
                     </div>
+
+                    <p id="show-password"> Show Password </p>
+                    <p id="hide-password" style="display: none"> Hide Password </p>
+
                 </form>
+                <div class="save-password">       
+                    <input type="submit" id="saving-password" name="submit" value="Save">
+                    <input type="submit" id="cancel-password" value="Cancel">
+                </div>
             </div>
         </div>
     </div>
@@ -139,7 +140,7 @@
         <form action="{{ route('delete-account', $users->id) }}" name="delete_form" method="POST">
             @csrf
         </form>
-        <button id="delete" type="button"> Delete Account </button>
+        <button id="delete" type="button"> Delete My Account </button>
     </div>
 </div>
 

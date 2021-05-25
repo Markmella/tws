@@ -57,31 +57,42 @@ class ProfileController extends Controller
 
     public function updateInformation(Request $request, $id){
         $user = User::find($id);
+        
+        $userUsername = $user->username;
+        $userEmail = $user->email;
 
-        // Need to edit 
-        // if($user->email == $request->email && $user->username == $request->username){
-        //     $user->update([
-        //         'name' => ucwords($request->name),
-        //         'username' => $request->username,
-        //         'email' => $request->email,
-        //     ]);
+        $usernameInput = $request->username;
+        $emailInput = $request->email;
 
-        //     return back()->with('updated-info', ' ');
-        // }else {
-        //     $this->validate($request, [
-        //         'name' => 'required|max:255',
-        //         'username' => 'required|max:255|unique:users',
-        //         'email' => 'required|max:255|unique:users'
-        //     ]);
-        // }
+        if($userUsername == $usernameInput && $userEmail == $emailInput){
+            $user->update([
+                'name' => ucwords($request->name),
+                'username' => $request->username,
+                'email' => $request->email,
+            ]);
 
-        // $user->update([
-        //     'name' => ucwords($request->name),
-        //     'username' => $request->username,
-        //     'email' => $request->email,
-        // ]);
+            return back()->with('updated-information', ' ');
+        }
 
-        return back()->with('updated-info', ' ');
+        if($userUsername != $usernameInput){
+            $this->validate($request, [
+                'username' => 'required|max:255|unique:users'
+            ]);
+        }
+
+        if($userEmail != $emailInput){
+            $this->validate($request, [
+                'email' => 'required|max:255|unique:users'
+            ]);
+        }
+
+        $user->update([
+            'name' => ucwords($request->name),
+            'username' => $request->username,
+            'email' => $request->email
+        ]);
+
+        return back()->with('updated-information', ' ');
     }
 
     public function deleteAccount($id){

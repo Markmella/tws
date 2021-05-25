@@ -1,6 +1,6 @@
 
 let changeInformationBtn = document.getElementById("change-information-button");
-let informationBtn = document.querySelector(".information-button");
+let saveInformationContainer = document.querySelector(".save-information");
 
 let changePasswordBtn = document.getElementById("change-password-button");
 let changePasswordCon = document.querySelector(".password-container");
@@ -10,6 +10,9 @@ let changePasswordCon = document.querySelector(".password-container");
     let usernameField = document.getElementById("username");
     let emailField = document.getElementById("email");
 
+    let error1 = document.getElementById("error1");
+    let error2 = document.getElementById("error2");
+
     changeInformationBtn.addEventListener('click', function () {
         fullnameField.disabled = false;
         usernameField.disabled = false;
@@ -17,54 +20,90 @@ let changePasswordCon = document.querySelector(".password-container");
         fullnameField.style.borderBottom = "2px solid #444";
         usernameField.style.borderBottom = "2px solid #444";
         emailField.style.borderBottom = "2px solid #444";
-        informationBtn.style.display = "flex";
+        saveInformationContainer.style.display = "flex";
         changeInformationBtn.style.display = "none";
         changePasswordBtn.style.display = "none";
+        error1.style.display = "none";
+        error2.style.display = "none";
     });
 
-    let btnCancelInfo = document.getElementById("cancel-info");
+    let btnCancelInformation = document.getElementById("cancel-information");
     
-    btnCancelInfo.addEventListener('click', function(e){
+    btnCancelInformation.addEventListener('click', function(e){
         e.preventDefault();
-        fullnameField.disabled = true;
-        usernameField.disabled = true;
-        emailField.disabled = true;
-        fullnameField.style.borderBottom = "none";
-        usernameField.style.borderBottom = "none";
-        emailField.style.borderBottom = "none";
-        informationBtn.style.display = "none";
-        changePasswordCon.style.display = "none";
-        changeInformationBtn.style.display = "flex";
-        changePasswordBtn.style.display = "flex";
+        Swal.fire({
+            width: 200,
+            timer: 1500,
+                didOpen: () => {
+                    Swal.showLoading()
+                },
+            }).then(() => {
+                location.reload();
+        });
     });
-
 // For change information container
+
+
+// For saving information button
+let btnSavingInformation = document.getElementById('saving-information');
+
+btnSavingInformation.addEventListener('click', function(){
+    Swal.fire({
+        width: 220,
+        title: 'Checking...',
+        timer: 1500,
+            didOpen: () => {
+                Swal.showLoading()
+            },
+        }).then(() => {
+            information_form.submit();
+    });
+});
+// For saving information button
 
 
 // For change password container
 let savePasswordContainer = document.querySelector(".btn-save-password");
-let passwordInput = savePasswordContainer.querySelectorAll("input[type='password']");
 
 changePasswordBtn.addEventListener('click', function(){
     changePasswordCon.style.display = "flex";
     changePasswordBtn.style.display = "none";
     changeInformationBtn.style.display = "none";
-    passwordInput[0].value = "";
-    passwordInput[1].value = "";
-    passwordInput[2].value = "";
 });
 
-let btnCancelPassword = document.getElementById("cancel-button");
-let errorPassword = document.querySelector(".error-password");
+let btnCancelPassword = document.getElementById("cancel-password");
 
 btnCancelPassword.addEventListener('click', function(e){
     e.preventDefault();
-    errorPassword.style.display = "none";
-    changePasswordCon.style.display = "none";
-    changePasswordBtn.style.display = "flex";
-    changeInformationBtn.style.display = "flex";
+    Swal.fire({
+        width: 200,
+        timer: 1500,
+            didOpen: () => {
+                Swal.showLoading()
+            },
+        }).then(() => {
+            location.reload();
+    });
 });
 // For change password container
+
+
+// For saving password button
+let btnSavingPassword = document.getElementById('saving-password');
+
+btnSavingPassword.addEventListener('click', function(){
+    Swal.fire({
+        width: 220,
+        title: 'Checking...',
+        timer: 1500,
+            didOpen: () => {
+                Swal.showLoading()
+            },
+        }).then(() => {
+            password_form.submit();
+    });
+});
+// For saving information button
 
 
 // For change password input
@@ -152,11 +191,15 @@ btnCamera.addEventListener('click', function(){
 });
 
 btnExit.addEventListener('click', function(){
-    changePasswordBtn.disabled = false;
-    errorMessage.style.display = "none";
-    changePictureCon.style.display = "none";
-    profileCon.style.opacity = "1";
-    location.reload();
+    Swal.fire({
+        width: 200,
+        timer: 1500,
+            didOpen: () => {
+                Swal.showLoading()
+            },
+        }).then(() => {
+            location.reload();
+    });
 });
 // For camera icon
 
@@ -212,8 +255,8 @@ let btnDelete = document.getElementById('delete');
 
 btnDelete.addEventListener('click', function(){
     Swal.fire({
-        width: 300,
-        title: 'Deleting Account...',
+        width: 320,
+        title: 'Deleting My Account...',
         timer: 3000,
             didOpen: () => {
                 Swal.showLoading()

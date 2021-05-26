@@ -1,10 +1,10 @@
-@extends('layout.master')
+@extends('admin.adminMaster')
 
-@section('title') TWS | Login @endsection
+@section('title') TWS | Admin Login @endsection
 
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('css/login-register.css') }}">
+<link rel="stylesheet" href="{{ asset('css/adminLogin.css') }}">
 <script src="{{ asset('js/login.js') }}" defer></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
@@ -13,7 +13,7 @@
         Swal.fire({
             icon: 'error',
             width: '320',
-            title: 'Invalid Login Details'
+            title: 'Invalid Admin Details'
         })
     </script>
 @endif
@@ -30,8 +30,8 @@
 
 <div class="login-register-form">
     <div class="form-container">
-        <form class="forms" name="login_form" action="{{ route('login') }}" method="POST">
-            <h2> Login to The World Scoop </h2>
+        <form class="forms" name="login_form" action="{{ route('admin-login') }}" method="POST">
+            <h2> Administrator </h2>
             @csrf
             <input id="username" type="text" name="username" placeholder="Username" autofocus
                 @error('username') style="border: 1px solid red" @enderror
@@ -54,22 +54,10 @@
             <p id="show-password"> Show Password </p>
             <p id="hide-password" style="display: none"> Hide Password </p>
 
-            <div class="remember">
-                <input class="checkbox" type="checkbox" id="remember" name="remember">
-                <label for="remember"> Remember Me </label>
-            </div>
         </form>
 
         <div class="button-container">
             <input id="submit" type="button" value="Log In">
-            <div class="line">
-                <div class="or">
-                    OR
-                </div>
-            </div>
-            <div class="btn-register">
-                <a href="{{ route('register') }}"> Create New Account </a>
-            </div>
         </div>
     </div>
 </div>

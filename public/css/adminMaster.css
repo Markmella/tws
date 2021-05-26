@@ -1,0 +1,207 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #aaa;
+}
+
+.navbar {
+    background-color: #444;
+    max-width: 1250px;
+    margin: 0 auto;
+    -webkit-position: sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-list {
+    display: flex;
+}
+
+.menu-list li {
+    list-style: none;
+}
+
+#profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+#profile img {
+    width: 32px;
+    height: 32px;
+    border: 1px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.menu-list li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 1rem;
+    display: block;
+}
+
+.menu-list li:hover {
+    background: #242424;
+}
+
+.navbar-content .button a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.navbar-content .button a:hover {
+    color: dodgerblue;
+    font-weight: bold;
+}
+
+/* Logout button */
+.navbar-content .button {
+    margin-right: 1rem;
+}
+
+.navbar-content .button button {
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar-content .button button:hover {
+    font-weight: bold;
+    color: dodgerblue;
+}
+/* Logout button */
+
+
+
+/* For Icon */
+.menu-icon {
+    color: white;
+    font-size: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    display: none;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+/* For Icon */
+
+
+
+.footer {
+    max-width: 1250px;
+    margin: 0 auto;
+    background-color: #444;
+    padding: 1rem;
+    color: #ccc;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.arrow {
+    background-color: #444;
+    position: fixed;
+    padding: 0px 10px;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    text-align: center;
+    line-height: 40px;
+}
+
+.arrow a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.arrow a:hover {
+    color: dodgerblue;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #444;
+}
+
+@media (max-width: 790px){
+
+    .brand {
+        margin-top: 2rem;
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .menu-list {
+        background-color: #444;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 100%;
+        padding: 3rem 0;
+        display: block;
+        transition: all .8s ease;
+    }
+
+    .menu-list.active {
+        left: 0;
+    }
+
+    #profile {
+        justify-content: flex-start;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .arrow {
+        right: 10px;
+        bottom: 5px;
+    }
+    
+    .arrow a {
+        font-size: 1rem;
+    }
+
+}

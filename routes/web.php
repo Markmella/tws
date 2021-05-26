@@ -9,6 +9,7 @@ use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\User\UpdateController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\PostsController;
+use App\Http\Controllers\Admin\AdminController;
 
 use App\Models\Post;
 
@@ -74,3 +75,10 @@ Route::post('/profile-update-picture{id}', [ProfileController::class, 'updatePic
 Route::post('/profile-update-password{id}', [ProfileController::class, 'updatePassword'])->name('update-password');
 Route::post('/profile-update-information{id}', [ProfileController::class, 'updateInformation'])->name('update-information');
 Route::post('/profile{id}', [ProfileController::class, 'deleteAccount'])->name('delete-account');
+
+
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+
+Route::get('/admin-login', [AdminController::class, 'login'])->name('admin-login');
+Route::post('/admin-login', [AdminController::class, 'store']);
+

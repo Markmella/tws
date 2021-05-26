@@ -55,8 +55,8 @@
             <p id="hide-password" style="display: none"> Hide Password </p>
 
             <div class="remember">
-                <input class="checkbox" type="checkbox" id="remember">
-                <label for="remember"> Remember me </label>
+                <input class="checkbox" type="checkbox" id="remember" name="remember">
+                <label for="remember"> Remember Me </label>
             </div>
         </form>
 

@@ -96,28 +96,29 @@ var currentPasswordField = document.getElementById('current');
 var password1Field = document.getElementById('password1');
 var password2Field = document.getElementById('password2');
 var error = document.getElementById('error');
-
-function currentPasswordInput() {
+currentPasswordField.addEventListener('keyup', function () {
   var input = currentPasswordField.value;
 
   if (input.length !== 0) {
+    error.style.display = "none";
     currentPasswordField.style.border = "1px solid #444";
   } else {
+    error.style.display = "block";
     currentPasswordField.style.border = "1px solid red";
   }
-}
-
-function password1Input() {
+});
+password1Field.addEventListener('keyup', function () {
   var input = password1Field.value;
 
   if (input.length !== 0) {
+    error.style.display = "none";
     password1Field.style.border = "1px solid #444";
   } else {
+    error.style.display = "block";
     password1Field.style.border = "1px solid red";
   }
-}
-
-function password2Input() {
+});
+password2Field.addEventListener('keyup', function () {
   var input = password2Field.value;
 
   if (input.length !== 0) {
@@ -127,9 +128,8 @@ function password2Input() {
     error.style.display = "block";
     password2Field.style.border = "1px solid red";
   }
-} // For change password input
+}); // For change password input
 // For Showing Password
-
 
 var showPassword = document.getElementById("show-password");
 var hidePassword = document.getElementById("hide-password");

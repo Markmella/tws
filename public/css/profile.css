@@ -159,6 +159,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 2rem;
 }
 
 .save-password input {
@@ -364,9 +365,29 @@
         font-size: 14px;
     }
 
-    .save-password input {
+    .save-password input,
+    .information-container .save-information input {
         font-size: 14px;
         margin: 10px;
+    }
+
+    .information-container p input {
+        font-size: 1rem;
+    }
+
+    .information-container .fullname input {
+        font-size: 1.5rem;
+    }
+
+    .btn-save-password #show-password, 
+    .btn-save-password #hide-password {
+        font-size: 14px;
+    }
+
+    .delete-account button {
+
+        font-size: 14px;
+        padding: 10px 2rem;
     }
 
 }

@@ -365,8 +365,7 @@
         font-size: 14px;
     }
 
-    .save-password input,
-    .information-container .save-information input {
+    .save-password input {
         font-size: 14px;
         margin: 10px;
     }

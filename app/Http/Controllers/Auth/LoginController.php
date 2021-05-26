@@ -14,7 +14,9 @@ class LoginController extends Controller
     }
 
     public function index(){
-        return view('auth.login');
+        return view('auth.login', [
+            'users' => User::get()
+        ]);
     }
 
     public function login(Request $request){

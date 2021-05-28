@@ -42,7 +42,7 @@
     padding: 1rem;
 }
 
-table {
+.table-content table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
@@ -50,25 +50,30 @@ table {
     letter-spacing: 1px;
 }
 
-table th {
+.table-content table th {
     width: 25%;
     font-size: 1.2rem;
     padding: 10px;
     border-bottom: 1px solid #444;
 }
 
-table td {
+.table-content table td {
     width: 25%;
     font-size: 1rem;
     padding: 1rem 10px;
 }
 
-table td a {
+.table-content table p {
+    height: 40px;
+    overflow: hidden;
+}
+
+.table-content table td a {
     color: black;
     font-size: 1rem;
     text-decoration: none;
     letter-spacing: 1px;
-    padding: 8px 2rem;
+    padding: 5px 10px;
     outline: none;
     border: 1px solid #444;
     border-radius: 5px;
@@ -76,7 +81,8 @@ table td a {
     cursor: pointer;
 }
 
-table td a:hover {
+
+.table-content table td a:hover {
     color: white;
     background-color: #444;
 }

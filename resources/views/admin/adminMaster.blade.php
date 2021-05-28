@@ -24,15 +24,14 @@
                     <i class="fas fa-bars"></i>
                 </div>
                 <div class="button">
-                    @guest
-                        <a href="{{ route('admin-login') }}">Login</a>
-                    @endguest
-                    @auth
+                    {{-- @if (auth()->admin()) --}}
                         <form name="admin_logout_form" action="{{ route('admin-logout') }}" method="POST">
                             @csrf
                         </form>
                         <button id="submit" type="button"> Logout </button>
-                    @endauth
+                    {{-- @else --}}
+                        <a href="{{ route('admin-login') }}">Login</a>
+                    {{-- @endif --}}
                 </div>
             </div>
         </div>

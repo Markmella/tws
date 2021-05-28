@@ -13,15 +13,28 @@
     <div class="top-container">
         <div class="recent-post">
             <div class="post">
-                
                 @if ($posts->count())
-                    <?php
-                        $articleTitle = $latest->title;
-                        $articleDate = $latest->created_at->format('M d, Y');
-                        $articleTime = $latest->updated_at->diffForHumans();
-                        $articleAuthor = $latest->author;
-                        $articleContent = $latest->article;
-                    ?>
+                    @if (!empty($_GET["article"]))
+                        <?php
+                            $articleTitle = $latest->title;
+                            $articleDate = $latest->created_at->format('M d, Y');
+                            $articleTime = $latest->updated_at->diffForHumans();
+                            $articleAuthor = $latest->author;
+                            $articleContent = $latest->article;
+                        ?>
+                    @else
+                        @foreach ($posts as $post)
+                            @if ($post->status == 'Accepted')
+                                <?php
+                                    $articleTitle = $post->title;
+                                    $articleDate = $post->created_at->format('M d, Y');
+                                    $articleTime = $post->updated_at->diffForHumans();
+                                    $articleAuthor = $post->author;
+                                    $articleContent = $post->article;
+                                ?>
+                            @endif
+                        @endforeach
+                    @endif
                 @else
                     <?php
                         $articleTitle = $title;
@@ -82,11 +95,13 @@
             <h2> Topics </h2>
             <div class="all-topics">
                 @foreach ($posts as $post)
-                    <div class="topic">
-                        <a href="/?article={{ $post->id }}">
-                            {{ $post->title }}
-                        </a>
-                    </div>
+                    @if ($post->status == 'Accepted')
+                        <div class="topic">
+                            <a href="/?article={{ $post->id }}">
+                                {{ $post->title }}
+                            </a>
+                        </div>
+                    @endif
                 @endforeach
             </div>
         </div>
@@ -94,19 +109,22 @@
     <div class="all-article">
         @if ($posts->count())
             @foreach ($posts as $post)
-                <div class="article">
-                    <div class="article-content">
-                        <p class="title"> {{ $post->title }} </p>
-                        <p class="date-time"> {{ $post->updated_at->format('M d, Y') }} &nbsp;&nbsp; 
-                            <span> {{ $post->updated_at->diffForHumans() }} </span>
-                        </p>
-                        <p class="author"> {{ $post->author }} </p>
-                        <p class="text-content"> {{ $post->article }} </p>
-                    </div>
-                    <div class="article-button">
-                        <a href="/?article={{ $post->id }}"> Read more </a>
-                    </div>
-                </div>              
+                @if ($post->status == 'Accepted')
+                    <div class="article">
+                        <div class="article-content">
+                            
+                            <p class="title"> {{ $post->title }} </p>
+                            <p class="date-time"> {{ $post->updated_at->format('M d, Y') }} &nbsp;&nbsp; 
+                                <span> {{ $post->updated_at->diffForHumans() }} </span>
+                            </p>
+                            <p class="author"> {{ $post->author }} </p>
+                            <p class="text-content"> {{ $post->article }} </p>
+                        </div>
+                        <div class="article-button">
+                            <a href="/?article={{ $post->id }}"> Read more </a>
+                        </div>
+                    </div>              
+                @endif
             @endforeach
         @endif
     </div>

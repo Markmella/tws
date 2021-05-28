@@ -82,3 +82,14 @@ Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::get('/admin-login', [AdminController::class, 'login'])->name('admin-login');
 Route::post('/admin-login', [AdminController::class, 'store']);
 
+Route::get('/admin-dashboard', [AdminController::class, 'dashboard'])->name('admin-dashboard');
+
+Route::get('/admin-show-article{id}', [AdminController::class, 'show'])->name('admin-show-article');
+Route::post('/admin-accept-article{id}', [AdminController::class, 'accepted'])->name('admin-accept-article');
+Route::post('/admin-decline-article{id}', [AdminController::class, 'declined'])->name('admin-decline-article');
+
+
+
+Route::post('/admin-logout', [AdminController::class, 'logout'])->name('admin-logout');
+
+

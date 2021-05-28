@@ -25,7 +25,8 @@ class PostsController extends Controller
             'title' => ucfirst($request->title),
             'author' => ucfirst($request->author),
             'source' => $request->source,
-            'article' => ucfirst($request->article)
+            'article' => ucfirst($request->article),
+            'status' => 'Pending'
         ]);
 
         return back()->with('success', ' ');

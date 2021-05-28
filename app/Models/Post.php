@@ -13,7 +13,8 @@ class Post extends Model
         'title',
         'author',
         'source',
-        'article'
+        'article',
+        'status'
     ];
 
 }

@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/master.css') }}">
     <script type="text/javascript" src="{{ asset('js/fontAwesomeIcon.js') }}" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     @guest <script src="{{ asset('js/header.js') }}" defer></script> @endguest
     @auth <script src="{{ asset('js/dashboard.js') }}" defer></script> @endauth
     <title> @yield('title') </title>

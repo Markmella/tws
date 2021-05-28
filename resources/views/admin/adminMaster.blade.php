@@ -19,27 +19,6 @@
                         <i class="fas fa-times"></i>
                     </div>
                         <li id="home"><a href="{{ route('admin') }}"> Home </a></li>
-                        {{-- @auth
-                            <li id="dashboard"><a href="{{ route('dashboard') }}"> Dashboard </a></li>
-                            <li id="post"><a href="{{ route('posts') }}"> Post Article </a></li>
-                            <li id="profile">
-                                <img 
-                                    @if (auth()->user()->image == NULL)
-                                        src="{{ asset('images/profile.png') }}"
-                                    @else
-                                        src="{{ asset('uploads/' . auth()->user()->image) }}"
-                                    @endif
-                                >
-                                <a href="{{ route('profile', auth()->user()->id) }}">
-                                    {{ auth()->user()->name }}
-                                </a>
-                            </li>
-                        @endauth
-                        @guest
-                            <li id="about"><a href="{{ route('about') }}"> About </a></li>
-                            <li id="disclaimer"><a href="{{ route('disclaimer') }}"> Disclaimer </a></li>
-                            <li id="contact"><a href="{{ route('contact') }}"> Contact </a></li>
-                        @endguest --}}
                 </ul>
                 <div class="menu-icon menu-btn">
                     <i class="fas fa-bars"></i>
@@ -49,7 +28,7 @@
                         <a href="{{ route('admin-login') }}">Login</a>
                     @endguest
                     @auth
-                        <form name="logout_form" action="{{ route('logout') }}" method="POST">
+                        <form name="admin_logout_form" action="{{ route('admin-logout') }}" method="POST">
                             @csrf
                         </form>
                         <button id="submit" type="button"> Logout </button>
@@ -67,5 +46,22 @@
             <a href="#Home"> <i class="fas fa-arrow-up"></i> </a>
         </div>
 
+
+        <script>
+            let btnLogout = document.getElementById('submit');
+
+            btnLogout.addEventListener('click', function(){
+                Swal.fire({
+                    width: 250,
+                    title: 'Logging out',
+                    timer: 1500,
+                        didOpen: () => {
+                            Swal.showLoading()
+                        },
+                    }).then(() => {
+                        admin_logout_form.submit();
+                })
+            });
+        </script>
     </body>
 </html>

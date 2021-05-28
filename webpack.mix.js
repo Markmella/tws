@@ -31,5 +31,7 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/profile.css', 'public/css')
     .postCss('resources/admin/adminMaster.css', 'public/css')
     .postCss('resources/admin/adminHome.css', 'public/css')
-    .postCss('resources/admin/adminLogin.css', 'public/css');
+    .postCss('resources/admin/adminLogin.css', 'public/css')
+    .postCss('resources/admin/adminShow.css', 'public/css')
+    .postCss('resources/admin/adminDashboard.css', 'public/css');
 

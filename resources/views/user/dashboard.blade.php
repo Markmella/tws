@@ -50,7 +50,6 @@
                         <p class="text-content"> {{ $post->article }} </p>
                     </div>
                     <div class="article-button">
-                        <input type="hidden" value="{{ $post->user_id }}">
                         <a href="/?article={{ $post->id }}" title="Read more"> Read more </a>
                         <a href="{{ route('update', $post->id) }}" title="Edit">
                             <i class="fas fa-edit"></i>

@@ -49,14 +49,25 @@
                             <th> User ID </th>
                             <th> Article Title </th>
                             <th> Article Author </th>
-                            <th> Status </th>
+                            <th> Action </th>
                         </tr>
                         @foreach ($posts as $post)
                             @if ($post->status == 'Pending')
                                 <tr>
-                                    <td>{{ $post->user_id }}</td>
-                                    <td>{{ $post->title }}</td>
-                                    <td>{{ $post->author }}</td>
+                                    <td>
+                                        <p>
+                                            {{ $post->user_id }}
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            {{ $post->title }}
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            {{ $post->author }}</td>
+                                        </p>
                                     <td>
                                         <a href="{{ route('admin-show-article', $post->id) }}"> Show </a>
                                     </td>
@@ -80,10 +91,26 @@
                         @foreach ($posts as $post)
                             @if ($post->status == 'Accepted')
                                 <tr>
-                                    <td>{{ $post->user_id }}</td>
-                                    <td>{{ $post->title }}</td>
-                                    <td>{{ $post->author }}</td>
-                                    <td>{{ $post->status }}</td>
+                                    <td>
+                                        <p>
+                                            {{ $post->user_id }}
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            {{ $post->title }}
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            {{ $post->author }}
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            {{ $post->status }}
+                                        </p>
+                                    </td>
                                 </tr>
                             @endif
                         @endforeach
@@ -105,10 +132,26 @@
                         @foreach ($posts as $post)
                             @if ($post->status == 'Declined')
                                 <tr>
-                                    <td>{{ $post->user_id }}</td>
-                                    <td>{{ $post->title }}</td>
-                                    <td>{{ $post->author }}</td>
-                                    <td>{{ $post->status }}</td>
+                                    <td>
+                                        <p>
+                                            {{ $post->user_id }}
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            {{ $post->title }}
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            {{ $post->author }}
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            {{ $post->status }}
+                                        </p>
+                                    </td>
                                 </tr>
                             @endif
                         @endforeach
@@ -128,10 +171,26 @@
                         </tr>
                         @foreach ($posts as $post)
                             <tr>
-                                <td>{{ $post->user_id }}</td>
-                                <td>{{ $post->title }}</td>
-                                <td>{{ $post->author }}</td>
-                                <td>{{ $post->status }}</td>
+                                <td>
+                                    <p>
+                                        {{ $post->user_id }}
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        {{ $post->title }}
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        {{ $post->author }}
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        {{ $post->status }}
+                                    </p>
+                                </td>
                             </tr>
                         @endforeach
                     </table>
@@ -150,10 +209,26 @@
                         </tr>
                         @foreach ($users as $user)
                             <tr>
-                                <td>{{ $user->id }}</td>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->username }}</td>
-                                <td>{{ $user->email }}</td>
+                                <td>
+                                    <p>
+                                        {{ $user->id }}
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        {{ $user->name }}
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        {{ $user->username }}
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        {{ $user->email }}
+                                    </p>
+                                </td>
                             </tr>
                         @endforeach
                     </table>

@@ -33,7 +33,7 @@
         <form class="forms" name="login_form" action="{{ route('login') }}" method="POST">
             <h2> Login to The World Scoop </h2>
             @csrf
-            <input id="username" type="text" name="username" placeholder="Username" autofocus
+            <input id="username" type="text" name="username" placeholder="Username"
                 @error('username') style="border: 1px solid red" @enderror
                 value="{{ old('username') }}">
             <div id="error1" class="error-message">
@@ -45,11 +45,11 @@
             <input id="password" type="password" name="password" placeholder="Password"
                 @error('password') style="border: 1px solid red" @enderror
                 value="{{ old('password') }}">
-                <div id="error2" class="error-message">
-                    @error('password')
-                        {{ $message }}
-                    @enderror
-                </div>
+            <div id="error2" class="error-message">
+                @error('password')
+                    {{ $message }}
+                @enderror
+            </div>
     
             <p id="show-password"> Show Password </p>
             <p id="hide-password" style="display: none"> Hide Password </p>

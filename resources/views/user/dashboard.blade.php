@@ -49,15 +49,21 @@
                         <p class="author"> {{ $post->author }} </p>
                         <p class="text-content"> {{ $post->article }} </p>
                     </div>
-                    <div class="article-button">
-                        <a href="/?article={{ $post->id }}" title="Read more"> Read more </a>
-                        <a href="{{ route('update', $post->id) }}" title="Edit">
-                            <i class="fas fa-edit"></i>
-                        </a>
-                        <a href="{{ route('delete', $post->id) }}" title="Delete">
-                            <i class="fas fa-trash-alt"></i>
-                        </a>
-                    </div>
+                    @if ($post->status == "Pending")
+                        <div class="pending-article">
+                            This article is pending
+                        </div>
+                    @else
+                        <div class="article-button">
+                            <a href="/?article={{ $post->id }}" title="Read more"> Read more </a>
+                            <a href="{{ route('update', $post->id) }}" title="Edit">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a href="{{ route('delete', $post->id) }}" title="Delete">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </div>
+                    @endif
                 </div>       
             @endif
         @endforeach

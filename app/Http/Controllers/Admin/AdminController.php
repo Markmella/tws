@@ -24,15 +24,20 @@ class AdminController extends Controller
 
     public function store(Request $request){
 
-        $admin = Admin::get();
+        $admins = Admin::get();
 
         $this->validate($request, [
             'username' => 'required',
             'password' => 'required'
         ]);
 
-        if($admin[0]->username != $request->username && $admin[0]->password != $request->password){
-            return back()->with('error', ' ');
+        $username = $request->username;
+        $password = $request->password;
+
+        foreach($admins as $admin){
+            if($admin->username != $username && $admin->password != $password){
+                return back()->with('error', ' ');
+            }
         }
 
         return redirect()->route('admin-dashboard');

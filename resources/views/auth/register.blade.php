@@ -22,7 +22,7 @@
     <form class="register-form" action="{{ route('register') }}" method="POST">
         <h2> Register </h2>
         @csrf
-        <input id="name" type="text" name="name" placeholder="Name" autofocus
+        <input id="name" type="text" name="name" placeholder="Name"
             @error('name') style="border: 1px solid" @enderror
             value="{{ old('name') }}">
             <div id="error1" class="error-message">

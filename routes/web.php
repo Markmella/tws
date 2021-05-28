@@ -16,6 +16,7 @@ use App\Models\Post;
 Route::get('/', function () { 
     include_once 'data.php';
 
+    // $front = Post::where('status', 'Accepted')->get();
     $posts = Post::get();
     $latest = Post::latest('created_at')->first();
 

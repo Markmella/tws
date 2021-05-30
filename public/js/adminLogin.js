@@ -1,10 +1,10 @@
 /******/ (() => { // webpackBootstrap
 var __webpack_exports__ = {};
-/*!************************************!*\
-  !*** ./resources/js/auth/login.js ***!
-  \************************************/
-var btnLogin = document.getElementById('login');
-btnLogin.addEventListener('click', function () {
+/*!******************************************!*\
+  !*** ./resources/js/admin/adminLogin.js ***!
+  \******************************************/
+var btnAdminLogin = document.getElementById('admin_login');
+btnAdminLogin.addEventListener('click', function () {
   Swal.fire({
     width: 250,
     title: 'Checking...',
@@ -13,7 +13,7 @@ btnLogin.addEventListener('click', function () {
       Swal.showLoading();
     }
   }).then(function () {
-    login_form.submit();
+    admin_login_form.submit();
   });
 });
 var emailField = document.getElementById('username');

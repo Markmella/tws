@@ -16,32 +16,34 @@ use App\Models\Post;
 Route::get('/', function () { 
     include_once 'data.php';
 
-    // $front = Post::where('status', 'Accepted')->get();
     $posts = Post::get();
     $latest = Post::latest('created_at')->first();
 
     if($posts->count()){
-        if(!empty($_GET["article"]))
+        if(!empty($_GET["article"])){
             $latest = Post::find($_GET["article"]);
+        }
         
         return view('content.home', [
-            'posts' => $posts,
-            'latest' => $latest
-        ]); 
-    }else {
-        return view('content.home', [
-            'posts' => $posts,
-            'latest' => $latest,
+            "posts" => $posts,
+            "latest" => $latest,
             "title" => $data[0],
             "datetime" => $data[1],
             "author" => $data[2],
             "article" => $data[3],
             "source" => $data[4]
-            ]
-        );
+        ]); 
+    }else {
+        return view('content.home', [
+            "posts" => $posts,
+            "latest" => $latest,
+            "title" => $data[0],
+            "datetime" => $data[1],
+            "author" => $data[2],
+            "article" => $data[3],
+            "source" => $data[4]
+        ]);
     }
-
-
 })->name('home');
 
 Route::get('/about', [MasterController::class, 'about'])->name('about');
@@ -88,6 +90,10 @@ Route::get('/admin-dashboard', [AdminController::class, 'dashboard'])->name('adm
 Route::get('/admin-show-article{id}', [AdminController::class, 'show'])->name('admin-show-article');
 Route::post('/admin-accept-article{id}', [AdminController::class, 'accepted'])->name('admin-accept-article');
 Route::post('/admin-decline-article{id}', [AdminController::class, 'declined'])->name('admin-decline-article');
+
+
+Route::get('/admin-delete-article{id}', [AdminController::class, 'showDelete'])->name('admin-delete-article');
+Route::post('/admin-delete-article{id}', [AdminController::class, 'delete']);
 
 
 

@@ -14,6 +14,7 @@
         <div class="recent-post">
             <div class="post">
                 @if ($posts->count())
+                    <?php $flag = true ?>
                     @if (!empty($_GET["article"]))
                         <?php
                             $articleTitle = $latest->title;
@@ -31,9 +32,19 @@
                                     $articleTime = $post->updated_at->diffForHumans();
                                     $articleAuthor = $post->author;
                                     $articleContent = $post->article;
+                                    $flag = false;
                                 ?>
                             @endif
                         @endforeach
+                        <?php
+                            if($flag){
+                                $articleTitle = $title;
+                                $articleDate = $datetime;
+                                $articleTime = '10 days ago';
+                                $articleAuthor = $author;
+                                $articleContent = $article;
+                            }
+                        ?>
                     @endif
                 @else
                     <?php

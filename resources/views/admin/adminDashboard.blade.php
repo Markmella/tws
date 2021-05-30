@@ -27,6 +27,17 @@
     </script>
 @endif
 
+@if (session('deleted'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            width: '320',
+            title: 'Arcticle Deleted'
+        })
+    </script>
+@endif
+
+
 
 <div class="adminDashboard-container">
     <div class="adminDashboard-content">
@@ -87,6 +98,7 @@
                             <th> Article Title </th>
                             <th> Article Author </th>
                             <th> Status </th>
+                            <th> Action </th>
                         </tr>
                         @foreach ($posts as $post)
                             @if ($post->status == 'Accepted')
@@ -111,6 +123,9 @@
                                             {{ $post->status }}
                                         </p>
                                     </td>
+                                    <td>
+                                        <a href="{{ route('admin-delete-article', $post->id) }}"> Show </a>
+                                    </td>
                                 </tr>
                             @endif
                         @endforeach
@@ -128,6 +143,7 @@
                             <th> Article Title </th>
                             <th> Article Author </th>
                             <th> Status </th>
+                            <th> Action </th>
                         </tr>
                         @foreach ($posts as $post)
                             @if ($post->status == 'Declined')
@@ -150,6 +166,11 @@
                                     <td>
                                         <p>
                                             {{ $post->status }}
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            <a href="{{ route('admin-delete-article', $post->id) }}"> Show </a>
                                         </p>
                                     </td>
                                 </tr>

@@ -61,7 +61,7 @@
         </form>
 
         <div class="button-container">
-            <input id="submit" type="button" value="Log In">
+            <input id="login" type="button" value="Log In">
             <div class="line">
                 <div class="or">
                     OR

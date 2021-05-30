@@ -84,11 +84,28 @@ class AdminController extends Controller
     }
 
 
+    public function showDelete($id){
+
+        return view('admin.adminShowArticle', [
+            'posts' => Post::find($id)
+        ]);
+    }
+
+    public function delete($id){
+
+        $posts = Post::find($id);
+
+        $posts->delete();
+
+        return redirect()->route('admin-dashboard')->with('deleted', ' ');
+    }
+
+
     public function logout(Request $request){
 
         auth()->logout();
 
-        return redirect('login-admin');
+        return redirect('admin-login');
     }
 
 }

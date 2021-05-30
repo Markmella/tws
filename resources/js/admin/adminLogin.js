@@ -1,7 +1,7 @@
 
-let btnLogin = document.getElementById('login');
+let btnAdminLogin = document.getElementById('admin_login');
 
-btnLogin.addEventListener('click', function(){
+btnAdminLogin.addEventListener('click', function(){
     Swal.fire({
         width: 250,
         title: 'Checking...',
@@ -10,9 +10,10 @@ btnLogin.addEventListener('click', function(){
             Swal.showLoading()
         },
     }).then(() => {
-        login_form.submit();
+        admin_login_form.submit();
     })
 });
+
 
 let emailField = document.getElementById('username');
 let passwordField = document.getElementById('password');

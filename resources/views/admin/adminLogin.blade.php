@@ -5,7 +5,7 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ asset('css/adminLogin.css') }}">
-<script src="{{ asset('js/login.js') }}" defer></script>
+<script src="{{ asset('js/adminLogin.js') }}" defer></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 @if (session('error'))
@@ -30,7 +30,7 @@
 
 <div class="login-register-form">
     <div class="form-container">
-        <form class="forms" name="login_form" action="{{ route('admin-login') }}" method="POST">
+        <form class="forms" name="admin_login_form" action="{{ route('admin-login') }}" method="POST">
             <h2> Administrator </h2>
             @csrf
             <input id="username" type="text" name="username" placeholder="Username" autofocus
@@ -57,7 +57,7 @@
         </form>
 
         <div class="button-container">
-            <input id="submit" type="button" value="Log In">
+            <input id="admin_login" type="button" value="Log In">
         </div>
     </div>
 </div>

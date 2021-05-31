@@ -1,10 +1,5 @@
-To run the file
-
-1. Clone the
-
-
 Create By
 
-Mella, Mark Julius P.
-Aunzo, Mark Angelo B.
-Valencia, Joshua Ryan M.
+Mella, Mark Julius P. <br>
+Aunzo, Mark Angelo B. <br>
+Valencia, Joshua Ryan M. <br>

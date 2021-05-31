@@ -46,6 +46,7 @@
                 <li id="pending"> Pending Article </li>
                 <li id="accepted"> Accepted Article </li>
                 <li id="declined"> Declined Article </li>
+                <li id="deleted"> Deleted Article </li>
                 <li id="history"> History </li>
                 <li id="users"> Users </li>
             </ul>
@@ -60,7 +61,7 @@
                             <th> User ID </th>
                             <th> Article Title </th>
                             <th> Article Author </th>
-                            <th> Action </th>
+                            <th class="action"> Action </th>
                         </tr>
                         @foreach ($posts as $post)
                             @if ($post->status == 'Pending')
@@ -79,7 +80,7 @@
                                         <p>
                                             {{ $post->author }}</td>
                                         </p>
-                                    <td>
+                                    <td class="action">
                                         <a href="{{ route('admin-show-article', $post->id) }}"> Show </a>
                                     </td>
                                 </tr>
@@ -97,8 +98,8 @@
                             <th> User ID </th>
                             <th> Article Title </th>
                             <th> Article Author </th>
-                            <th> Status </th>
-                            <th> Action </th>
+                            <th class="action"> Status </th>
+                            <th class="action"> Action </th>
                         </tr>
                         @foreach ($posts as $post)
                             @if ($post->status == 'Accepted')
@@ -118,12 +119,12 @@
                                             {{ $post->author }}
                                         </p>
                                     </td>
-                                    <td>
+                                    <td class="action">
                                         <p>
                                             {{ $post->status }}
                                         </p>
                                     </td>
-                                    <td>
+                                    <td class="action">
                                         <a href="{{ route('admin-delete-article', $post->id) }}"> Show </a>
                                     </td>
                                 </tr>
@@ -142,8 +143,8 @@
                             <th> User ID </th>
                             <th> Article Title </th>
                             <th> Article Author </th>
-                            <th> Status </th>
-                            <th> Action </th>
+                            <th class="action"> Status </th>
+                            <th class="action"> Action </th>
                         </tr>
                         @foreach ($posts as $post)
                             @if ($post->status == 'Declined')
@@ -163,14 +164,54 @@
                                             {{ $post->author }}
                                         </p>
                                     </td>
-                                    <td>
+                                    <td class="action">
                                         <p>
                                             {{ $post->status }}
                                         </p>
                                     </td>
-                                    <td>
+                                    <td class="action">
                                         <p>
                                             <a href="{{ route('admin-delete-article', $post->id) }}"> Show </a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            @endif
+                        @endforeach
+                    </table>
+                </div>
+
+                <div class="deleted-content" style="display: none">
+                    <div class="status">
+                        Deleted Article
+                    </div>
+                    <table>
+                        <tr>
+                            <th> User ID </th>
+                            <th> Article Title </th>
+                            <th> Article Author </th>
+                            <th class="action"> Status </th>
+                        </tr>
+                        @foreach ($posts as $post)
+                            @if ($post->status == 'Deleted')
+                                <tr>
+                                    <td>
+                                        <p>
+                                            {{ $post->user_id }}
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            {{ $post->title }}
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <p>
+                                            {{ $post->author }}
+                                        </p>
+                                    </td>
+                                    <td class="action">
+                                        <p>
+                                            {{ $post->status }}
                                         </p>
                                     </td>
                                 </tr>
@@ -188,7 +229,7 @@
                             <th> User ID </th>
                             <th> Article Title </th>
                             <th> Article Author </th>
-                            <th> Status </th>
+                            <th class="action"> Status </th>
                         </tr>
                         @foreach ($posts as $post)
                             <tr>
@@ -207,7 +248,7 @@
                                         {{ $post->author }}
                                     </p>
                                 </td>
-                                <td>
+                                <td class="action">
                                     <p>
                                         {{ $post->status }}
                                     </p>
@@ -264,12 +305,14 @@
     let pending = document.getElementById("pending");
     let accepted = document.getElementById("accepted");
     let declined = document.getElementById("declined");
+    let deleted = document.getElementById("deleted");
     let history = document.getElementById("history");
     let users = document.getElementById("users");
 
     let pendingContainer = document.querySelector('.pending-content');
     let acceptedContainer = document.querySelector('.accepted-content');
     let declinedContainer = document.querySelector('.declined-content');
+    let deletedContainer = document.querySelector('.deleted-content');
     let historyContainer = document.querySelector('.history-content');
     let usersContainer = document.querySelector('.users-content');
 
@@ -277,6 +320,7 @@
         pendingContainer.style.display = "block";
         acceptedContainer.style.display = "none";
         declinedContainer.style.display = "none";
+        deletedContainer.style.display = "none";
         historyContainer.style.display = "none";
         usersContainer.style.display = "none";
     });
@@ -285,14 +329,25 @@
         acceptedContainer.style.display = "block";
         pendingContainer.style.display = "none";
         declinedContainer.style.display = "none";
+        deletedContainer.style.display = "none";
         historyContainer.style.display = "none";
         usersContainer.style.display = "none";
     });
 
     declined.addEventListener('click', function(){
         declinedContainer.style.display = "block";
-        acceptedContainer.style.display = "none";
         pendingContainer.style.display = "none";
+        acceptedContainer.style.display = "none";
+        deletedContainer.style.display = "none";
+        historyContainer.style.display = "none";
+        usersContainer.style.display = "none";
+    });
+
+    deleted.addEventListener('click', function(){
+        deletedContainer.style.display = "block";
+        pendingContainer.style.display = "none";
+        acceptedContainer.style.display = "none";
+        declinedContainer.style.display = "none";
         historyContainer.style.display = "none";
         usersContainer.style.display = "none";
     });
@@ -302,6 +357,7 @@
         pendingContainer.style.display = "none";
         acceptedContainer.style.display = "none";
         declinedContainer.style.display = "none";
+        deletedContainer.style.display = "none";
         usersContainer.style.display = "none";
     });
 
@@ -311,6 +367,7 @@
         pendingContainer.style.display = "none";
         acceptedContainer.style.display = "none";
         declinedContainer.style.display = "none";
+        deletedContainer.style.display = "none";
     });
 
 </script>

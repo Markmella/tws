@@ -19,19 +19,24 @@
                         <i class="fas fa-times"></i>
                     </div>
                         <li id="home"><a href="{{ route('admin') }}"> Home </a></li>
-                        <li id="dashboard"><a href="{{ route('admin-dashboard') }}"> Dashboard </a></li>
+                        @if (session('status'))
+                            <li id="dashboard"><a href="{{ route('admin-dashboard') }}"> Dashboard </a></li>
+                            <li id="dashboard"><a href="{{ route('admin-dashboard') }}"> Admin Profile </a></li>
+                        @endif
                 </ul>
                 <div class="menu-icon menu-btn">
                     <i class="fas fa-bars"></i>
                 </div>
                 <div class="button">
-                    
+                    @if (session('status'))    
                         <form name="admin_logout_form" action="{{ route('admin-logout') }}" method="POST">
                             @csrf
                         </form>
                         <button id="submit" type="button"> Logout </button>
-                    
+                    @else
                         <a href="{{ route('admin-login') }}">Login</a>
+                    @endif
+                            
                    
                 </div>
             </div>

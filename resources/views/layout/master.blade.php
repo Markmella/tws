@@ -60,7 +60,7 @@
                 </div>
                 <div class="button">
                     @guest
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}"> </a>
                     @endguest
                     @auth
                         <form name="logout_form" action="{{ route('logout') }}" method="POST">

@@ -17,9 +17,16 @@ class AdminController extends Controller
     }
 
 
+
     public function login(){
-        return view('admin.adminLogin');
+        if(session('status')){
+            return back();
+        }else {
+            return view('admin.adminLogin');
+        }
     }
+
+
 
 
     public function store(Request $request){
@@ -35,31 +42,45 @@ class AdminController extends Controller
         $password = $request->password;
 
         foreach($admins as $admin){
-            if($admin->username != $username && $admin->password != $password){
-                return back()->with('error', ' ');
+            if($admin->username == $username && $admin->password == $password){
+    
+                $request->session()->put('status', 'in');
+                return redirect()->route('admin-dashboard');
             }
         }
-
-        return redirect()->route('admin-dashboard');
+        return back()->with('error', ' ');
     }
+
+
 
 
     public function dashboard(){
-        return view('admin.adminDashboard', [
-            'posts' => Post::get(),
-            'users' => User::get()
-        ]);
+        if(session('status')){
+            return view('admin.adminDashboard', [
+                'posts' => Post::get(),
+                'users' => User::get()
+            ]);
+        }else {
+            return back();
+        }
     }
+
+
 
 
     public function show($id){
-
-        return view('admin.adminShow', [
-            'posts' => Post::find($id)
-        ]);
+        if(session('status')){
+            return view('admin.adminShow', [
+                'posts' => Post::find($id)
+            ]);
+        }else {
+            return back();
+        }
     }
 
 
+
+    
     public function accepted($id){
 
         $posts = Post::find($id);
@@ -72,6 +93,8 @@ class AdminController extends Controller
     }
 
     
+
+
     public function declined($id){
 
         $posts = Post::find($id);
@@ -84,26 +107,40 @@ class AdminController extends Controller
     }
 
 
+
+
     public function showDelete($id){
 
-        return view('admin.adminShowArticle', [
-            'posts' => Post::find($id)
-        ]);
+        if(session('status')){
+            return view('admin.adminShowArticle', [
+                'posts' => Post::find($id)
+            ]);
+        }else {
+            return back();
+        }
     }
+
+
 
     public function delete($id){
 
         $posts = Post::find($id);
 
-        $posts->delete();
+        $article->update([
+            'status' => 'Deleted'
+        ]);
 
         return redirect()->route('admin-dashboard')->with('deleted', ' ');
     }
 
 
+
+    
     public function logout(Request $request){
 
-        auth()->logout();
+        if(session('status')){
+            session()->pull('status');
+        }
 
         return redirect('admin-login');
     }

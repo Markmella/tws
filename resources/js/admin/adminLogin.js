@@ -14,7 +14,6 @@ btnAdminLogin.addEventListener('click', function(){
     })
 });
 
-
 let emailField = document.getElementById('username');
 let passwordField = document.getElementById('password');
 

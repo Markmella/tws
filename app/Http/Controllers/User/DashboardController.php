@@ -23,7 +23,10 @@ class DashboardController extends Controller
     public function delete($id){
 
         $article = Post::find($id);
-        $article->delete();
+
+        $article->update([
+            'status' => 'Deleted'
+        ]);
 
         return back()->with('deleted', ' ');
     }

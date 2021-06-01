@@ -10,6 +10,10 @@ use App\Http\Controllers\User\UpdateController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\PostsController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\adminLoginController;
+use App\Http\Controllers\Admin\AdminLogoutController;
+use App\Http\Controllers\Admin\AdminShowAllController;
+use App\Http\Controllers\Admin\AdminShowDeleteController;
 
 use App\Models\Post;
 
@@ -51,20 +55,23 @@ Route::get('/disclaimer', [MasterController::class, 'disclaimer'])->name('discla
 Route::get('/contact', [MasterController::class, 'contact'])->name('contact');
 
 
-
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 
+
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
+
 
 Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
 Route::post('/logout', [LogoutController::class, 'logout']);
 
 
 
+
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/delete{id}', [DashboardController::class, 'delete'])->name('delete');
+
 
 Route::get('/posts', [PostsController::class, 'index'])->name('posts');
 Route::post('/posts', [PostsController::class, 'store']);
@@ -73,6 +80,7 @@ Route::post('/posts', [PostsController::class, 'store']);
 Route::get('/update{id}', [UpdateController::class, 'index'])->name('update');
 Route::post('/update{id}', [UpdateController::class, 'update']);
 
+
 Route::get('/profile{id}', [ProfileController::class, 'index'])->name('profile');
 Route::post('/profile-update-picture{id}', [ProfileController::class, 'updatePicture'])->name('update-profile');
 Route::post('/profile-update-password{id}', [ProfileController::class, 'updatePassword'])->name('update-password');
@@ -80,23 +88,24 @@ Route::post('/profile-update-information{id}', [ProfileController::class, 'updat
 Route::post('/profile{id}', [ProfileController::class, 'deleteAccount'])->name('delete-account');
 
 
+
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
-
-Route::get('/admin-login', [AdminController::class, 'login'])->name('admin-login');
-Route::post('/admin-login', [AdminController::class, 'store']);
-
 Route::get('/admin-dashboard', [AdminController::class, 'dashboard'])->name('admin-dashboard');
 
-Route::get('/admin-show-article{id}', [AdminController::class, 'show'])->name('admin-show-article');
-Route::post('/admin-accept-article{id}', [AdminController::class, 'accepted'])->name('admin-accept-article');
-Route::post('/admin-decline-article{id}', [AdminController::class, 'declined'])->name('admin-decline-article');
+
+Route::get('/admin-login', [AdminLoginController::class, 'index'])->name('admin-login');
+Route::post('/admin-login', [AdminLoginController::class, 'login']);
 
 
-Route::get('/admin-delete-article{id}', [AdminController::class, 'showDelete'])->name('admin-delete-article');
-Route::post('/admin-delete-article{id}', [AdminController::class, 'delete']);
+Route::get('/admin-show-article{id}', [adminShowAllController::class, 'show'])->name('admin-show-article');
+Route::post('/admin-accept-article{id}', [adminShowAllController::class, 'accepted'])->name('admin-accept-article');
+Route::post('/admin-decline-article{id}', [adminShowAllController::class, 'declined'])->name('admin-decline-article');
 
 
+Route::get('/admin-delete-article{id}', [adminShowDeleteController::class, 'showDelete'])->name('admin-delete-article');
+Route::post('/admin-delete-article{id}', [adminShowDeleteController::class, 'delete']);
 
-Route::post('/admin-logout', [AdminController::class, 'logout'])->name('admin-logout');
+
+Route::post('/admin-logout', [adminLogoutController::class, 'logout'])->name('admin-logout');
 
 

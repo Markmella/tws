@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:ital,wght@0,700;1,500&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/adminMaster.css') }}">
+    <script src="{{ asset('js/adminHeader.js') }}" defer></script>
     <script type="text/javascript" src="{{ asset('js/fontAwesomeIcon.js') }}" defer></script>
     <title> @yield('title') </title>
 </head>
@@ -21,7 +22,7 @@
                         <li id="home"><a href="{{ route('admin') }}"> Home </a></li>
                         @if (session('status'))
                             <li id="dashboard"><a href="{{ route('admin-dashboard') }}"> Dashboard </a></li>
-                            <li id="dashboard"><a href="{{ route('admin-dashboard') }}"> Admin Profile </a></li>
+                            <li id="admin"><a href="{{ route('admin-dashboard') }}"> Admin Profile </a></li>
                         @endif
                 </ul>
                 <div class="menu-icon menu-btn">
@@ -34,10 +35,8 @@
                         </form>
                         <button id="submit" type="button"> Logout </button>
                     @else
-                        <a href="{{ route('admin-login') }}">Login</a>
-                    @endif
-                            
-                   
+                        <a href="{{ route('admin-login') }}"> Login </a>
+                    @endif   
                 </div>
             </div>
         </div>

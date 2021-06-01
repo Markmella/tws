@@ -46,14 +46,14 @@
     margin-right: 12px;
 }
 
+.article .pending-article a {
+    margin-left: 1rem;
+}
+
 .article-button a:hover,
 .article .pending-article a:hover {
     background-color: #444;
     color: white;
-}
-
-.article .pending-article a {
-    margin-left: 12px;
 }
 
 .article p {

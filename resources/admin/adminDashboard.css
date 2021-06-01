@@ -125,7 +125,7 @@
     }
 
     .table-content {
-        width: 95%;
+        width: 100%;
     }
 
 }
@@ -133,11 +133,20 @@
 @media (max-width: 790px){
 
     .left-content {
-        width: 70%;
+        width: 80%;
     }
 
-    .table-content {
-        width: 95%;
+    .status {
+        font-size: 1rem;
+    }
+
+    .table-content table th,
+    .table-content table td {
+        font-size: 12px;
+    }
+
+    .table-content table td a {
+        font-size: 12px;
     }
 
 }

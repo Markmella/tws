@@ -260,7 +260,7 @@
 
                 <div class="users-content" style="display: none">
                     <div class="status">
-                        All Users
+                        Users
                     </div>
                     <table>
                         <tr>

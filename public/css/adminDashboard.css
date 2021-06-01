@@ -51,20 +51,16 @@
 }
 
 .table-content table th {
-    width: 20%;
+    width: 25%;
     font-size: 1.2rem;
     padding: 10px;
     border-bottom: 1px solid #444;
 }
 
 .table-content table td {
-    width: 20%;
+    width: 25%;
     font-size: 1rem;
     padding: 1rem 10px;
-}
-
-.table-content table .action {
-    text-align: center;
 }
 
 .table-content table p {
@@ -129,7 +125,7 @@
     }
 
     .table-content {
-        width: 95%;
+        width: 100%;
     }
 
 }
@@ -137,11 +133,20 @@
 @media (max-width: 790px){
 
     .left-content {
-        width: 70%;
+        width: 80%;
     }
 
-    .table-content {
-        width: 95%;
+    .status {
+        font-size: 1rem;
+    }
+
+    .table-content table th,
+    .table-content table td {
+        font-size: 12px;
+    }
+
+    .table-content table td a {
+        font-size: 12px;
     }
 
 }

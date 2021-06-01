@@ -65,13 +65,18 @@
     margin: 1rem;
     border: none;
     border: 1px solid #444;
-    border-radius: 3px;  
+    border-radius: 30px;  
     cursor: pointer;
 }
 
-.adminShow-content .button-options input:hover {
+.adminShow-content .button-options input:hover:first-child {
+    background-color: #90EE90;
+    box-shadow: 0 0 10px #444;
+}
+
+.adminShow-content .button-options input:hover:last-child {
     color: white;
-    background-color: #444;
+    background-color: #EE204E;
     box-shadow: 0 0 10px #444;
 }
 
@@ -108,4 +113,12 @@
 
 .swal2-styled.swal2-confirm:focus {
     box-shadow: none;
+}
+
+@media (max-width: 790px){
+
+    .adminShow-content {
+        width: 100%;
+    }
+
 }

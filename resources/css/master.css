@@ -104,14 +104,18 @@ h1 {
 }
 
 .navbar-content .button a {
+    background-color: #aaa;
+    padding: .5rem 1.5rem;
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 1rem;
     letter-spacing: 1px;
+    border-radius: 5px;
 }
 
 .navbar-content .button a:hover {
-    color: dodgerblue;
+    color: black;
+    background-color: white;
     font-weight: bold;
 }
 
@@ -121,18 +125,21 @@ h1 {
 }
 
 .navbar-content .button button {
-    background-color: transparent;
-    color: white;
+    background-color: #aaa;
+    padding: .5rem 1.5rem;
+    color: black;
     font-size: 1rem;
     letter-spacing: 1px;
     outline: none;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
 .navbar-content .button button:hover {
+    color: black;
+    background-color: white;
     font-weight: bold;
-    color: dodgerblue;
 }
 /* Logout button */
 

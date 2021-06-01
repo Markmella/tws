@@ -9,6 +9,7 @@
     "/js/post-update.js": "/js/post-update.js",
     "/js/profile.js": "/js/profile.js",
     "/js/adminLogin.js": "/js/adminLogin.js",
+    "/js/adminHeader.js": "/js/adminHeader.js",
     "/css/disclaimer.css": "/css/disclaimer.css",
     "/css/about.css": "/css/about.css",
     "/css/home.css": "/css/home.css",

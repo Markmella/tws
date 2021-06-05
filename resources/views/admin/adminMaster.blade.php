@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:ital,wght@0,700;1,500&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/adminMaster.css') }}">
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="{{ asset('js/adminHeader.js') }}" defer></script>
     <script type="text/javascript" src="{{ asset('js/fontAwesomeIcon.js') }}" defer></script>
     <title> @yield('title') </title>
@@ -20,19 +19,10 @@
                     <div class="menu-icon close-btn">
                         <i class="fas fa-times"></i>
                     </div>
-                        <li id="home">
-                            <i class="fas fa-home"></i>
-                            <a href="{{ route('admin') }}"> Home </a>
-                        </li>
+                        <li id="home"><a href="{{ route('admin') }}"> Home </a></li>
                         @if (session('status'))
-                            <li id="dashboard">
-                                <i class="fas fa-columns"></i>
-                                <a href="{{ route('admin-dashboard') }}"> Dashboard </a>
-                            </li>
-                            <li id="admin">
-                                <i class="fas fa-users-cog"></i>
-                                <a href="{{ route('admin-profile') }}"> Admin Profile </a>
-                            </li>
+                            <li id="dashboard"><a href="{{ route('admin-dashboard') }}"> Dashboard </a></li>
+                            <li id="admin"><a href="{{ route('admin-dashboard') }}"> Admin Profile </a></li>
                         @endif
                 </ul>
                 <div class="menu-icon menu-btn">
@@ -43,13 +33,9 @@
                         <form name="admin_logout_form" action="{{ route('admin-logout') }}" method="POST">
                             @csrf
                         </form>
-                        <button id="submit" type="button"> Logout &nbsp;
-                            <i class="fas fa-sign-out-alt"></i>
-                        </button>
+                        <button id="submit" type="button"> Logout </button>
                     @else
-                        <a href="{{ route('admin-login') }}"> Login &nbsp;
-                            <i class="fas fa-sign-in-alt"></i>
-                        </a>
+                        <a href="{{ route('admin-login') }}"> Login </a>
                     @endif   
                 </div>
             </div>

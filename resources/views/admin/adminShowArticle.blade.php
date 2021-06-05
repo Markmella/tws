@@ -11,14 +11,14 @@
 <div class="adminShow-container">
     <div class="adminShow-content">
         <p> Title: 
-            <span> {{ $post->title }} </span> 
+            <span> {{ $posts->title }} </span> 
         </p>
         <p> Author: 
-            <span> {{ $post->author }} </span> 
+            <span> {{ $posts->author }} </span> 
         </p>
         <p class="article"> Article </p>
-        <textarea disabled><?php echo $post->article ?></textarea>
-        <form action="{{ route('admin-delete-article', $post->id) }}" name="delete_form" method="POST">
+        <textarea disabled><?php echo $posts->article ?></textarea>
+        <form action="{{ route('admin-delete-article', $posts->id) }}" name="delete_form" method="POST">
             @csrf
         </form>
         <div class="button-options">
@@ -46,6 +46,7 @@
                 delete_form.submit();
         })
     });
+
 </script>
 
 

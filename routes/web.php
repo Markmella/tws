@@ -12,7 +12,6 @@ use App\Http\Controllers\User\PostsController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\adminLoginController;
 use App\Http\Controllers\Admin\AdminLogoutController;
-use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\Admin\AdminShowAllController;
 use App\Http\Controllers\Admin\AdminShowDeleteController;
 
@@ -92,12 +91,11 @@ Route::post('/profile{id}', [ProfileController::class, 'deleteAccount'])->name('
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::get('/admin-dashboard', [AdminController::class, 'dashboard'])->name('admin-dashboard');
-Route::get('/admin-profile', [AdminController::class, 'profile'])->name('admin-profile');
 
-Route::post('/admin-register', [AdminProfileController::class, 'store'])->name('admin-register');
 
 Route::get('/admin-login', [AdminLoginController::class, 'index'])->name('admin-login');
 Route::post('/admin-login', [AdminLoginController::class, 'login']);
+
 
 Route::get('/admin-show-article{id}', [adminShowAllController::class, 'show'])->name('admin-show-article');
 Route::post('/admin-accept-article{id}', [adminShowAllController::class, 'accepted'])->name('admin-accept-article');

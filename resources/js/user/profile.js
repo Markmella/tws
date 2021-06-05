@@ -32,7 +32,7 @@ let changePasswordCon = document.querySelector(".password-container");
     btnCancelInformation.addEventListener('click', function(e){
         e.preventDefault();
         Swal.fire({
-            width: 150,
+            width: 200,
             timer: 1500,
                 didOpen: () => {
                     Swal.showLoading()
@@ -49,7 +49,7 @@ let btnSavingInformation = document.getElementById('saving-information');
 
 btnSavingInformation.addEventListener('click', function(){
     Swal.fire({
-        width: 250,
+        width: 220,
         title: 'Checking...',
         timer: 1500,
             didOpen: () => {
@@ -76,7 +76,7 @@ let btnCancelPassword = document.getElementById("cancel-password");
 btnCancelPassword.addEventListener('click', function(e){
     e.preventDefault();
     Swal.fire({
-        width: 150,
+        width: 200,
         timer: 1500,
             didOpen: () => {
                 Swal.showLoading()
@@ -93,7 +93,7 @@ let btnSavingPassword = document.getElementById('saving-password');
 
 btnSavingPassword.addEventListener('click', function(){
     Swal.fire({
-        width: 250,
+        width: 220,
         title: 'Checking...',
         timer: 1500,
             didOpen: () => {
@@ -196,7 +196,7 @@ btnCamera.addEventListener('click', function(){
 
 btnExit.addEventListener('click', function(){
     Swal.fire({
-        width: 150,
+        width: 200,
         timer: 1500,
             didOpen: () => {
                 Swal.showLoading()

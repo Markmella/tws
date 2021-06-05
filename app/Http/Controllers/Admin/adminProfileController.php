@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Hash;
 
 class adminProfileController extends Controller
 {
+
+    
+
+
+
     public function store(Request $request){
         
         Admin::create([

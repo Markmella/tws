@@ -11,17 +11,17 @@
 <div class="adminShow-container">
     <div class="adminShow-content">
         <p> Title: 
-            <span> {{ $posts->title }} </span> 
+            <span> {{ $post->title }} </span> 
         </p>
         <p> Author: 
-            <span> {{ $posts->author }} </span> 
+            <span> {{ $post->author }} </span> 
         </p>
         <p class="article"> Article </p>
-        <textarea disabled><?php echo $posts->article ?></textarea>
-        <form action="{{ route('admin-accept-article', $posts->id) }}" name="accept_form" method="POST">
+        <textarea disabled><?php echo $post->article ?></textarea>
+        <form action="{{ route('admin-accept-article', $post->id) }}" name="accept_form" method="POST">
             @csrf
         </form>
-        <form action="{{ route('admin-decline-article', $posts->id) }}" name="decline_form" method="POST">
+        <form action="{{ route('admin-decline-article', $post->id) }}" name="decline_form" method="POST">
             @csrf
         </form>
         <div class="button-options">
@@ -40,7 +40,7 @@
 
     btnAccept.addEventListener('click', function(){
         Swal.fire({
-            width: 250,
+            width: 150,
             timer: 1500,
                 didOpen: () => {
                     Swal.showLoading()
@@ -55,7 +55,7 @@
 
     btnDecline.addEventListener('click', function(){
         Swal.fire({
-            width: 250,
+            width: 150,
             timer: 1500,
                 didOpen: () => {
                     Swal.showLoading()

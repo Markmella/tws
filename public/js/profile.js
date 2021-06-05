@@ -30,7 +30,7 @@ var btnCancelInformation = document.getElementById("cancel-information");
 btnCancelInformation.addEventListener('click', function (e) {
   e.preventDefault();
   Swal.fire({
-    width: 200,
+    width: 150,
     timer: 1500,
     didOpen: function didOpen() {
       Swal.showLoading();
@@ -44,7 +44,7 @@ btnCancelInformation.addEventListener('click', function (e) {
 var btnSavingInformation = document.getElementById('saving-information');
 btnSavingInformation.addEventListener('click', function () {
   Swal.fire({
-    width: 220,
+    width: 250,
     title: 'Checking...',
     timer: 1500,
     didOpen: function didOpen() {
@@ -66,7 +66,7 @@ var btnCancelPassword = document.getElementById("cancel-password");
 btnCancelPassword.addEventListener('click', function (e) {
   e.preventDefault();
   Swal.fire({
-    width: 200,
+    width: 150,
     timer: 1500,
     didOpen: function didOpen() {
       Swal.showLoading();
@@ -80,7 +80,7 @@ btnCancelPassword.addEventListener('click', function (e) {
 var btnSavingPassword = document.getElementById('saving-password');
 btnSavingPassword.addEventListener('click', function () {
   Swal.fire({
-    width: 220,
+    width: 250,
     title: 'Checking...',
     timer: 1500,
     didOpen: function didOpen() {
@@ -168,7 +168,7 @@ btnCamera.addEventListener('click', function () {
 });
 btnExit.addEventListener('click', function () {
   Swal.fire({
-    width: 200,
+    width: 150,
     timer: 1500,
     didOpen: function didOpen() {
       Swal.showLoading();

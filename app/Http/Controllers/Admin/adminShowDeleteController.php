@@ -12,7 +12,7 @@ class adminShowDeleteController extends Controller
 
         if(session('status')){
             return view('admin.adminShowArticle', [
-                'post' => Post::find($id)
+                'posts' => Post::find($id)
             ]);
         }else {
             return back();
@@ -21,8 +21,11 @@ class adminShowDeleteController extends Controller
 
     public function delete($id){
 
-        $post = Post::find($id);
-        $post->delete();
+        $posts = Post::find($id);
+
+        $article->update([
+            'status' => 'Deleted'
+        ]);
 
         return redirect()->route('admin-dashboard')->with('deleted', ' ');
     }

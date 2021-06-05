@@ -115,10 +115,6 @@
     box-shadow: none;
 }
 
-.swal2-loading {
-    margin: 1rem 0;
-}
-
 @media (max-width: 790px){
 
     .adminShow-content {

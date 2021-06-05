@@ -32,19 +32,10 @@
                     <div class="menu-icon close-btn">
                         <i class="fas fa-times"></i>
                     </div>
-                        <li id="home">
-                            <i class="fas fa-home"></i>
-                            <a href="{{ route('home') }}"> Home </a>
-                        </li>
+                        <li id="home"><a href="{{ route('home') }}"> Home </a></li>
                         @auth
-                            <li id="dashboard">
-                                <i class="fas fa-columns"></i>
-                                <a href="{{ route('dashboard') }}"> Dashboard </a>
-                            </li>
-                            <li id="post">
-                                <i class="fas fa-edit"></i>
-                                <a href="{{ route('posts') }}"> Post Article </a>
-                            </li>
+                            <li id="dashboard"><a href="{{ route('dashboard') }}"> Dashboard </a></li>
+                            <li id="post"><a href="{{ route('posts') }}"> Post Article </a></li>
                             <li id="profile">
                                 <img 
                                     @if (auth()->user()->image == NULL)
@@ -59,18 +50,9 @@
                             </li>
                         @endauth
                         @guest
-                            <li id="about">
-                                <i class="fas fa-users"></i>
-                                <a href="{{ route('about') }}"> About </a>
-                            </li>
-                            <li id="disclaimer">
-                                <i class="fas fa-info-circle"></i>
-                                <a href="{{ route('disclaimer') }}"> Disclaimer </a>
-                            </li>
-                            <li id="contact">
-                                <i class="fas fa-envelope-open-text"></i>
-                                <a href="{{ route('contact') }}"> Contact </a>
-                            </li>
+                            <li id="about"><a href="{{ route('about') }}"> About </a></li>
+                            <li id="disclaimer"><a href="{{ route('disclaimer') }}"> Disclaimer </a></li>
+                            <li id="contact"><a href="{{ route('contact') }}"> Contact </a></li>
                         @endguest
                 </ul>
                 <div class="menu-icon menu-btn">
@@ -78,17 +60,13 @@
                 </div>
                 <div class="button">
                     @guest
-                        <a href="{{ route('login') }}"> Login &nbsp;
-                            <i class="fas fa-sign-in-alt"></i>
-                        </a>
+                        <a href="{{ route('login') }}"> Login </a>
                     @endguest
                     @auth
                         <form name="logout_form" action="{{ route('logout') }}" method="POST">
                             @csrf
                         </form>
-                        <button id="submit" type="button"> Log Out &nbsp;
-                            <i class="fas fa-sign-out-alt"></i> 
-                        </button>
+                        <button id="submit" type="button"> Logout </button>
                     @endauth
                 </div>
             </div>

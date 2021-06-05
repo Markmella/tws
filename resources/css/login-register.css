@@ -15,7 +15,6 @@
     box-shadow: 0 0 10px #444;
     width: 450px;
     padding: 2rem;
-    margin: 2rem;
     border-radius: 8px;
 }
 
@@ -26,16 +25,6 @@
     margin-bottom: 2rem;
 }
 
-.forms .label,
-.register-form .label {
-    color: black;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    font-weight: bold;
-    padding-top: 1rem;
-}
-
-
 .forms input,
 .register-form input {
     background-color: transparent;
@@ -43,8 +32,7 @@
     font-size: 1.2rem;
     letter-spacing: 1px;
     padding: .5rem;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 1rem 0;
     border: 1px solid #444;
     border-radius: 5px;   
 }
@@ -93,18 +81,6 @@
 .register-form input[type="submit"]:hover {
     color: white;
     background-color: #444;
-}
-
-.button-container .forget-password {
-    margin-top: 10px;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    cursor: pointer;
-}
-
-.button-container .forget-password:hover {
-    color: dodgerblue;
-    text-decoration: underline;
 }
 
 .button-container .line {

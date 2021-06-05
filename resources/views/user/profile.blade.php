@@ -42,10 +42,10 @@
     <div class="profile-content">
         <div class="profile">
             <img id="profile-picture"
-                @if ($users->image == NULL)
+                @if ($user->image == NULL)
                     src="{{ asset('images/profile.png') }}"
                 @else
-                    src="{{ asset('uploads/' . $users->image) }}"
+                    src="{{ asset('uploads/' . $user->image) }}"
                 @endif
             >
             <div class="camera">
@@ -55,16 +55,16 @@
 
 
         <div class="information-container">
-            <form action="{{ route('update-information', $users->id) }}" name="information_form" method="POST">
+            <form action="{{ route('update-information', $user->id) }}" name="information_form" method="POST">
                 @csrf
-                <p class="fullname"> <input id="fullname" name="name" type="text" value="{{ $users->name }}" disabled> </p>
-                <p> Username <input id="username" name="username" type="text" value="{{ $users->username }}" disabled> </p>
+                <p class="fullname"> <input id="fullname" name="name" type="text" value="{{ $user->name }}" disabled> </p>
+                <p> Username <input id="username" name="username" type="text" value="{{ $user->username }}" disabled> </p>
                 <div id="error1" class="error-message error-password">
                     @error('username')
                         {{ $message }}
                     @enderror
                 </div>
-                <p> Email <input id="email" name="email" type="text" value="{{ $users->email }}" disabled> </p>
+                <p> Email <input id="email" name="email" type="text" value="{{ $user->email }}" disabled> </p>
                 <div id="error2" class="error-message error-password">
                     @error('email')
                         {{ $message }}
@@ -94,7 +94,7 @@
             @error ('password') style="display: flex" @enderror
             @if (session('error')) style="display: flex" @endif>
             <div class="btn-save-password">
-                <form action="{{ route('update-password', $users->id) }}" name="password_form" method="POST">
+                <form action="{{ route('update-password', $user->id) }}" name="password_form" method="POST">
                     @csrf
                     <input id="current" type="password" name="current_password" placeholder="Current Password"
                         @error('password') style="border: 1px solid red" @enderror
@@ -137,7 +137,7 @@
     </div>
 
     <div class="delete-account">
-        <form action="{{ route('delete-account', $users->id) }}" name="delete_form" method="POST">
+        <form action="{{ route('delete-account', $user->id) }}" name="delete_form" method="POST">
             @csrf
         </form>
         <button id="delete" type="button"> Delete My Account </button>
@@ -148,14 +148,14 @@
     <div class="exit">
         <i class="fas fa-times"></i>
     </div>
-    <form action="{{ route('update-profile', $users->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('update-profile', $user->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="profile-preview">
             <img id="profile-prev"
-                @if ($users->image == NULL)
+                @if ($user->image == NULL)
                     src="{{ asset('images/profile.png') }}"
                 @else
-                    src="{{ asset('uploads/' . $users->image) }}"
+                    src="{{ asset('uploads/' . $user->image) }}"
                 @endif
             >
         </div>
@@ -170,7 +170,7 @@
             <label for="file"> Choose Profile </label>
         </div>
         <div class="btn-save-profile">
-            <input type="submit" name="submit" value="Save">
+            <input type="submit" value="Save">
             <input type="submit" id="cancel" value="Cancel">
         </div>
     </form>

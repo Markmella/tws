@@ -24,6 +24,7 @@ emailField.addEventListener('keyup', function(){
     let input = emailField.value;
 
     if(input.length !== 0){
+    
         error1.style.display = "none";
         emailField.style.border = "1px solid #444";
     }else {

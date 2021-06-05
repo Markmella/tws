@@ -29,11 +29,12 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/disclaimer.css', 'public/css')
     .postCss('resources/css/contact.css', 'public/css')
     .postCss('resources/css/dashboard.css', 'public/css')
-    .postCss('resources/css/post.css', 'public/css')
+    .postCss('resources/css/post-update.css', 'public/css')
     .postCss('resources/css/profile.css', 'public/css')
     .postCss('resources/admin/adminMaster.css', 'public/css')
     .postCss('resources/admin/adminHome.css', 'public/css')
     .postCss('resources/admin/adminLogin.css', 'public/css')
+    .postCss('resources/admin/adminDashboard.css', 'public/css')
     .postCss('resources/admin/adminShow.css', 'public/css')
-    .postCss('resources/admin/adminDashboard.css', 'public/css');
+    .postCss('resources/admin/adminProfile.css', 'public/css');
 

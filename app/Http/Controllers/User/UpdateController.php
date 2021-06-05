@@ -15,7 +15,7 @@ class UpdateController extends Controller
     public function index($id){
 
         return view('user.update', [
-            'posts' => Post::find($id)
+            'post' => Post::find($id)
         ]);
     }
 

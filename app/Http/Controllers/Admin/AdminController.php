@@ -27,4 +27,15 @@ class AdminController extends Controller
         }
     }
 
+    public function profile(Request $request){
+
+        $id = $request->session()->get('id');
+        $username = $request->session()->get('username');
+
+        $adminUsername = array('username' => $username);
+
+        return view('admin.adminProfile')->with($adminUsername);
+
+    }
+
 }

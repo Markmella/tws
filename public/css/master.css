@@ -73,35 +73,6 @@ h1 {
 
 .menu-list li {
     list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 1rem;
-}
-
-.menu-list li:hover {
-    background: #242424;
-}
-
-.menu-list li .fa-home,
-.menu-list li .fa-users,
-.menu-list li .fa-info-circle,
-.menu-list li .fa-envelope-open-text,
-.menu-list li .fa-phone,
-.menu-list li .fa-columns,
-.menu-list li .fa-edit {
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-
-.menu-list li a {
-    text-decoration: none;
-    color: white;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    padding: 1rem 10px;
-    display: block;
 }
 
 #profile {
@@ -117,14 +88,26 @@ h1 {
     border: 1px solid white;
     border-radius: 50%;
     cursor: pointer;
-    margin: 0 5px;
+}
+
+.menu-list li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 1rem;
+    display: block;
+}
+
+.menu-list li:hover {
+    background: #242424;
 }
 
 .navbar-content .button a {
-    background-color: transparent;
-    padding: 6px 20px;
+    background-color: #aaa;
+    padding: .5rem 1.5rem;
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 1rem;
     letter-spacing: 1px;
     border-radius: 5px;
@@ -142,9 +125,9 @@ h1 {
 }
 
 .navbar-content .button button {
-    background-color: transparent;
-    padding: 6px 20px;
-    color: white;
+    background-color: #aaa;
+    padding: .5rem 1.5rem;
+    color: black;
     font-size: 1rem;
     letter-spacing: 1px;
     outline: none;
@@ -247,6 +230,10 @@ h1 {
 
     .menu-list.active {
         left: 0;
+    }
+
+    #profile {
+        justify-content: flex-start;
     }
 
     .menu-icon {

@@ -35,21 +35,20 @@ body {
 
 .menu-list li {
     list-style: none;
+}
+
+#profile {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     padding: 0 1rem;
 }
 
-.menu-list li:hover {
-    background: #242424;
-}
-
-.menu-list li .fa-home,
-.menu-list li .fa-columns,
-.menu-list li .fa-users-cog {
-    color: white;
-    font-size: 1.2rem;
+#profile img {
+    width: 32px;
+    height: 32px;
+    border: 1px solid white;
+    border-radius: 50%;
     cursor: pointer;
 }
 
@@ -62,11 +61,15 @@ body {
     display: block;
 }
 
+.menu-list li:hover {
+    background: #242424;
+}
+
 .navbar-content .button a {
-    background-color: transparent;
-    padding: 6px 20px;
+    background-color: #aaa;
+    padding: .5rem 1.5rem;
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 1rem;
     letter-spacing: 1px;
     border-radius: 5px;
@@ -84,9 +87,9 @@ body {
 }
 
 .navbar-content .button button {
-    background-color: transparent;
-    padding: 6px 20px;
-    color: white;
+    background-color: #aaa;
+    padding: .5rem 1.5rem;
+    color: black;
     font-size: 1rem;
     letter-spacing: 1px;
     outline: none;

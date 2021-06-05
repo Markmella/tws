@@ -27,6 +27,7 @@ class AdminController extends Controller
         }
     }
 
+<<<<<<< HEAD
     public function profile(Request $request){
         if(session('status')){
             $id = $request->session()->get('id');
@@ -40,4 +41,6 @@ class AdminController extends Controller
         }
     }
 
+=======
+>>>>>>> parent of ba90de4 (Revert "Revert "Revert "Revert "add functionality in admin side"""")
 }

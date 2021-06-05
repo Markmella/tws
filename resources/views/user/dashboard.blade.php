@@ -36,15 +36,7 @@
     </script>
 @endif
 
-<div class="dashboard-container">
-    @if (!auth()->user()->posts()->count())
-        <div class="message-container">
-            <p>
-                There is no Article posted.
-            </p>
-            <a href="{{ route('posts') }}">Create Article now</a>
-        </div>
-    @endif
+<div class="dashboard-container">         
     @if ($posts->count())
         @foreach ($posts as $post)
             @if ($post->user_id === auth()->user()->id)

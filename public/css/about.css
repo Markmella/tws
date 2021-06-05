@@ -102,10 +102,11 @@
     border: 2px solid #444;
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
-    margin-top: 10rem;
     letter-spacing: 1px;
     line-height: 1.5rem;
+    padding: 1rem;
+    margin-top: 10rem;
+    margin-bottom: 2rem;
 }
 
 .information .info {

@@ -22,8 +22,12 @@
     <form class="register-form" action="{{ route('register') }}" method="POST">
         <h2> Register </h2>
         @csrf
-        <input id="name" type="text" name="name" placeholder="Name"
-            @error('name') style="border: 1px solid" @enderror
+
+        <div class="label">
+            Name
+        </div>
+        <input id="name" type="text" name="name"
+            @error('name') style="border: 1px solid red" @enderror
             value="{{ old('name') }}">
             <div id="error1" class="error-message">
                 @error('name')
@@ -31,7 +35,10 @@
                 @enderror
             </div>
 
-        <input id="username" type="text" name="username" placeholder="Username"
+        <div class="label">
+            Username
+        </div>
+        <input id="username" type="text" name="username"
             @error('username') style="border: 1px solid red" @enderror
             value="{{ old('username') }}">
             <div id="error2" class="error-message">
@@ -40,7 +47,10 @@
                 @enderror
             </div>
 
-        <input id="email" type="text" name="email" placeholder="Email"
+        <div class="label">
+            Email
+        </div>
+        <input id="email" type="text" name="email"
             @error('email') style="border: 1px solid red" @enderror
             value="{{ old('email') }}">
             <div id="error3" class="error-message">
@@ -49,11 +59,18 @@
                 @enderror
             </div>
 
-        <input id="password1" type="password" name="password" placeholder="Password"
+        <div class="label">
+            Password
+        </div>
+        <input id="password1" type="password" name="password"
             @error('password') style="border: 1px solid red" @enderror
             value="{{ old('password') }}">
 
-        <input id="password2" type="password" name="password_confirmation" placeholder="Repeat Password"
+
+        <div class="label">
+            Repeat Password
+        </div>
+        <input id="password2" type="password" name="password_confirmation"
             @error('password') style="border: 1px solid red" @enderror
             value="{{ old('password_confirmation') }}">
             <div id="error4" class="error-message">

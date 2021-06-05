@@ -74,7 +74,7 @@
                 <p class="info">
                     Joshua Ryan M. Valencia <br>
                     Administrator / Tester <br>
-                    23 years old
+                    21 years old
                 </p>
                 <div class="social-media">
                     <a href="https://www.facebook.com/piggyboyjoshua20" target="_blank">

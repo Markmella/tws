@@ -15,7 +15,7 @@ class ProfileController extends Controller
 
     public function index($id){
         return view('user.profile', [
-            'user' => User::find($id),
+            'users' => User::find($id),
         ]);
     }
 

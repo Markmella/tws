@@ -10,29 +10,6 @@
     flex-wrap: wrap;
 }
 
-.message-container {
-    text-align: center;
-    color: black;
-}
-
-.message-container p {
-    margin-top: 3rem;
-    margin-bottom: 4rem;
-    font-size: 2rem;
-    letter-spacing: 1px;
-}
-
-.message-container a {
-    color: black;
-    text-decoration: none;
-    font-size: 1.2rem;
-}
-
-.message-container a:hover {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
 .article {
     padding: 1.5rem;
     width: 350px;

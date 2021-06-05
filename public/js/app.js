@@ -19113,10 +19113,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/css/post-update.css":
-/*!***************************************!*\
-  !*** ./resources/css/post-update.css ***!
-  \***************************************/
+/***/ "./resources/css/post.css":
+/*!********************************!*\
+  !*** ./resources/css/post.css ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -19178,19 +19178,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/admin/adminDashboard.css":
-/*!********************************************!*\
-  !*** ./resources/admin/adminDashboard.css ***!
-  \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ "./resources/admin/adminShow.css":
 /*!***************************************!*\
   !*** ./resources/admin/adminShow.css ***!
@@ -19204,10 +19191,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/admin/adminProfile.css":
-/*!******************************************!*\
-  !*** ./resources/admin/adminProfile.css ***!
-  \******************************************/
+/***/ "./resources/admin/adminDashboard.css":
+/*!********************************************!*\
+  !*** ./resources/admin/adminDashboard.css ***!
+  \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -19591,14 +19578,13 @@ process.umask = function() { return 0; };
 /******/ 			"css/home": 0,
 /******/ 			"css/login-register": 0,
 /******/ 			"css/master": 0,
-/******/ 			"css/adminProfile": 0,
-/******/ 			"css/adminShow": 0,
 /******/ 			"css/adminDashboard": 0,
+/******/ 			"css/adminShow": 0,
 /******/ 			"css/adminLogin": 0,
 /******/ 			"css/adminHome": 0,
 /******/ 			"css/adminMaster": 0,
 /******/ 			"css/profile": 0,
-/******/ 			"css/post-update": 0,
+/******/ 			"css/post": 0,
 /******/ 			"css/dashboard": 0,
 /******/ 			"css/contact": 0
 /******/ 		};
@@ -19648,22 +19634,21 @@ process.umask = function() { return 0; };
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminProfile","css/adminShow","css/adminDashboard","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post-update","css/dashboard","css/contact"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminProfile","css/adminShow","css/adminDashboard","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post-update","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/master.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminProfile","css/adminShow","css/adminDashboard","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post-update","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/login-register.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminProfile","css/adminShow","css/adminDashboard","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post-update","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/home.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminProfile","css/adminShow","css/adminDashboard","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post-update","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/about.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminProfile","css/adminShow","css/adminDashboard","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post-update","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/disclaimer.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminProfile","css/adminShow","css/adminDashboard","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post-update","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/contact.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminProfile","css/adminShow","css/adminDashboard","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post-update","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/dashboard.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminProfile","css/adminShow","css/adminDashboard","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post-update","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/post-update.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminProfile","css/adminShow","css/adminDashboard","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post-update","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/profile.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminProfile","css/adminShow","css/adminDashboard","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post-update","css/dashboard","css/contact"], () => (__webpack_require__("./resources/admin/adminMaster.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminProfile","css/adminShow","css/adminDashboard","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post-update","css/dashboard","css/contact"], () => (__webpack_require__("./resources/admin/adminHome.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminProfile","css/adminShow","css/adminDashboard","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post-update","css/dashboard","css/contact"], () => (__webpack_require__("./resources/admin/adminLogin.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminProfile","css/adminShow","css/adminDashboard","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post-update","css/dashboard","css/contact"], () => (__webpack_require__("./resources/admin/adminDashboard.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminProfile","css/adminShow","css/adminDashboard","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post-update","css/dashboard","css/contact"], () => (__webpack_require__("./resources/admin/adminShow.css")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminProfile","css/adminShow","css/adminDashboard","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post-update","css/dashboard","css/contact"], () => (__webpack_require__("./resources/admin/adminProfile.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminDashboard","css/adminShow","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post","css/dashboard","css/contact"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminDashboard","css/adminShow","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/master.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminDashboard","css/adminShow","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/login-register.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminDashboard","css/adminShow","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/home.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminDashboard","css/adminShow","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/about.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminDashboard","css/adminShow","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/disclaimer.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminDashboard","css/adminShow","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/contact.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminDashboard","css/adminShow","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/dashboard.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminDashboard","css/adminShow","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/post.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminDashboard","css/adminShow","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post","css/dashboard","css/contact"], () => (__webpack_require__("./resources/css/profile.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminDashboard","css/adminShow","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post","css/dashboard","css/contact"], () => (__webpack_require__("./resources/admin/adminMaster.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminDashboard","css/adminShow","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post","css/dashboard","css/contact"], () => (__webpack_require__("./resources/admin/adminHome.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminDashboard","css/adminShow","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post","css/dashboard","css/contact"], () => (__webpack_require__("./resources/admin/adminLogin.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminDashboard","css/adminShow","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post","css/dashboard","css/contact"], () => (__webpack_require__("./resources/admin/adminShow.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/disclaimer","css/about","css/home","css/login-register","css/master","css/adminDashboard","css/adminShow","css/adminLogin","css/adminHome","css/adminMaster","css/profile","css/post","css/dashboard","css/contact"], () => (__webpack_require__("./resources/admin/adminDashboard.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

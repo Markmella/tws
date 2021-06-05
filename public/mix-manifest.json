@@ -15,13 +15,14 @@
     "/css/home.css": "/css/home.css",
     "/css/login-register.css": "/css/login-register.css",
     "/css/master.css": "/css/master.css",
-    "/css/adminDashboard.css": "/css/adminDashboard.css",
+    "/css/adminProfile.css": "/css/adminProfile.css",
     "/css/adminShow.css": "/css/adminShow.css",
+    "/css/adminDashboard.css": "/css/adminDashboard.css",
     "/css/adminLogin.css": "/css/adminLogin.css",
     "/css/adminHome.css": "/css/adminHome.css",
     "/css/adminMaster.css": "/css/adminMaster.css",
     "/css/profile.css": "/css/profile.css",
-    "/css/post.css": "/css/post.css",
+    "/css/post-update.css": "/css/post-update.css",
     "/css/dashboard.css": "/css/dashboard.css",
     "/css/contact.css": "/css/contact.css"
 }

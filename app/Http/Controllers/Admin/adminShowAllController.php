@@ -11,7 +11,7 @@ class adminShowAllController extends Controller
     public function show($id){
         if(session('status')){
             return view('admin.adminShow', [
-                'posts' => Post::find($id)
+                'post' => Post::find($id)
             ]);
         }else {
             return back();
@@ -20,9 +20,9 @@ class adminShowAllController extends Controller
     
     public function accepted($id){
 
-        $posts = Post::find($id);
+        $post = Post::find($id);
 
-        $posts->update([
+        $post->update([
             'status' => 'Accepted'
         ]);
 
@@ -31,9 +31,9 @@ class adminShowAllController extends Controller
 
     public function declined($id){
 
-        $posts = Post::find($id);
+        $post = Post::find($id);
 
-        $posts->update([
+        $post->update([
             'status' => 'Declined'
         ]);
 

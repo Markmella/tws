@@ -40,6 +40,14 @@
     letter-spacing: 1px;
 }
 
+.post-body .label {
+    color: black;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    padding-top: 1rem;
+}
+
 .post-body form input {
     background-color: transparent;
     width: 100%;
@@ -48,7 +56,7 @@
     padding: .5rem;
     border: 1px solid #444;
     border-radius: 3px;   
-    margin-top: 1rem;
+    margin-top: 5px;
 }
 
 .post-body form textarea {
@@ -59,7 +67,8 @@
     padding: .5rem;
     border: 1px solid #444;
     border-radius: 3px;
-    margin-top: 1rem;
+    margin-top: 5px;
+    margin-bottom: 1rem;
     resize: none;
 }
 

@@ -4,7 +4,7 @@
 
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('css/post-update.css') }}">
+<link rel="stylesheet" href="{{ asset('css/post.css') }}">
 <script src="{{ asset('js/post-update.js') }}" defer></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
@@ -29,11 +29,7 @@
         <form action="{{ route('posts') }}" method="POST">
             <h3> Post Article </h3>
             @csrf
-            
-            <div class="label">
-                Title
-            </div>
-            <input id="title" type="text" name="title"
+            <input id="title" type="text" name="title" placeholder="Title" autofocus
                 @error('title') style="border: 1px solid red" @enderror
                 value="{{ old('title') }}">
             @error('title')
@@ -42,10 +38,7 @@
                 </div>
             @enderror
 
-            <div class="label">
-                Author
-            </div>
-            <input id="author" type="text" name="author"
+            <input id="author" type="text" name="author" placeholder="Author"
                 @error('author') style="border: 1px solid red" @enderror
                 value="{{ old('author') }}">
             @error('author')
@@ -54,10 +47,7 @@
                 </div>
             @enderror
 
-            <div class="label">
-                Source
-            </div>
-            <input id="source" type="text" name="source" placeholder="URL link"
+            <input id="source" type="text" name="source" placeholder="Source"
                 @error('source') style="border: 1px solid red" @enderror
                 value="{{ old('source') }}">
             @error('source')
@@ -66,9 +56,6 @@
                 </div>
             @enderror
 
-            <div class="label">
-                Article
-            </div>
             <textarea id="article" name="article" id="" cols="30" rows="20" placeholder="Type your article here..."
                 @error('article') style="border: 1px solid red" @enderror>{{ old('article') }}</textarea>
             @error('article')
